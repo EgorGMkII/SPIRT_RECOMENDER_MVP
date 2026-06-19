@@ -17,6 +17,7 @@ from sommelier.agent.schemas import IntentType, ParsedIntent
 from sommelier.agent.state import AgentState
 from sommelier.agent.profile import UserProfile
 from sommelier.agent.profile import ProfileUpdate
+from sommelier.agent.memory import CandidateMemory, LastTurnMemory, SessionMemory
 from sommelier.catalog.cocktail_profiles import CocktailSearchProfile
 from sommelier.catalog.search_profiles import product_card_to_search_profile
 from sommelier.retrieval.cocktail_search import CocktailSearchResult
@@ -93,10 +94,15 @@ class FailingIndex:
 
 
 def _cocktail_result(cocktail_id: str = "mojito") -> CocktailSearchResult:
+    names = {
+        "mojito": "Mojito",
+        "daiquiri": "Daiquiri",
+    }
+    name = names.get(cocktail_id, cocktail_id)
     profile = CocktailSearchProfile(
         cocktail_id=cocktail_id,
         source_url=f"https://example.com/{cocktail_id}",
-        name="Mojito",
+        name=name,
         main_rum="BACARDI Carta Blanca rum",
         description="A refreshing mint and lime rum cocktail.",
         ingredients=["50 ml BACARDI Carta Blanca rum", "25 ml lime juice", "8 mint leaves"],
@@ -109,6 +115,27 @@ def _cocktail_result(cocktail_id: str = "mojito") -> CocktailSearchResult:
         normalized_query="mojito cocktail recipe mint lime white rum",
         matched_tokens=["mojito", "mint", "lime", "rum"],
         profile=profile,
+    )
+
+
+def _cocktail_memory_for_prompt() -> SessionMemory:
+    return SessionMemory(
+        session_id="s1",
+        last_turn=LastTurnMemory(
+            user_message="какой коктейль сделать с лаймом и мятой?",
+            effective_user_message="cocktail with lime and mint",
+            intent="cocktail_expansion",
+            cocktail_query="lime mint cocktail",
+            final_answer="Лучший вариант — Mojito.",
+            candidates=[
+                CandidateMemory(
+                    item_id="mojito",
+                    name="Mojito",
+                    kind="cocktail",
+                    score=3.2,
+                )
+            ],
+        ),
     )
 
 
@@ -456,6 +483,30 @@ def test_cocktail_answer_prompt_contains_recipe_guardrails() -> None:
     assert "Build over ice." in prompt
     assert "liked_cocktails" in prompt
     assert "mojito" in prompt
+
+
+def test_cocktail_answer_prompt_contains_previous_turn_for_alternatives() -> None:
+    state = AgentState(
+        session_id="s1",
+        user_message="а есть что-то похожее, но проще?",
+        effective_user_message="simpler alternative to Mojito",
+        is_followup=True,
+        followup_intent=IntentType.COCKTAIL_EXPANSION,
+        avoid_previous_candidates=False,
+    )
+    state.session_memory = _cocktail_memory_for_prompt()
+    state.parsed_intent = _parsed_intent(
+        IntentType.COCKTAIL_EXPANSION,
+        "simpler alternative to Mojito",
+    )
+    state.cocktail_results = [_cocktail_result("mojito"), _cocktail_result("daiquiri")]
+
+    prompt = build_cocktail_answer_prompt(state)
+
+    assert "previous_turn" in prompt
+    assert "Mojito" in prompt
+    assert "already offered" in prompt
+    assert "choose a different cocktail candidate" in prompt
 
 
 def test_answer_generation_can_use_llm_writer(monkeypatch) -> None:

@@ -83,7 +83,9 @@ Rules:
 - If the current message depends on previous candidates, recipe, food context, or wording,
   set is_followup=true.
 - If it is a follow-up, preserve the previous topic unless the user clearly switches topics.
-- For cocktail follow-ups like "something similar but simpler", keep intent=cocktail_expansion.
+- For cocktail follow-ups like "something similar but simpler" or
+  "а есть что-то похожее, но проще?", keep intent=cocktail_expansion and MUST
+  set avoid_previous_candidates=true.
 - If the user asks for a similar, simpler, alternative, or another option after a
   recommendation, set avoid_previous_candidates=true and make effective_user_message
   ask for an alternative, not the same item.

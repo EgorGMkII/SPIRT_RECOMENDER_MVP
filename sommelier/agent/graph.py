@@ -479,11 +479,25 @@ def build_cocktail_answer_context(state: AgentState) -> dict:
                 "score": round(result.score, 4),
             }
         )
+    previous_turn = None
+    if state.session_memory and state.session_memory.last_turn:
+        last_turn = state.session_memory.last_turn
+        previous_turn = {
+            "user_message": last_turn.user_message,
+            "effective_user_message": last_turn.effective_user_message,
+            "intent": last_turn.intent,
+            "final_answer": last_turn.final_answer,
+            "candidates": [
+                candidate.model_dump(mode="json")
+                for candidate in last_turn.candidates
+            ],
+        }
     return {
         "user_message": state.user_message,
         "effective_user_message": state.effective_user_message,
         "is_followup": state.is_followup,
         "intent": state.parsed_intent.intent if state.parsed_intent else None,
+        "previous_turn": previous_turn,
         "avoid_previous_candidates": state.avoid_previous_candidates,
         "avoid_candidate_ids": state.avoid_candidate_ids,
         "avoid_candidate_names": state.avoid_candidate_names,

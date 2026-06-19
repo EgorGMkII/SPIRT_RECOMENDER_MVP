@@ -13,7 +13,12 @@ Goal:
 - Preserve the user's real intent and constraints.
 - Use natural language, not tags or JSON.
 - Include relevant taste, aroma, style, serve, cocktail use, food context, mood,
-  sweetness/dryness, intensity, age/style, and exclusions if present.
+  sweetness/dryness, intensity, and age/style.
+- Do not include negative or avoided descriptors as searchable terms.
+  If the user says "without coconut", "not sweet", "avoid vanilla", or similar,
+  omit those avoided words from the search query.
+- Convert negative constraints into positive desired profile language only when useful:
+  "not sweet" -> "dry, clean, balanced"; "without coconut" -> do not mention coconut.
 - Do not limit yourself to a fixed vocabulary.
 - Do not invent product names or product facts.
 - Keep it embedding-friendly: 1-3 short sentences.
@@ -26,10 +31,13 @@ User: нужен ром для ужина, буду есть мясо с гри�
 Search query: Rum for dinner with meat and mushrooms. Rich enough for savory food, with oak, spice, caramel, toasted or earthy depth.
 
 User: хочу что-то сухое, не сладкое, можно пить чистым
-Search query: Dry rum for sipping neat. Not sweet. Clean, mature or barrel-influenced profile with balanced complexity.
+Search query: Dry rum for sipping neat. Clean, mature or barrel-influenced profile with balanced complexity.
 
 User: ром для мохито, без кокоса
-Search query: Rum for mojito cocktails. Fresh light rum profile for mint and lime. Avoid coconut flavor.
+Search query: Rum for mojito cocktails. Fresh light rum profile for mint and lime.
+
+User: тогда посоветуй ром для коктейлей, но без сладкого профиля
+Search query: Rum for cocktails with a dry, clean, balanced and fresh profile.
 
 User: {query}
 Search query:

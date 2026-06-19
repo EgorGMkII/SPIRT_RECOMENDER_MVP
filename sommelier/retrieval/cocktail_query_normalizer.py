@@ -10,6 +10,10 @@ Rewrite the user's cocktail request as one concise English search query for BM25
 
 Keep important cocktail names, rum names, ingredients, flavors, and recipe intent.
 Translate Russian terms to English when needed.
+Do not include negative or avoided ingredients/flavors as BM25 search terms.
+If the user says "без кокоса", "without coconut", "not sweet", or "avoid X",
+omit the avoided term from the search query and express the desired positive style
+when useful, such as "fresh", "dry", "citrus", "light", or "refreshing".
 Do not answer the user.
 Do not invent ingredients.
 Return plain text only, no JSON and no bullets.
@@ -26,6 +30,12 @@ Search query: BACARDÍ Carta Blanca rum cocktail recipe
 
 User: простой коктейль с колой
 Search query: easy simple rum cola cocktail
+
+User: освежающий коктейль без кокоса
+Search query: refreshing citrus light rum cocktail
+
+User: коктейль похожий на мохито, но не сладкий
+Search query: mojito style fresh lime mint light rum cocktail
 
 User: {query}
 Search query:

@@ -24,6 +24,11 @@ Rewrite the user's food/dinner description into an embedding-friendly rum search
 
 Goal:
 - Use general culinary knowledge to describe the kind of rum profile that could fit the food.
+- Do not include negative or avoided descriptors as searchable terms.
+  If the user says "not sweet", "without coconut", "avoid vanilla", or similar,
+  omit those avoided words from the search query.
+- Convert negative constraints into positive pairing language only when useful:
+  "not sweet" -> "dry, savory-friendly, balanced"; "without coconut" -> do not mention coconut.
 - Do not claim the pairing is source-backed.
 - Do not invent a specific product.
 - Keep it concise: 1-3 sentences.
@@ -31,6 +36,12 @@ Goal:
 
 Good output style:
 "Rum for grilled beef and mushrooms. Rich aged profile with oak, caramel, spice, vanilla, toasted or earthy notes. Suitable for dinner pairing."
+
+User food text:
+мясо с грибами, но не сладкий ром
+
+Search query:
+"Rum for meat and mushrooms. Dry, savory-friendly aged profile with oak, spice, toasted or earthy notes. Suitable for dinner pairing."
 
 User food text:
 {food_text}
