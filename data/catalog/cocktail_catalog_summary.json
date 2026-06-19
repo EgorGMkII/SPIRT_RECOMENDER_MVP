@@ -1,0 +1,360 @@
+{
+  "input_dir": "data\\parsed_cocktails",
+  "output_dir": "data\\catalog\\cocktails",
+  "results": [
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-bacardi-and-cola.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-bacardi-and-cola.json",
+      "cocktail_id": "bacardi-and-cola",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Recipe steps on the page appear duplicated/redundant; preserved as written and condensed into ordered steps.",
+        "Main rum is explicit as BACARDÍ Carta Blanca rum, also referenced as BACARDÍ Superior in FAQ; used page's primary rum naming."
+      ]
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-blood-moon.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-blood-moon.json",
+      "cocktail_id": "blood-moon",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-coconut-and-pineapple.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-coconut-and-pineapple.json",
+      "cocktail_id": "coconut-and-pineapple",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-coconut-mismo.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-coconut-mismo.json",
+      "cocktail_id": "coconut-mismo",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-coquito.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-coquito.json",
+      "cocktail_id": "coquito",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuatro-cuba-libre.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuatro-cuba-libre.json",
+      "cocktail_id": "cuatro-cuba-libre",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuatro-highball.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuatro-highball.json",
+      "cocktail_id": "cuatro-highball",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuatro-mismo.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuatro-mismo.json",
+      "cocktail_id": "cuatro-mismo",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuatro-remix.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuatro-remix.json",
+      "cocktail_id": "cuatro-remix",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuatro-smash.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuatro-smash.json",
+      "cocktail_id": "cuatro-smash",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-cuba-libre.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-cuba-libre.json",
+      "cocktail_id": "cuba-libre",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-daiquiri.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-daiquiri.json",
+      "cocktail_id": "daiquiri",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-frozen-daiquiri.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-frozen-daiquiri.json",
+      "cocktail_id": "frozen-daiquiri",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-frozen-pina-colada.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-frozen-pina-colada.json",
+      "cocktail_id": "frozen-pina-colada",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-frozen-strawberry-daiquiri.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-frozen-strawberry-daiquiri.json",
+      "cocktail_id": "frozen-strawberry-daiquiri",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-ginger-snap.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-ginger-snap.json",
+      "cocktail_id": "ginger-snap",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-hotel-nacional.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-hotel-nacional.json",
+      "cocktail_id": "hotel_nacional",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-hurricane.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-hurricane.json",
+      "cocktail_id": "hurricane",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-jungle-bird.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-jungle-bird.json",
+      "cocktail_id": "jungle-bird",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-lime-cooler.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-lime-cooler.json",
+      "cocktail_id": "lime-cooler",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-lime-rum-and-cranberry.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-lime-rum-and-cranberry.json",
+      "cocktail_id": "lime-and-cranberry",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-lime-rum-and-soda.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-lime-rum-and-soda.json",
+      "cocktail_id": "lime-and-soda",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-limitada-neat.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-limitada-neat.json",
+      "cocktail_id": "limitada-neat",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "The page explicitly names BACARDÍ Gran Reserva Limitada rum in the instructions, while the ingredient line says BACARDÍ Reserva Limitada rum; kept both as shown and used the ingredient line as the recipe ingredient.",
+        "No explicit prep time or difficulty provided.",
+        "No explicit garnish beyond 'no garnish' provided."
+      ]
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-limonade.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-limonade.json",
+      "cocktail_id": "limonade",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-mojito-group-serve.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-mojito-group-serve.json",
+      "cocktail_id": "mojito-group-serve",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-mojito.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-mojito.json",
+      "cocktail_id": "mojito",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-negroni.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-negroni.json",
+      "cocktail_id": "rum-negroni",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-ocho-old-fashioned.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-ocho-old-fashioned.json",
+      "cocktail_id": "ocho-old-fashioned",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-ocho-on-the-rocks.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-ocho-on-the-rocks.json",
+      "cocktail_id": "ocho-on-the-rocks",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-old-cuban.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-old-cuban.json",
+      "cocktail_id": "old-cuban",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-pina-colada.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-pina-colada.json",
+      "cocktail_id": "pina-colada",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-raspberry-mojito.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-raspberry-mojito.json",
+      "cocktail_id": "raspberry-mojito",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-rum-mule.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-rum-mule.json",
+      "cocktail_id": "rum-mule",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-rum-punch.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-rum-punch.json",
+      "cocktail_id": "rum-punch",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-rum-toddy.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-rum-toddy.json",
+      "cocktail_id": "rum-toddy",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-spiced-mule.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-spiced-mule.json",
+      "cocktail_id": "spiced-mule",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-cola.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-cola.json",
+      "cocktail_id": "spiced-rum-and-cola",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-ginger-ale.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-ginger-ale.json",
+      "cocktail_id": "spiced-and-ginger",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-pineapple.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-and-pineapple.json",
+      "cocktail_id": "spiced-rum-and-pineapple",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-apple-and-ginger.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-spiced-rum-apple-and-ginger.json",
+      "cocktail_id": "spiced-rum-apple-and-ginger",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-tormenta-negra.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-tormenta-negra.json",
+      "cocktail_id": "tormenta-negra",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails-zombie.json",
+      "output_file": "data\\catalog\\cocktails\\www-bacardi-com-rum-cocktails-zombie.json",
+      "cocktail_id": "zombie",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": []
+    },
+    {
+      "input_file": "data\\parsed_cocktails\\www-bacardi-com-rum-cocktails.json",
+      "output_file": null,
+      "cocktail_id": null,
+      "skipped": true,
+      "dry_run": false,
+      "warnings": [
+        "Not a cocktail page."
+      ]
+    }
+  ],
+  "errors": []
+}

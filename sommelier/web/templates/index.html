@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Sommelier Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="chat-shell">
+      <section class="chat-panel" aria-label="AI sommelier chat">
+        <header class="chat-header">
+          <div>
+            <h1>AI Sommelier</h1>
+            <span>Rum recommendations</span>
+          </div>
+          <small id="status">Loading catalog...</small>
+        </header>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="chat-form" class="composer">
+          <input id="message-input" name="message" autocomplete="off" placeholder="Спроси о роме, сочетании с едой или коктейле" required>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
+    </main>
+    <script src="/static/chat.js"></script>
+  </body>
+</html>

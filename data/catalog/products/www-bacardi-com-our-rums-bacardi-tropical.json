@@ -1,0 +1,80 @@
+{
+  "product_id": "bacardi-tropical",
+  "source_url": "https://www.bacardi.com/our-rums/bacardi-tropical/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Tropical",
+  "title": "BACARDÍ Tropical Flavoured Rum | Pineapple Coconut and Guava Flavoured Rum | BACARDÍ Global",
+  "category": "flavoured rum",
+  "short_description": "A perfectly balanced blend of juicy pineapple, creamy coconut and sweet guava flavours.",
+  "marketing_description": "BACARDÍ Tropical Flavoured Rum is a perfectly balanced blend of juicy pineapple, creamy coconut, and sweet guava. Nothing tastes more like summer than this limited edition, authentic BACARDI Caribbean flavor that mixes well with juices and sodas.",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "Mix with soda water, lemonade, pineapple juice, cranberry juice, or orange juice. Ideal for cocktails and other mixed drinks.",
+  "cocktail_names": [
+    "Tropical & Soda",
+    "Tropical & Lemonade",
+    "Tropical & Pineapple Juice",
+    "Tropical & Cranberry Juice",
+    "BACARDÍ & Cola",
+    "Tropical & Orange Juice",
+    "Lime & Cranberry",
+    "Raspberry & Sonic",
+    "Coconut Mismo"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Tropical",
+    "BACARDÍ Limón",
+    "BACARDÍ Passionfruit",
+    "BACARDÍ Lime",
+    "BACARDÍ Coconut",
+    "BACARDÍ Dragonberry",
+    "BACARDÍ Raspberry",
+    "BACARDÍ Mango Chile"
+  ],
+  "faq_items": [
+    {
+      "question": "What can you mix flavoured rum with?",
+      "answer": "Flavoured rum gives your taste buds an extra element of surprise. You can mix flavoured rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "Is flavoured rum sweet?",
+      "answer": "Flavoured, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ TROPICAL BACARDÍ LIMÓN BACARDÍ PASSIONFRUIT BACARDÍ LIME BACARDÍ COCONUT BACARDÍ DRAGONBERRY BACARDÍ RASPBERRY BACARDÍ MANGO CHILE Cocktail BACARDÍ & COLA FLAVOUR RANGE TROPICAL A perfectly balanced blend of juicy pineapple, creamy coconut and sweet guava flavours. HOW TO MAKE A TROPICAL & SODA COCKTAIL DROP THE ULTIMATE CARIBBEAN MIX AT YOUR NEXT PARTY WITH THE COMBINED ISLAND FLAVOURS OF BACARDÍ TROPICAL RUM.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "BACARDÍ Tropical Flavoured Rum is a perfectly balanced blend of juicy pineapple, creamy coconut, and sweet guava. Nothing tastes more like summer than this limited edition, authentic BACARDI Caribbean flavor that mixes well with juices and sodas.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Tropical Flavoured Rum | Pineapple Coconut and Guava Flavoured Rum | BACARDÍ Global",
+    "og:description": "BACARDÍ Tropical Flavoured Rum is a perfectly balanced blend of juicy pineapple, creamy coconut, and sweet guava. Nothing tastes more like summer than this limited edition, authentic BACARDI Caribbean flavor that mixes well with juices and sodas.",
+    "og:url": "https://www.bacardi.com/our-rums/bacardi-tropical/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-10-27T14:12:49+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2023/07/21125954/FY23_Bacardi_Global_Our_Rums_Bacardi_Tropical-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "summary_large_image",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/bacardi-tropical/"
+  },
+  "extraction_confidence": 0.92,
+  "extraction_warnings": [
+    "Navigation and footer content detected and ignored.",
+    "No tasting notes section explicitly provided; sensory fields left empty.",
+    "Cocktail names and recommended rums were inferred from page section labels and product list items."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

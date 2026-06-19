@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "frozen-daiquiri",
+  "source_url": "https://www.bacardi.com/rum-cocktails/frozen-daiquiri/",
+  "brand": "Bacardi",
+  "name": "Daiquiri (frozen)",
+  "title": "Daiquiri (frozen) Cocktail Recipe | How to make a Daiquiri (frozen) | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca rum",
+  "short_description": "A slushy frozen daiquiri made with BACARDÍ Carta Blanca rum, fresh lime juice, sugar, and crushed ice.",
+  "marketing_description": "If you ever imagine yourself sitting seaside under the sun without a worry in the world, chances are you have a Frozen Daiquiri in hand. It’s luscious richness satisfies a craving for something sweet yet a little tart.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "fresh lime juice",
+        "amount": "25 ml"
+      },
+      {
+        "name": "extra fine sugar",
+        "amount": "3 tsp"
+      },
+      {
+        "name": "crushed ice",
+        "amount": "3/4 cup(s)"
+      },
+      {
+        "name": "lime wheel",
+        "amount": "as garnish"
+      }
+    ],
+    "steps": [
+      "Combine all the ingredients in a blender.",
+      "Add 3/4 cup of crushed ice and blend until a slushy consistency forms.",
+      "Serve in a cocktail glass.",
+      "Garnish with a lime wheel."
+    ]
+  },
+  "glassware": "cocktail glass",
+  "garnish": "lime wheel",
+  "method": "blend",
+  "raw_text_excerpt": "How to make a Daiquiri (frozen) 50 ml BACARDÍ Carta Blanca rum 25 ml fresh lime juice 3 tsp extra fine sugar 3/4 cup(s) crushed ice lime wheel as garnish ... Step 1 Combine all the ingredients in a blender. Step 2 Blend Add 3/4 cup of crushed ice and blend until a slushy consistency forms. Step 3 Serve in a cocktail glass. Step 4 Garnish with a lime wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Frozen Daiquiri Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Daiquiri (frozen) Cocktail Recipe | How to make a Daiquiri (frozen) | BACARDÍ Global",
+    "og:description": "Learn how to make the best Frozen Daiquiri Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/frozen-daiquiri/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-05-30T11:19:46+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/9fcf1c71-83bf-4b81-be35-b49dd2f056e2/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_FRozen-Daiquiri_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Frozen Daiquiri Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Frozen Daiquiri Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Frozen Daiquiri",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/frozen-daiquiri/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

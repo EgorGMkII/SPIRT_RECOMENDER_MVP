@@ -1,0 +1,63 @@
+{
+  "product_id": "bacardi-spiced-rum",
+  "source_url": "https://www.bacardi.com/our-rums/spiced-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Spiced",
+  "category": "spiced rum",
+  "short_description": "A rum with charisma that adds both light and deep notes to your drink.",
+  "tasting_summary": "BACARDÍ Spiced has upfront notes of creamy delicious vanilla, woody and subtle honey through the mid-palette, and a natural cinnamon and nutmeg spice finish. Vanilla and cinnamon Sweet and spiced Black pepper and fudge",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "honey",
+    "pepper",
+    "cinnamon",
+    "pineapple"
+  ],
+  "usage_tags": [
+    "mixer"
+  ],
+  "cocktail_names": [
+    "Spiced & Cola",
+    "Spiced & Ginger",
+    "Spiced Mule",
+    "Spiced & Cola",
+    "Spiced & Ginger",
+    "Spiced Mule",
+    "Spiced Rum & Pineapple",
+    "Rum Punch",
+    "Spiced, Apple & Ginger",
+    "Spiced & Soda",
+    "Jump Shot",
+    "Pineapple Potion"
+  ],
+  "searchable_text": "BACARDÍ Spiced is a spiced rum made with aged rum and blended natural flavours and spices, with a gentle smoky note from charred American oak barrels. It shows creamy vanilla and cinnamon on the nose, a sweet, spiced palate with woody oak and subtle honey, and a finish of natural cinnamon, nutmeg, black pepper and fudge. Bold yet smooth in texture, it suits ice-cold serves with cola or ginger beer and works well in mixed spiced rum drinks and cocktails such as rum punch, spiced mule, and pineapple-based drinks. Flavor tags: vanilla, oak, honey, pepper, cinnamon, pineapple.",
+  "display_description": "A rum with charisma that adds both light and deep notes to your drink.",
+  "evidence_fields": {
+    "name": "BACARDÍ Spiced",
+    "category": "spiced rum",
+    "short_description": "A rum with charisma that adds both light and deep notes to your drink.",
+    "tasting_summary": "BACARDÍ Spiced has upfront notes of creamy delicious vanilla, woody and subtle honey through the mid-palette, and a natural cinnamon and nutmeg spice finish. Vanilla and cinnamon Sweet and spiced Black pepper and fudge",
+    "how_to_serve": "Perfect for mixing spiced rum drinks. Perfect to enjoy ice cold with cola or ginger beer.",
+    "cocktail_names": [
+      "Spiced & Cola",
+      "Spiced & Ginger",
+      "Spiced Mule",
+      "Spiced & Cola",
+      "Spiced & Ginger",
+      "Spiced Mule",
+      "Spiced Rum & Pineapple",
+      "Rum Punch",
+      "Spiced, Apple & Ginger",
+      "Spiced & Soda",
+      "Jump Shot",
+      "Pineapple Potion"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-spiced-rum.json",
+  "warnings": [
+    "Title includes '35% Proof', but ABV was not explicitly extracted as a structured field.",
+    "Cocktail names list may include duplicates from repeated page sections.",
+    "Navigation, related products, and footer content were ignored."
+  ]
+}

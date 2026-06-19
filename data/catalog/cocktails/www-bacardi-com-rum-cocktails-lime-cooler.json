@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "lime-cooler",
+  "source_url": "https://www.bacardi.com/rum-cocktails/lime-cooler/",
+  "brand": "Bacardi",
+  "name": "Lime Cooler",
+  "title": "Lime Cooler Rum Cocktail Recipe | How to make a Lime Cooler | BACARDÍ Global",
+  "main_rum": "BACARDĺ Lime Flavoured rum",
+  "short_description": "A refreshing Bacardi Lime cocktail with watermelon, lime, and soda water, served over crushed or cubed ice.",
+  "marketing_description": "Celebrate summer with the flavourful taste combination of BACARDÍ Lime and watermelon. Topped off with sparkling club soda, the BACARDÍ Lime Cooler quenches your summer thirst.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDĺ Lime Flavoured rum",
+        "amount": "44 ml"
+      },
+      {
+        "name": "Watermelon Liquer",
+        "amount": "15 ml"
+      },
+      {
+        "name": "Lime Juice",
+        "amount": "15 ml"
+      },
+      {
+        "name": "Simple Syrup",
+        "amount": "10 ml"
+      },
+      {
+        "name": "Soda Water",
+        "amount": "44 ml"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients except club soda in a shaker.",
+      "Shake vigorously with plenty of ice.",
+      "Strain into a highball glass over crushed or cubed ice, and top with club soda.",
+      "Garnish with a lime wheel and watermelon wedge."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Lime wheel and watermelon wedge",
+  "method": "Shake",
+  "raw_text_excerpt": "44 ml BACARDĺ Lime Flavoured rum 15 ml Watermelon Liquer 15 ml Lime Juice 10 ml Simple Syrup 44 ml Soda Water ... Combine all ingredients except club soda in a shaker. Shake vigorously with plenty of ice. Strain into a highball glass over crushed or cubed ice, and top with club soda. Garnish with a lime wheel and watermelon wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Lime Cooler Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Lime Cooler Rum Cocktail Recipe | How to make a Lime Cooler | BACARDÍ Global",
+    "og:description": "Learn how to make the best Lime Cooler Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/lime-cooler/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T07:24:56+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/bf7dfb90-e934-4604-a61d-0f58e35c0d3c/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Lime-Cooler_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Lime Cooler Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Lime Cooler Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Lime Cooler",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/lime-cooler/"
+  },
+  "extraction_confidence": 0.97,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

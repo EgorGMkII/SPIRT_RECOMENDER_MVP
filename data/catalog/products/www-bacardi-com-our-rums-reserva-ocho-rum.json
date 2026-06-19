@@ -1,0 +1,78 @@
+{
+  "product_id": "bacardi-reserva-ocho-rum",
+  "source_url": "https://www.bacardi.com/our-rums/reserva-ocho-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Reserva Ocho Rum",
+  "title": "BACARDÍ Reserva Ocho Rum | Bacardi 8 Year Old Rum | Bacardi 8 Anos | BACARDÍ Global",
+  "category": "dark rum",
+  "short_description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+  "marketing_description": "Inspired by a family recipe from 1862, BACARDÍ Reserva Ocho is known as The Family Reserve. After a minimum of eight years of ageing, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices. Enjoy this golden sipping rum and discover a private rum for all to enjoy.",
+  "tasting_notes": "BACARDÍ Reserva Ocho is a complex golden rum with a deep, layered and mellow flavor of dried fruits, spices and oaky vanilla.",
+  "nose": "Dried apricot and banana leaf",
+  "palate": "Oak and spices",
+  "finish": "Expansive and well-rounded",
+  "process": "After a minimum of eight years of ageing, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+  "how_to_serve": "Enjoy this golden sipping rum.",
+  "cocktail_names": [
+    "Ocho Old Fashioned",
+    "Ocho on the Rocks",
+    "Old Cuban",
+    "Hotel Nacional",
+    "Rum Negroni"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Carta Oro",
+    "BACARDÍ Spiced",
+    "BACARDÍ Añejo Cuatro",
+    "BACARDÍ Reserva Diez",
+    "BACARDÍ Reserva Limitada"
+  ],
+  "faq_items": [
+    {
+      "question": "What is aged rum?",
+      "answer": "Rum can be aged anywhere from one year upwards. Aging rum can add additional complexity to its flavor and mouthfeel."
+    },
+    {
+      "question": "What is the difference between dark, gold and white rum?",
+      "answer": "Color can give us clues about time spent aging or the flavors that might be found within. Dark can be bold, sweet (or dry) and even smoky, gold is rich and soothing, and white is smooth, subtle and often refreshing. But color can be misleading. The best way to truly understand a rum is to taste it for yourself."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ RESERVA OCHO Inspired by a family recipe from 1862, BACARDÍ Reserva Ocho is known as The Family Reserve. Tasting Notes BACARDÍ Reserva Ocho is a complex golden rum with a deep, layered and mellow flavor of dried fruits, spices and oaky vanilla. Nose Dried apricot and banana leaf Palate Oak and spices Finish Expansive and well-rounded After a minimum of eight years of ageing, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices. Enjoy this golden sipping rum and discover a private rum for all to enjoy",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Reserva Ocho Rum | Bacardi 8 Year Old Rum | Bacardi 8 Anos | BACARDÍ Global",
+    "og:description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices. Enjoy this golden sipping rum and discover a private rum for all to enjoy",
+    "og:url": "https://www.bacardi.com/our-rums/reserva-ocho-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:55:04+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/26063644/FY23_Bacardi_Global_Our_Rums_Bacardi_Reserva_8-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Reserva Ocho Rum",
+    "twitter:description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices. Enjoy this golden sipping rum and discover a private rum for all to enjoy",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "dark rum",
+    "twitter:image:alt": "BACARDÍ Reserva Ocho Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/reserva-ocho-rum/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [
+    "Page contains navigation, related content, FAQ, and footer sections that were ignored except where directly relevant.",
+    "No explicit ABV was present.",
+    "No explicit country of origin was present.",
+    "No explicit barrel type was present."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

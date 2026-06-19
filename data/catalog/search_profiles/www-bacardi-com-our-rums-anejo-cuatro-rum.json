@@ -1,0 +1,50 @@
+{
+  "product_id": "bacardi-anejo-cuatro-rum",
+  "source_url": "https://www.bacardi.com/our-rums/anejo-cuatro-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Añejo Cuatro Rum",
+  "category": "gold rum",
+  "short_description": "A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour.",
+  "tasting_summary": "Enjoy notes of mild vanilla, toasted oak, clove and honey with a smooth finish. Vanilla and cinnamon Dark honey and clove Toffee and oak",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "honey",
+    "clove",
+    "cinnamon",
+    "caramel"
+  ],
+  "usage_tags": [
+    "cocktail",
+    "highball"
+  ],
+  "cocktail_names": [
+    "Cuatro Highball",
+    "Cuatro Mismo",
+    "Cuatro Remix",
+    "Cuatro Smash",
+    "Cuatro Cuba Libre"
+  ],
+  "searchable_text": "BACARDÍ Añejo Cuatro Rum is a gold rum aged for at least four years, with a soft golden color and a smooth, refined character. It opens with aromas of vanilla and cinnamon, followed by a palate of dark honey and clove. The finish brings toffee and oak, with mild vanilla, toasted oak, and a smooth finish overall. Best served in cocktails or highballs, it adds sophistication to mixed drinks and suits rum drinks that highlight honey, caramel, vanilla, oak, cinnamon, and spice.",
+  "display_description": "A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour.",
+  "evidence_fields": {
+    "name": "BACARDÍ Añejo Cuatro Rum",
+    "category": "gold rum",
+    "short_description": "A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour.",
+    "tasting_summary": "Enjoy notes of mild vanilla, toasted oak, clove and honey with a smooth finish. Vanilla and cinnamon Dark honey and clove Toffee and oak",
+    "how_to_serve": "Use BACARDÍ Añejo Cuatro rum to imbue your cocktails with a flair of sophistication.",
+    "cocktail_names": [
+      "Cuatro Highball",
+      "Cuatro Mismo",
+      "Cuatro Remix",
+      "Cuatro Smash",
+      "Cuatro Cuba Libre"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-anejo-cuatro-rum.json",
+  "warnings": [
+    "Navigation, related-product lists, and footer content were present and ignored.",
+    "FAQ section included general rum information; only supported answers were extracted.",
+    "No explicit ABV, barrel type, country of origin, or ingredients beyond the FAQ text were present."
+  ]
+}

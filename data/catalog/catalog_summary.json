@@ -1,0 +1,192 @@
+{
+  "input_dir": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products",
+  "output_dir": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products",
+  "results": [
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-anejo-cuatro-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-anejo-cuatro-rum.json",
+      "product_id": "bacardi-anejo-cuatro-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Navigation, related-product lists, and footer content were present and ignored.",
+        "FAQ section included general rum information; only supported answers were extracted.",
+        "No explicit ABV, barrel type, country of origin, or ingredients beyond the FAQ text were present."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-bacardi-tropical.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-bacardi-tropical.json",
+      "product_id": "bacardi-tropical",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Navigation and footer content detected and ignored.",
+        "No tasting notes section explicitly provided; sensory fields left empty.",
+        "Cocktail names and recommended rums were inferred from page section labels and product list items."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-carta-blanca-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-blanca-rum.json",
+      "product_id": "bacardi-carta-blanca",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Some marketing copy uses BACARDÍ Superior Rum wording while the page H1 says BACARDÍ Carta Blanca.",
+        "Cocktail and recommended-rum lists were long; only clearly related items were retained.",
+        "Navigation, footer, and unrelated related-content text were ignored."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-carta-negra-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-negra-rum.json",
+      "product_id": "bacardi-carta-negra",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Page contains navigation, related content, and FAQ blocks that were ignored where not relevant.",
+        "Category inferred from title and page context as dark rum/black rum.",
+        "Recommended rums list preserves source casing and ordering as shown on page."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-carta-oro-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-oro-rum.json",
+      "product_id": "bacardi-carta-oro",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Page title uses 'BACARDÍ Gold Rum' while H1 uses 'BACARDÍ Carta Oro'; both appear to refer to the same product.",
+        "No explicit ABV, age statement, country, price, or ingredient list for this product was provided beyond general FAQ information."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-coconut-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-coconut-rum.json",
+      "product_id": "bacardi-coconut-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "No explicit tasting notes section was present; sensory fields left empty.",
+        "Product page contains navigation, related-content, and footer noise that was ignored.",
+        "No ABV, age statement, country, barrel type, awards, or ingredient list was explicitly provided beyond the marketing copy mentioning white rum and real coconut essence."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-coquito.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-coquito.json",
+      "product_id": "bacardi-coquito",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Navigation, related products, and footer content were present and ignored.",
+        "No ABV, age statement, country, barrel type, or ingredients were explicitly provided beyond the descriptive copy."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-dragonberry-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-dragonberry-rum.json",
+      "product_id": "bacardi-dragonberry-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "No tasting notes section found; sensory fields left empty.",
+        "Page includes navigation, related content, and FAQ blocks that were ignored where unrelated.",
+        "Product name is presented as 'DRAGONBERRY' in the H1; full product naming inferred from page title and URL."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-lime-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-lime-rum.json",
+      "product_id": "bacardi-lime-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "No explicit tasting notes section was present; sensory fields left empty.",
+        "Page contains navigation, related content, and footer material that were ignored.",
+        "Recommended rums list appears under a 'LIKE THIS? TRY THESE' section and may include mixed serve/product suggestions."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-limon-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-limon-rum.json",
+      "product_id": "bacardi-limon-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "No explicit tasting notes section was present; sensory details were inferred only where clearly presented in marketing copy.",
+        "Navigation, related products, and FAQ blocks were present and partially ignored where unrelated."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-raspberry-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-raspberry-rum.json",
+      "product_id": "bacardi-raspberry-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "No explicit tasting notes sections for nose, palate, or finish were present on the page.",
+        "Navigation, footer, related content, and social blocks were present and ignored."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-reserva-diez-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-diez-rum.json",
+      "product_id": "bacardi-gran-reserva-diez",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Navigation and footer content detected and ignored.",
+        "Product category inferred from page context and metadata rather than explicitly stated as a single category label."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-reserva-limitada-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-limitada-rum.json",
+      "product_id": "bacardi-gran-reserva-limitada",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Page contains navigation, related-product, and FAQ content mixed with product copy; unrelated sections were ignored.",
+        "Title mentions \"Bacardi 12 Year Rum\", but no explicit age statement was found in the page body."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-reserva-ocho-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-ocho-rum.json",
+      "product_id": "bacardi-reserva-ocho-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Page contains navigation, related content, FAQ, and footer sections that were ignored except where directly relevant.",
+        "No explicit ABV was present.",
+        "No explicit country of origin was present.",
+        "No explicit barrel type was present."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums-spiced-rum.json",
+      "output_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-spiced-rum.json",
+      "product_id": "bacardi-spiced-rum",
+      "skipped": false,
+      "dry_run": false,
+      "warnings": [
+        "Title includes '35% Proof', but ABV was not explicitly extracted as a structured field.",
+        "Cocktail names list may include duplicates from repeated page sections.",
+        "Navigation, related products, and footer content were ignored."
+      ]
+    },
+    {
+      "input_file": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\parsed_products\\www-bacardi-com-our-rums.json",
+      "output_file": null,
+      "product_id": null,
+      "skipped": true,
+      "dry_run": false,
+      "warnings": [
+        "Not a product page."
+      ]
+    }
+  ],
+  "errors": []
+}

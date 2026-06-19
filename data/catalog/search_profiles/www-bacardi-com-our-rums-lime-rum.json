@@ -1,0 +1,44 @@
+{
+  "product_id": "bacardi-lime-rum",
+  "source_url": "https://www.bacardi.com/our-rums/lime-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Lime",
+  "category": "flavoured rum",
+  "short_description": "If an impromptu beach party had a flavour – BACARDÍ Lime would be it.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "citrus",
+    "pineapple",
+    "coconut"
+  ],
+  "usage_tags": [],
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "searchable_text": "BACARDÍ Lime is a flavoured rum from BACARDÍ, crafted for bright, easygoing citrus character. It suggests an impromptu beach-party vibe, with zesty lime at the core and supporting tropical notes of pineapple and coconut. Designed for simple mixing, it works well splashed into a favorite beverage or built as a BACARDÍ Lime and soda for a refreshing, low-effort serve. Its flavor profile suits light, fruity cocktails and sunny, casual drinks, making it a strong choice for lime-forward serves, citrus mixers, and tropical cocktail use.",
+  "display_description": "If an impromptu beach party had a flavour – BACARDÍ Lime would be it.",
+  "evidence_fields": {
+    "name": "BACARDÍ Lime",
+    "category": "flavoured rum",
+    "short_description": "If an impromptu beach party had a flavour – BACARDÍ Lime would be it.",
+    "tasting_summary": "",
+    "how_to_serve": "Simply add it to your favorite beverage. Build a BACARDÍ Lime and soda for the perfect simple serve.",
+    "cocktail_names": [
+      "Limonade",
+      "Raspberry Mojito",
+      "Lime Cooler",
+      "Coconut Rum & Pineapple Juice",
+      "Rum Rita"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-lime-rum.json",
+  "warnings": [
+    "No explicit tasting notes section was present; sensory fields left empty.",
+    "Page contains navigation, related content, and footer material that were ignored.",
+    "Recommended rums list appears under a 'LIKE THIS? TRY THESE' section and may include mixed serve/product suggestions."
+  ]
+}

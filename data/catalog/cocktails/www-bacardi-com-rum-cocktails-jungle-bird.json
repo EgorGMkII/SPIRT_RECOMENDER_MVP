@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "jungle-bird",
+  "source_url": "https://www.bacardi.com/rum-cocktails/jungle-bird/",
+  "brand": "Bacardi",
+  "name": "Jungle Bird",
+  "title": "Jungle Bird Rum Cocktail Recipe | How to make a Jungle Bird Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Negra rum",
+  "short_description": "A tropical, bittersweet rum cocktail made with BACARDÍ Carta Negra, pineapple, lime, and simple syrup.",
+  "marketing_description": "A bracing way to start the evening, with no rough edges thanks to the pineapple and lime that give this classic a tropical vibe.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Negra rum",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "MARTINI Bitter vermouth",
+        "amount": "12.5 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "18.75 ml"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "18.75 ml"
+      }
+    ],
+    "steps": [
+      "Build: Place all of the ingredients into a shaker and add ice.",
+      "Shake vigorously.",
+      "Strain into an old fashioned glass filled with crushed ice.",
+      "Garnish with a pineapple wedge and a pineapple leaf."
+    ]
+  },
+  "glassware": "old fashioned glass",
+  "garnish": "pineapple wedge and a pineapple leaf",
+  "method": "shake",
+  "raw_text_excerpt": "How to make a Jungle Bird 37.5 ml BACARDÍ Carta Negra rum 12.5 ml MARTINI Bitter vermouth 37.5 ml pineapple juice 18.75 ml lime juice 18.75 ml simple syrup Servings Copy Jungle Bird ingredients Copied! Jungle Bird recipe One step at a time 1 Build Place all of the ingredients into a shaker and add ice. 2 Shake Shake vigorously. 3 Strain Strain into an old fashioned glass filled with crushed ice. 4 Garnish Garnish with a pineapple wedge and a pineapple leaf.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Jungle Bird Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Jungle Bird Rum Cocktail Recipe | How to make a Jungle Bird Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Jungle Bird Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/jungle-bird/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T07:18:03+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/2cbc977d-cea9-46c9-a053-eebbb21e7a6d/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Jungle-Bird_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Jungle Bird Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Jungle Bird Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Jungle Bird",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/jungle-bird/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

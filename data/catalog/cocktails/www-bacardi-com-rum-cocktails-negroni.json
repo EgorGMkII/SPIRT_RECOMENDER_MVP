@@ -1,0 +1,61 @@
+{
+  "cocktail_id": "rum-negroni",
+  "source_url": "https://www.bacardi.com/rum-cocktails/negroni/",
+  "brand": "Bacardi",
+  "name": "Rum Negroni",
+  "title": "Negroni Cocktail Recipe | How to make a Negroni Rum Cocktail| BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "short_description": "A rum-based Negroni made with BACARDÍ Reserva Ocho, MARTINI Riserva Speciale Rubino, and MARTINI Riserva Speciale Bitter.",
+  "marketing_description": "What do you call a negroni made with BACARDÍ Ocho? A Rum Negroni! Pour one during special occasions. It's like a Negroni, but with the richness of BACARDÍ Ocho. A classic reinvented.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Ocho rum",
+        "amount": "30 ml"
+      },
+      {
+        "name": "MARTINI Riserva Speciale Rubino",
+        "amount": "30 ml"
+      },
+      {
+        "name": "MARTINI Riserva Speciale Bitter",
+        "amount": "30 ml"
+      }
+    ],
+    "steps": [
+      "Combine all of the ingredients in a mixing glass with ice.",
+      "Stir until well chilled.",
+      "Strain into a rocks glass filled with a large ice cube.",
+      "Garnish with an orange wedge or twist."
+    ]
+  },
+  "glassware": "rocks glass",
+  "garnish": "orange wedge or twist",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Rum Negroni 30 ml BACARDÍ Reserva Ocho rum 30 ml MARTINI Riserva Speciale Rubino 30 ml MARTINI Riserva Speciale Bitter 1 Combine Combine all of the ingredients in a mixing glass with ice. 2 Stir Stir until well chilled. 3 Strain Strain into a rocks glass filled with a large ice cube. 4 Garnish Garnish with an orange wedge or twist.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Negroni Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Negroni Cocktail Recipe | How to make a Negroni Rum Cocktail| BACARDÍ Global",
+    "og:description": "Learn how to make the best Negroni Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/negroni/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T07:29:08+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/e7acc8c5-2b89-469a-888c-df2327b59707/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Negrocho_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Negroni Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Negroni Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Negroni",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/negroni/"
+  },
+  "extraction_confidence": 0.97,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

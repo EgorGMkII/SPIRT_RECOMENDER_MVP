@@ -1,0 +1,57 @@
+{
+  "cocktail_id": "limonade",
+  "source_url": "https://www.bacardi.com/rum-cocktails/limonade/",
+  "brand": "Bacardi",
+  "name": "Limonade",
+  "title": "Limonade Rum Cocktail Recipe | How to make a Limonade | BACARDÍ Global",
+  "main_rum": "BACARDÍ Limón Flavoured rum",
+  "short_description": "A simple highball cocktail of BACARDÍ Limón flavoured rum and lemonade, stirred over ice and garnished with a lemon wedge.",
+  "marketing_description": "Fresh and tart, lemonade combines with BACARDÍ Limón rum for a truly invigorating drink, a worthy companion for those long hot summer afternoons.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Limón Flavoured rum",
+        "amount": "44 ml"
+      },
+      {
+        "name": "Lemonade",
+        "amount": "89 ml"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Pour in BACARDÍ Limón rum, followed by lemonade.",
+      "Stir gently.",
+      "Garnish with a lemon wedge."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Lemon wedge",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Limonade 44 ml BACARDÍ Limón Flavoured rum 89 ml Lemonade Servings ... Fill a highball glass with ice. Pour in BACARDÍ Limón rum, followed by lemonade. Stir gently. Garnish with a lemon wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Limonade Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Limonade Rum Cocktail Recipe | How to make a Limonade | BACARDÍ Global",
+    "og:description": "Learn how to make the best Limonade Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/limonade/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T07:27:17+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/7abfbf5f-9ee8-4c0e-bd55-74a40167d621/FY21_Bacardi_Lifestyleproduct_Outdoor_Limonlemonade?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Limonade Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Limonade Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Limonade",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/limonade/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

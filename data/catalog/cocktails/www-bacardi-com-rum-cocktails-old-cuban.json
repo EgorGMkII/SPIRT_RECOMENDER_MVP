@@ -1,0 +1,73 @@
+{
+  "cocktail_id": "old-cuban",
+  "source_url": "https://www.bacardi.com/rum-cocktails/old-cuban/",
+  "brand": "Bacardi",
+  "name": "Old Cuban",
+  "title": "Old Cuban Cocktail Recipe | How to make a Old Cuban | BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "short_description": "A sparkling rum cocktail with mint, lime, bitters, and prosecco made with BACARDÍ Reserva Ocho rum.",
+  "marketing_description": "Inspired by BACARDÍ Reserva Ocho dark rum, the Old Cuban was created by Audrey Saunders as a modern classic.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Ocho rum",
+        "amount": "45 ml"
+      },
+      {
+        "name": "MARTINI Prosecco sparkling wine",
+        "amount": "60 ml"
+      },
+      {
+        "name": "mint leaves",
+        "amount": "6"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "25 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "20 ml"
+      },
+      {
+        "name": "Angostura® bitters",
+        "amount": "2 dashes"
+      }
+    ],
+    "steps": [
+      "Combine all the ingredients (except prosecco) in a cocktail shaker with ice.",
+      "Shake vigorously.",
+      "Double strain, and top with prosecco.",
+      "Garnish with a mint leaf float."
+    ]
+  },
+  "glassware": null,
+  "garnish": "mint leaf float",
+  "method": "shake",
+  "raw_text_excerpt": "A sparkling combination of BACARDÍ Reserva Ocho rum and prosecco. How to make a Old Cuban 45 ml BACARDÍ Reserva Ocho rum 60 ml MARTINI Prosecco sparkling wine 6 mint leaves 25 ml simple syrup 20 ml lime juice 2 dashes Angostura® bitters ... Combine all the ingredients (except prosecco) in a cocktail shaker with ice. Shake vigorously. Double strain, and top with prosecco. Garnish with a mint leaf float.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Old Cuban Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Old Cuban Cocktail Recipe | How to make a Old Cuban | BACARDÍ Global",
+    "og:description": "Learn how to make the best Old Cuban Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/old-cuban/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:16:19+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/6b6f72f7-d4bf-401a-9049-8b5383733248/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Old-Cuban_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Old Cuban Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Old Cuban Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Old Cuban",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/old-cuban/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

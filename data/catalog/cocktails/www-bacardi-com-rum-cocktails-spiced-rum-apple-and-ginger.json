@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "spiced-rum-apple-and-ginger",
+  "source_url": "https://www.bacardi.com/rum-cocktails/spiced-rum-apple-and-ginger/",
+  "brand": "Bacardi",
+  "name": "Spiced, Apple & Ginger",
+  "title": "Spiced Rum, Apple & Ginger Cocktail Recipe | How to make a Spiced Rum, Apple & Ginger | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A simple highball cocktail blending BACARDÍ Spiced rum with apple juice, ginger ale, and optional bitters for a crisp seasonal drink.",
+  "marketing_description": "Keep seasonal celebrations simple with BACARDÍ Spiced rum, apple juice and ginger ale. The tang of BACARDÍ Spiced and ginger ale complements the sweetness of fresh apple juice.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "apple juice",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger ale",
+        "amount": "50 ml"
+      },
+      {
+        "name": "Angostura® bitters (optional)",
+        "amount": "2 dashes"
+      },
+      {
+        "name": "lime wedge(s)",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Build all liquid ingredients into the glass, squeeze a wedge of lime and add Angostura bitters if desired.",
+      "Stir to combine.",
+      "Garnish with another lime wedge or an apple slice."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "another lime wedge or an apple slice",
+  "method": "build",
+  "raw_text_excerpt": "How to make a Spiced, Apple & Ginger 50 ml BACARDÍ Spiced rum 50 ml apple juice 50 ml ginger ale 2 dashes Angostura® bitters (optional) 1 lime wedge(s) 1 Chill Fill a highball glass with ice. 2 Build Build all liquid ingredients into the glass, squeeze a wedge of lime and add Angostura bitters if desired. 3 Stir Stir to combine. 4 Garnish Garnish with another lime wedge or an apple slice.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Spiced, Apple & Ginger Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Spiced Rum, Apple & Ginger Cocktail Recipe | How to make a Spiced Rum, Apple & Ginger | BACARDÍ Global",
+    "og:description": "Learn how to make the best Spiced, Apple & Ginger Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/spiced-rum-apple-and-ginger/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:58:55+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/dac56201-c826-429d-8ad1-6ac02fc18e80/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Spiced-Apple-Ginger_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Spiced, Apple & Ginger Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Spiced, Apple & Ginger Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Spiced, Apple & Ginger",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/spiced-rum-apple-and-ginger/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

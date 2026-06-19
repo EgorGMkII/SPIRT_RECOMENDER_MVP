@@ -1,0 +1,84 @@
+{
+  "product_id": "bacardi-spiced-rum",
+  "source_url": "https://www.bacardi.com/our-rums/spiced-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Spiced",
+  "title": "BACARDÍ Spiced Rum | Spice Rum | 35% Proof | BACARDÍ Global",
+  "category": "spiced rum",
+  "short_description": "A rum with charisma that adds both light and deep notes to your drink.",
+  "marketing_description": "BACARDÍ Spiced charms its way to your taste buds. Made with aged rum and with a hint of smokiness from charred American oak barrels, BACARDÍ Spiced is a Gluten free rum blended with natural flavours and spices for a bold, yet smooth taste. The BACARDÍ Spiced liquid has both light and deep notes, making it perfect for mixing spiced rum drinks.",
+  "tasting_notes": "BACARDÍ Spiced has upfront notes of creamy delicious vanilla, woody and subtle honey through the mid-palette, and a natural cinnamon and nutmeg spice finish.",
+  "nose": "Vanilla and cinnamon",
+  "palate": "Sweet and spiced",
+  "finish": "Black pepper and fudge",
+  "process": "Made with aged rum and with a hint of smokiness from charred American oak barrels.",
+  "how_to_serve": "Perfect for mixing spiced rum drinks. Perfect to enjoy ice cold with cola or ginger beer.",
+  "cocktail_names": [
+    "Spiced & Cola",
+    "Spiced & Ginger",
+    "Spiced Mule",
+    "Spiced & Cola",
+    "Spiced & Ginger",
+    "Spiced Mule",
+    "Spiced Rum & Pineapple",
+    "Rum Punch",
+    "Spiced, Apple & Ginger",
+    "Spiced & Soda",
+    "Jump Shot",
+    "Pineapple Potion"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Carta Blanca",
+    "BACARDÍ Carta Negra",
+    "BACARDÍ Carta Oro",
+    "BACARDÍ AÑEJO CUATRO",
+    "BACARDÍ RESERVA OCHO"
+  ],
+  "faq_items": [
+    {
+      "question": "What is spiced rum?",
+      "answer": "Spiced rum is often aged for as long as dark rum, but has added spices and caramel coloring. It usually carries a bold, yet smooth taste."
+    },
+    {
+      "question": "Is spiced rum the same as gold rum?",
+      "answer": "No, spiced rum typically has added spices and flavourings to give it a bold, unique flavour, whereas gold rums tend to be more mellow."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ SPICED Made with aged rum and with a hint of smokiness from charred American oak barrels, BACARDÍ Spiced is a Gluten free rum blended with natural flavours and spices for a bold, yet smooth taste. The BACARDÍ Spiced liquid has both light and deep notes, making it perfect for mixing spiced rum drinks. VIDEO HOW TO MAKE A SPICED & COLA A SPICED TREAT Tasting Notes BACARDÍ Spiced has upfront notes of creamy delicious vanilla, woody and subtle honey through the mid-palette, and a natural cinnamon and nutmeg spice finish. Nose Vanilla and cinnamon Palate Sweet and spiced Finish Black pepper and fudge BACARDÍ SPICED IS PERFECT TO ENJOY ICE COLD WITH COLA OR GINGER BEER",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "A rum with charisma that adds both light and deep notes to your drink. BACARDÍ Spiced charms its way to your taste buds.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Spiced Rum | Spice Rum | 35% Proof | BACARDÍ Global",
+    "og:description": "A rum with charisma that adds both light and deep notes to your drink. BACARDÍ Spiced charms its way to your taste buds.",
+    "og:url": "https://www.bacardi.com/our-rums/spiced-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:58:44+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21140538/FY23_Bacardi_Global_Our_Rums_Bacardi_Spiced-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Spiced Rum",
+    "twitter:description": "A rum with charisma that adds both light and deep notes to your drink. BACARDÍ Spiced charms its way to your taste buds",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "spiced rum",
+    "twitter:image:alt": "BACARDÍ Spiced Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/spiced-rum/"
+  },
+  "extraction_confidence": 0.96,
+  "extraction_warnings": [
+    "Title includes '35% Proof', but ABV was not explicitly extracted as a structured field.",
+    "Cocktail names list may include duplicates from repeated page sections.",
+    "Navigation, related products, and footer content were ignored."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

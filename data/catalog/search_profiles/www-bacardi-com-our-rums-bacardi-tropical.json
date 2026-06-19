@@ -1,0 +1,56 @@
+{
+  "product_id": "bacardi-tropical",
+  "source_url": "https://www.bacardi.com/our-rums/bacardi-tropical/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Tropical",
+  "category": "flavoured rum",
+  "short_description": "A perfectly balanced blend of juicy pineapple, creamy coconut and sweet guava flavours.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "citrus",
+    "pineapple",
+    "coconut",
+    "guava"
+  ],
+  "usage_tags": [
+    "cocktail",
+    "mixer"
+  ],
+  "cocktail_names": [
+    "Tropical & Soda",
+    "Tropical & Lemonade",
+    "Tropical & Pineapple Juice",
+    "Tropical & Cranberry Juice",
+    "BACARDÍ & Cola",
+    "Tropical & Orange Juice",
+    "Lime & Cranberry",
+    "Raspberry & Sonic",
+    "Coconut Mismo"
+  ],
+  "searchable_text": "BACARDÍ Tropical is a flavoured rum with a bright Caribbean, summer-ready profile built around juicy pineapple, creamy coconut and sweet guava. It reads as smooth and balanced, with a tropical fruit-forward aroma and palate that leans lush, juicy and lightly creamy. Best served mixed, it works well with soda water, lemonade, pineapple juice, cranberry juice or orange juice, and is especially suited to easy cocktails and long drinks. Flavor and use tags: pineapple, coconut, guava, citrus, cocktail mixer, tropical rum.",
+  "display_description": "A perfectly balanced blend of juicy pineapple, creamy coconut and sweet guava flavours.",
+  "evidence_fields": {
+    "name": "BACARDÍ Tropical",
+    "category": "flavoured rum",
+    "short_description": "A perfectly balanced blend of juicy pineapple, creamy coconut and sweet guava flavours.",
+    "tasting_summary": "",
+    "how_to_serve": "Mix with soda water, lemonade, pineapple juice, cranberry juice, or orange juice. Ideal for cocktails and other mixed drinks.",
+    "cocktail_names": [
+      "Tropical & Soda",
+      "Tropical & Lemonade",
+      "Tropical & Pineapple Juice",
+      "Tropical & Cranberry Juice",
+      "BACARDÍ & Cola",
+      "Tropical & Orange Juice",
+      "Lime & Cranberry",
+      "Raspberry & Sonic",
+      "Coconut Mismo"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-bacardi-tropical.json",
+  "warnings": [
+    "Navigation and footer content detected and ignored.",
+    "No tasting notes section explicitly provided; sensory fields left empty.",
+    "Cocktail names and recommended rums were inferred from page section labels and product list items."
+  ]
+}

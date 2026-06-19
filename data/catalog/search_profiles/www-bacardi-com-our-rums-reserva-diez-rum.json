@@ -1,0 +1,37 @@
+{
+  "product_id": "bacardi-gran-reserva-diez",
+  "source_url": "https://www.bacardi.com/our-rums/reserva-diez-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Gran Reserva Diez",
+  "category": "aged rum",
+  "short_description": "Barrel-aged for a minimum of 10 years under the Caribbean sun, BACARDÍ Gran Reserva Diez balances fruity flavors with classic vanilla.",
+  "tasting_summary": "Discover bright notes of stone fruits, banana and pear balanced with caramelized vanilla and oak. Almond and peach Banana, pear and vanilla Pineapple and cinnamon",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "cinnamon",
+    "caramel",
+    "fruity",
+    "banana",
+    "pineapple"
+  ],
+  "usage_tags": [
+    "sipping"
+  ],
+  "cocktail_names": [],
+  "searchable_text": "BACARDÍ Gran Reserva Diez is an aged rum and premium sipping rum, expertly blended and barrel-aged for a minimum of 10 years under the Caribbean sun, then charcoal filtered for a smooth finish. It offers a fruity, balanced profile with notes of almond and peach on the nose, banana, pear, and vanilla on the palate, and a finish of pineapple and cinnamon. Expect bright stone-fruit character alongside caramelized vanilla and oak, with a smooth, refined texture. Best enjoyed neat or as a contemplative sipper, with strong appeal for vanilla, oak, caramel, banana, pineapple, and spice-driven rum searches.",
+  "display_description": "Barrel-aged for a minimum of 10 years under the Caribbean sun, BACARDÍ Gran Reserva Diez balances fruity flavors with classic vanilla.",
+  "evidence_fields": {
+    "name": "BACARDÍ Gran Reserva Diez",
+    "category": "aged rum",
+    "short_description": "Barrel-aged for a minimum of 10 years under the Caribbean sun, BACARDÍ Gran Reserva Diez balances fruity flavors with classic vanilla.",
+    "tasting_summary": "Discover bright notes of stone fruits, banana and pear balanced with caramelized vanilla and oak. Almond and peach Banana, pear and vanilla Pineapple and cinnamon",
+    "how_to_serve": "This rum is described as a sipping rum.",
+    "cocktail_names": []
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-diez-rum.json",
+  "warnings": [
+    "Navigation and footer content detected and ignored.",
+    "Product category inferred from page context and metadata rather than explicitly stated as a single category label."
+  ]
+}

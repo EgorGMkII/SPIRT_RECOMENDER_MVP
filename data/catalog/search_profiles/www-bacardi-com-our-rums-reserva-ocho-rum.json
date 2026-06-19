@@ -1,0 +1,48 @@
+{
+  "product_id": "bacardi-reserva-ocho-rum",
+  "source_url": "https://www.bacardi.com/our-rums/reserva-ocho-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Reserva Ocho Rum",
+  "category": "dark rum",
+  "short_description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+  "tasting_summary": "BACARDÍ Reserva Ocho is a complex golden rum with a deep, layered and mellow flavor of dried fruits, spices and oaky vanilla. Dried apricot and banana leaf Oak and spices Expansive and well-rounded",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "fruity",
+    "banana"
+  ],
+  "usage_tags": [
+    "sipping"
+  ],
+  "cocktail_names": [
+    "Ocho Old Fashioned",
+    "Ocho on the Rocks",
+    "Old Cuban",
+    "Hotel Nacional",
+    "Rum Negroni"
+  ],
+  "searchable_text": "BACARDÍ Reserva Ocho Rum is a dark, golden sipping rum and the Family Reserve, aged a minimum of eight years. It has a deep, layered, mellow profile with dried fruits, stone fruit, spices, oak, and oaky vanilla. The nose suggests dried apricot and banana leaf, while the palate brings oak and spice. The finish is expansive and well-rounded, with a smooth, rounded texture. Best enjoyed neat or on the rocks, and well suited to classic rum cocktails like an Old Fashioned, Old Cuban, Hotel Nacional, or Rum Negroni. Flavor tags: vanilla, oak, fruity, banana, dried fruit, spice.",
+  "display_description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+  "evidence_fields": {
+    "name": "BACARDÍ Reserva Ocho Rum",
+    "category": "dark rum",
+    "short_description": "After a minimum of eight years of waiting, BACARDÍ Reserva Ocho releases delightful flavors of stone fruits and spices.",
+    "tasting_summary": "BACARDÍ Reserva Ocho is a complex golden rum with a deep, layered and mellow flavor of dried fruits, spices and oaky vanilla. Dried apricot and banana leaf Oak and spices Expansive and well-rounded",
+    "how_to_serve": "Enjoy this golden sipping rum.",
+    "cocktail_names": [
+      "Ocho Old Fashioned",
+      "Ocho on the Rocks",
+      "Old Cuban",
+      "Hotel Nacional",
+      "Rum Negroni"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-ocho-rum.json",
+  "warnings": [
+    "Page contains navigation, related content, FAQ, and footer sections that were ignored except where directly relevant.",
+    "No explicit ABV was present.",
+    "No explicit country of origin was present.",
+    "No explicit barrel type was present."
+  ]
+}

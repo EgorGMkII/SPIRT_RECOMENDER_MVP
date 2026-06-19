@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "rum-toddy",
+  "source_url": "https://www.bacardi.com/rum-cocktails/rum-toddy/",
+  "brand": "Bacardi",
+  "name": "Rum Toddy",
+  "title": "Hot Rum Toddy Cocktail Recipe | How to make a Rum Toddy | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Oro",
+  "short_description": "A warm rum toddy made with BACARDÍ Carta Oro, hot water, honey, and lemon.",
+  "marketing_description": "From crisp nights to après ski, this Hot Rum Toddy warms you up with its Caribbean heat. A comforting cocktail, it's perfect for cosying up with close friends.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Oro rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "hot water",
+        "amount": "100 ml"
+      },
+      {
+        "name": "honey",
+        "amount": "12.5 ml"
+      },
+      {
+        "name": "lemon wedge(s)",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Pour hot water into a tempered glass mug.",
+      "Squeeze the lemon wedge into the water, add honey, and stir until the honey is dissolved.",
+      "Add BACARDÍ Carta Oro gold rum, and stir gently.",
+      "Garnish with a cinnamon stick and a lemon slice."
+    ]
+  },
+  "glassware": "tempered glass mug",
+  "garnish": "cinnamon stick and a lemon slice",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Rum Toddy 50 ml BACARDÍ Carta Oro rum 100 ml hot water 12.5 ml honey 1 lemon wedge(s) ... Garnish with a cinnamon stick and a lemon slice.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Hot Rum Toddy Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Hot Rum Toddy Cocktail Recipe | How to make a Rum Toddy | BACARDÍ Global",
+    "og:description": "Learn how to make the best Hot Rum Toddy Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/rum-toddy/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:44:01+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/e1b643e1-d06d-4aae-a56f-5169139e9309/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Rum-Toddy_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Hot Rum Toddy Cocktail Recipe | How to make a Rum Toddy | BACARDÍ Global",
+    "twitter:description": "Learn how to make the best Hot Rum Toddy Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Rum Toddy",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/rum-toddy/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

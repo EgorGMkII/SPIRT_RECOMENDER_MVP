@@ -1,0 +1,44 @@
+{
+  "product_id": "bacardi-coconut-rum",
+  "source_url": "https://www.bacardi.com/our-rums/coconut-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Coconut",
+  "category": "flavoured rum",
+  "short_description": "BACARDÍ Coconut brings the beach to your backyard.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "citrus",
+    "pineapple",
+    "coconut"
+  ],
+  "usage_tags": [],
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "searchable_text": "BACARDÍ Coconut is a flavoured rum made from a blend of white rum and real coconut essence, designed to bring a tropical, beachy character to the glass. It has clean, mellow flavors with a smooth, easygoing feel and a distinctly coconut-forward profile, lifted by citrus and pineapple notes. Ideal for refreshing serves, it works well over ice or mixed into simple, sunny drinks. Especially suited to fruit-forward cocktails like a Coconut Rum & Pineapple Juice, Rum Rita, Lime Cooler, Raspberry Mojito, or Limonade, it’s a versatile choice for coconut, tropical, citrus, and summer cocktail use.",
+  "display_description": "BACARDÍ Coconut brings the beach to your backyard.",
+  "evidence_fields": {
+    "name": "BACARDÍ Coconut",
+    "category": "flavoured rum",
+    "short_description": "BACARDÍ Coconut brings the beach to your backyard.",
+    "tasting_summary": "",
+    "how_to_serve": "",
+    "cocktail_names": [
+      "Limonade",
+      "Raspberry Mojito",
+      "Lime Cooler",
+      "Coconut Rum & Pineapple Juice",
+      "Rum Rita"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-coconut-rum.json",
+  "warnings": [
+    "No explicit tasting notes section was present; sensory fields left empty.",
+    "Product page contains navigation, related-content, and footer noise that was ignored.",
+    "No ABV, age statement, country, barrel type, awards, or ingredient list was explicitly provided beyond the marketing copy mentioning white rum and real coconut essence."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "cocktail_id": "hotel_nacional",
+  "source_url": "https://www.bacardi.com/rum-cocktails/hotel-nacional/",
+  "name": "Hotel Nacional",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "description": "A classic Cuban-style cocktail combining aged Bacardí rum with pineapple, lime, simple syrup, and apricot liqueur. The Hotel Nacional was the epicenter of culture in Havana during the 1950s, and this cocktail brings you back to Cuba's Golden Age.",
+  "ingredients": [
+    "60 ml BACARDÍ Reserva Ocho rum",
+    "22.5 ml pineapple juice",
+    "7.5 ml lime juice",
+    "7.5 ml simple syrup",
+    "15 ml apricot liqueur"
+  ],
+  "recipe_steps": [
+    "Combine ingredients in a cocktail shaker filled with ice.",
+    "Shake vigorously.",
+    "Fine strain into a chilled coupe glass.",
+    "Garnish with a pineapple leaf or a lime wheel."
+  ],
+  "searchable_text": "Hotel Nacional main rum BACARDÍ Reserva Ocho rum A classic Cuban-style cocktail combining aged Bacardí rum with pineapple, lime, simple syrup, and apricot liqueur. The Hotel Nacional was the epicenter of culture in Havana during the 1950s, and this cocktail brings you back to Cuba's Golden Age. ingredients 60 ml BACARDÍ Reserva Ocho rum, 22.5 ml pineapple juice, 7.5 ml lime juice, 7.5 ml simple syrup, 15 ml apricot liqueur recipe steps Combine ingredients in a cocktail shaker filled with ice. Shake vigorously. Fine strain into a chilled coupe glass. Garnish with a pineapple leaf or a lime wheel."
+}

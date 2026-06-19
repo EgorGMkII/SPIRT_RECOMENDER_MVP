@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "hotel_nacional",
+  "source_url": "https://www.bacardi.com/rum-cocktails/hotel-nacional/",
+  "brand": "Bacardi",
+  "name": "Hotel Nacional",
+  "title": "Hotel Nacional Rum Cocktail Recipe | How to make a Hotel Nacional Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "short_description": "A classic Cuban-style cocktail combining aged Bacardí rum with pineapple, lime, simple syrup, and apricot liqueur.",
+  "marketing_description": "The Hotel Nacional was the epicenter of culture in Havana during the 1950s, and this cocktail brings you back to Cuba's Golden Age.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Ocho rum",
+        "amount": "60 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "22.5 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "7.5 ml"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "7.5 ml"
+      },
+      {
+        "name": "apricot liqueur",
+        "amount": "15 ml"
+      }
+    ],
+    "steps": [
+      "Combine ingredients in a cocktail shaker filled with ice.",
+      "Shake vigorously.",
+      "Fine strain into a chilled coupe glass.",
+      "Garnish with a pineapple leaf or a lime wheel."
+    ]
+  },
+  "glassware": "chilled coupe glass",
+  "garnish": "pineapple leaf or a lime wheel",
+  "method": "shake",
+  "raw_text_excerpt": "How to make a Hotel Nacional 60 ml BACARDÍ Reserva Ocho rum 22.5 ml pineapple juice 7.5 ml lime juice 7.5 ml simple syrup 15 ml apricot liqueur ... Combine ingredients in a cocktail shaker filled with ice. Shake vigorously. Fine strain into a chilled coupe glass. Garnish with a pineapple leaf or a lime wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Hotel Nacional Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Hotel Nacional Rum Cocktail Recipe | How to make a Hotel Nacional Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Hotel Nacional Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/hotel-nacional/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:15:44+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/0409612c-9256-466d-a59f-625d83630fbf/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Hotel-Nacional_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Hotel Nacional Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Hotel Nacional Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Hotel Nacional",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/hotel-nacional/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

@@ -1,0 +1,57 @@
+{
+  "cocktail_id": "coconut-and-pineapple",
+  "source_url": "https://www.bacardi.com/rum-cocktails/coconut-and-pineapple/",
+  "brand": "Bacardi",
+  "name": "Coconut Rum & Pineapple Juice",
+  "title": "Coconut Rum & Pineapple Juice | Coconut & Pineapple Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Coconut rum",
+  "short_description": "A tropical highball of BACARDÍ Coconut rum and pineapple juice served over ice.",
+  "marketing_description": "The tropical combination of light BACARDÍ Coconut rum and fresh pineapple over ice demands your attention. It's a classy alternative to the creamy richness of a Piña Colada. Kick off your flip flops and relax with a BACARDÍ Coconut & Pineapple.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Coconut rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "150 ml"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Pour in the BACARDÍ Coconut and pineapple juice.",
+      "Mix well.",
+      "Garnish with a few pineapple slices cut in triangles."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "a few pineapple slices cut in triangles",
+  "method": "Mix",
+  "raw_text_excerpt": "How to make a COCONUT RUM & PINEAPPLE JUICE 50 ml BACARDÍ Coconut rum 150 ml pineapple juice ... 1 Chill Fill a highball glass with ice. 2 Pour Pour in the BACARDÍ Coconut and pineapple juice. 3 Mix Mix well. 4 Garnish Garnish with a few pineapple slices cut in triangles.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Coconut Rum & Pineapple Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Coconut Rum & Pineapple Juice | Coconut & Pineapple Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Coconut Rum & Pineapple Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/coconut-and-pineapple/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-04-18T09:12:33+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/36170887-573d-4530-8c97-afcdb7bfd65b/FY21_Bacardi_Lifestyleproduct_Dowhatmovesyou_Packshot_Coconut_Portrait-Landscape_Bwchb01?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Coconut & Pineapple Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Coconut & Pineapple Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Coconut & Pineapple",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/coconut-and-pineapple/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

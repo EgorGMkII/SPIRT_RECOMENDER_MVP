@@ -1,0 +1,57 @@
+{
+  "cocktail_id": "ocho-on-the-rocks",
+  "source_url": "https://www.bacardi.com/rum-cocktails/ocho-on-the-rocks/",
+  "brand": "Bacardi",
+  "name": "Ocho on the Rocks",
+  "title": "Ocho on the Rocks Cocktail Recipe | How to make a Ocho on the Rocks | BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "short_description": "A simple spirit-forward serve of BACARDÍ Reserva Ocho rum over a single large ice cube.",
+  "marketing_description": "BACARDÍ Reserva Ocho rum is a unique blend of the finest BACARDÍ rums patiently matured for eight years. Serving it over ice unlocks the classic scents of oak and fruit peels, while on the tongue, it's sweet and rich.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Ocho rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "single large ice cube",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "Fill an old fashioned glass with a single large ice cube.",
+      "Pour in the BACARDÍ Reserva Ocho rum.",
+      "Serve, no garnish.",
+      "Sip and savour."
+    ]
+  },
+  "glassware": "Old fashioned glass",
+  "garnish": "No garnish",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Ocho on the Rocks 50 ml BACARDÍ Reserva Ocho rum ... Chill Fill an old fashioned glass with a single large ice cube. Pour Pour in the BACARDÍ Reserva Ocho rum. Serve Serve, no garnish. Savour Sip and savour.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Ocho on the Rocks Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Ocho on the Rocks Cocktail Recipe | How to make a Ocho on the Rocks | BACARDÍ Global",
+    "og:description": "Learn how to make the best Ocho on the Rocks Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/ocho-on-the-rocks/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:10:54+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/eaeec3e7-7db8-403c-ad95-9a43f05fdda9/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Ocho-On-The-Rocks_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Ocho on the Rocks Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Ocho on the Rocks Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Ocho on the Rocks",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/ocho-on-the-rocks/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

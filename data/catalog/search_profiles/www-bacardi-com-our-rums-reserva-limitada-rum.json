@@ -1,0 +1,31 @@
+{
+  "product_id": "bacardi-gran-reserva-limitada",
+  "source_url": "https://www.bacardi.com/our-rums/reserva-limitada-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Gran Reserva Limitada",
+  "category": "aged rum",
+  "short_description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+  "tasting_summary": "Rich and complex. Smooth notes of butterscotch and dried fruit melt away to a long, dry finish. Almond and vanilla Dried raisins and chocolate Soft oak and raisin",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "fruity"
+  ],
+  "usage_tags": [],
+  "cocktail_names": [],
+  "searchable_text": "BACARDÍ Gran Reserva Limitada is a premium aged rum blended from scarce, including some of the brand’s oldest, rum stocks. Rich and complex, it shows almond and vanilla on the nose, then dried raisins and chocolate on the palate, with smooth butterscotch and dried fruit character. The finish is long, dry, soft oak, and raisin-forward. Golden, smooth, and refined, it is best sipped and savored neat. Flavor tags: vanilla, oak, dried fruit, chocolate, raisin, butterscotch, dark fruit, and smooth aged rum.",
+  "display_description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+  "evidence_fields": {
+    "name": "BACARDÍ Gran Reserva Limitada",
+    "category": "aged rum",
+    "short_description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+    "tasting_summary": "Rich and complex. Smooth notes of butterscotch and dried fruit melt away to a long, dry finish. Almond and vanilla Dried raisins and chocolate Soft oak and raisin",
+    "how_to_serve": "Perfect to sip and savor.",
+    "cocktail_names": []
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-reserva-limitada-rum.json",
+  "warnings": [
+    "Page contains navigation, related-product, and FAQ content mixed with product copy; unrelated sections were ignored.",
+    "Title mentions \"Bacardi 12 Year Rum\", but no explicit age statement was found in the page body."
+  ]
+}

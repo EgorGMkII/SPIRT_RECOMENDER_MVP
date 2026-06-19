@@ -1,0 +1,61 @@
+{
+  "cocktail_id": "cuatro-remix",
+  "source_url": "https://www.bacardi.com/rum-cocktails/cuatro-remix/",
+  "brand": "Bacardi",
+  "name": "Cuatro Remix",
+  "title": "Cuatro Remix Rum Cocktail Recipe | How to make a Cuatro Remix | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro rum",
+  "short_description": "A simple highball cocktail made with Bacardí Añejo Cuatro rum, ginger ale, and a splash of pineapple juice.",
+  "marketing_description": "Don't let its golden colour fool you. Our versatile BACARDÍ Añejo Cuatro rum is the perfect spirit for mixing delicious cocktails. Simply mix it with ginger ale and pineapple juice.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger ale",
+        "amount": "100 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "splash"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Build all ingredients directly in the glass.",
+      "Stir gently.",
+      "Garnish with a lime wheel."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Lime wheel",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Cuatro Remix 50 ml BACARDÍ Añejo Cuatro rum 100 ml ginger ale splash of pineapple juice ... Fill a highball glass with ice. Build all ingredients directly in the glass. Stir gently. Garnish with a lime wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Cuatro Remix Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Cuatro Remix Rum Cocktail Recipe | How to make a Cuatro Remix | BACARDÍ Global",
+    "og:description": "Learn how to make the best Cuatro Remix Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/cuatro-remix/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:05:31+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/81b52c43-7a3c-4f17-9c9c-0faa5154b72a/Bacardi_Cuatroremix_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Cuatro Remix Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Cuatro Remix Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Cuatro Remix",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/cuatro-remix/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

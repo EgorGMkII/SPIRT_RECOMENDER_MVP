@@ -1,0 +1,37 @@
+{
+  "product_id": "bacardi-raspberry-rum",
+  "source_url": "https://www.bacardi.com/our-rums/raspberry-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Raspberry Rum",
+  "category": "flavoured rum",
+  "short_description": "A crisp blend of white rum and raspberry flavours.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "citrus"
+  ],
+  "usage_tags": [],
+  "cocktail_names": [
+    "Limonade Raspberry Mojito",
+    "Lime Cooler",
+    "Rum Rita"
+  ],
+  "searchable_text": "BACARDÍ Raspberry Rum is a flavoured white rum with a crisp, sweet-tart raspberry profile. It combines the clean character of white rum with bright berry flavour for a tangy, mouth-watering taste. Light and refreshing in style, it suits easy mixed drinks and soda serves, especially when you want a fruity rum with a lively, zesty edge. Best used in simple highballs, citrus-forward cocktails, or rum-based twists on classic refreshers. Flavor tags: raspberry, sweet-tart, citrus, fruity, crisp, refreshing, mixer-friendly.",
+  "display_description": "A crisp blend of white rum and raspberry flavours.",
+  "evidence_fields": {
+    "name": "BACARDÍ Raspberry Rum",
+    "category": "flavoured rum",
+    "short_description": "A crisp blend of white rum and raspberry flavours.",
+    "tasting_summary": "",
+    "how_to_serve": "Add BACARDÍ Raspberry to your favourite soda for a tangy treat.",
+    "cocktail_names": [
+      "Limonade Raspberry Mojito",
+      "Lime Cooler",
+      "Rum Rita"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-raspberry-rum.json",
+  "warnings": [
+    "No explicit tasting notes sections for nose, palate, or finish were present on the page.",
+    "Navigation, footer, related content, and social blocks were present and ignored."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "cocktail_id": "cuatro-cuba-libre",
+  "source_url": "https://www.bacardi.com/rum-cocktails/cuatro-cuba-libre/",
+  "brand": "Bacardi",
+  "name": "Cuatro Cuba Libre",
+  "title": "Cuatro Cuba Libre Cocktail Recipe | How to make a Cuatro Cuba Libre | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro rum",
+  "short_description": "A refreshing Cuba Libre variation made with BACARDÍ Añejo Cuatro rum, cola, and fresh lime.",
+  "marketing_description": "BACARDÍ Añejo Cuatro rum and cola transforms this classic cuba libre cocktail into a complex, but still refreshing libation with a bright and zesty finish from the squeezed fresh lime. A perfect drink to enjoy with friends.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "cola",
+        "amount": "100 ml"
+      },
+      {
+        "name": "lime wedges",
+        "amount": "2"
+      }
+    ],
+    "steps": [
+      "Build: Fill a highball glass with ice.",
+      "Squeeze 2 lime wedges over the ice and drop them into the glass.",
+      "Pour in the BACARDÍ Añejo Cuatro rum followed by chilled cola, and give it all a gentle stir.",
+      "Garnish with lime."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "lime",
+  "method": "build",
+  "raw_text_excerpt": "How to make a Cuatro Cuba Libre Ingredients 50 ml BACARDÍ Añejo Cuatro rum 100 ml cola 2 lime wedges Servings Copy Cuatro Cuba Libre ingredients Copied! Cuatro Cuba Libre recipe One step at a time Step 1 Build To build this legendary cocktail, fill a highball glass with ice. Step 2 Squeeze Squeeze 2 lime wedges over the ice and drop them into the glass. Step 3 Pour Pour in the BACARDÍ Añejo Cuatro rum followed by chilled cola, and give it all a gentle stir. Step 4 Garnish Garnish with lime.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Cuatro Cuba Libre Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Cuatro Cuba Libre Cocktail Recipe | How to make a Cuatro Cuba Libre | BACARDÍ Global",
+    "og:description": "Learn how to make the best Cuatro Cuba Libre Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/cuatro-cuba-libre/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T13:03:13+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/80f6a7fd-679c-42fd-8874-9c3608fb30c6/Bacardi_Cuatrocubalibre_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Cuatro Cuba Libre Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Cuatro Cuba Libre Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "cola, cuba libre, cocktails",
+    "twitter:image:alt": "BACARDÍ Cuatro Cuba Libre",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/cuatro-cuba-libre/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

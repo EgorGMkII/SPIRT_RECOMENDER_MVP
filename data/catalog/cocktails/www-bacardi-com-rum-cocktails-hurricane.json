@@ -1,0 +1,73 @@
+{
+  "cocktail_id": "hurricane",
+  "source_url": "https://www.bacardi.com/rum-cocktails/hurricane/",
+  "brand": "Bacardi",
+  "name": "Hurricane",
+  "title": "Hurricane Rum Cocktail Recipe | How to make a Hurricane Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Negra rum",
+  "short_description": "A Mardi Gras cocktail with BACARDÍ Carta Negra and Carta Blanca rum, brightened by orange, lime, passionfruit, and grenadine.",
+  "marketing_description": "Big in New Orleans and served to this day in the French Quarter, the Hurricane is truly the drink of Mardi Gras.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Negra rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "orange juice",
+        "amount": "50 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "25 ml"
+      },
+      {
+        "name": "passionfruit syrup",
+        "amount": "25 ml"
+      },
+      {
+        "name": "grenadine syrup",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients in a shaker with plenty of ice.",
+      "Shake vigorously.",
+      "Strain into a hurricane glass filled with ice.",
+      "Garnish with a lemon wheel, orange peel and a cherry."
+    ]
+  },
+  "glassware": "hurricane glass",
+  "garnish": "lemon wheel, orange peel and a cherry",
+  "method": "shake",
+  "raw_text_excerpt": "Big in New Orleans and served to this day in the French quarter, the Hurricane is truly the drink of Mardi Gras because of its exotic blend of passion fruit, orange, and a hint of lime. How to make a Hurricane 50 ml BACARDÍ Carta Negra rum 37.5 ml BACARDÍ Carta Blanca rum 50 ml orange juice 25 ml lime juice 25 ml passionfruit syrup 1 tsp grenadine syrup ... Combine all ingredients in a shaker with plenty of ice. Shake vigorously. Strain into a hurricane glass filled with ice. Garnish with a lemon wheel, orange peel and a cherry.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Hurricane Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Hurricane Rum Cocktail Recipe | How to make a Hurricane Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Hurricane Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/hurricane/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:16:49+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/b7b74193-e29c-4c7b-9f2a-178a01b65618/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Hurricane_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Hurricane Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Hurricane Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Hurricane",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/hurricane/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

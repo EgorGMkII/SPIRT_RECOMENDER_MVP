@@ -1,0 +1,73 @@
+{
+  "cocktail_id": "raspberry-mojito",
+  "source_url": "https://www.bacardi.com/rum-cocktails/raspberry-mojito/",
+  "brand": "Bacardi",
+  "name": "Raspberry Mojito",
+  "title": "Raspberry Mojito Cocktail Recipe | How to make a Raspberry Mojito | BACARDÍ Global",
+  "main_rum": "BACARDÍ Raspberry rum",
+  "short_description": "A fruity mojito made with BACARDÍ Raspberry rum, mint, lime, raspberries, sugar, and club soda.",
+  "marketing_description": "A raspberry twist on the classic mojito for a kick of fruity flavour.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Raspberry rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "raspberries",
+        "amount": "3"
+      },
+      {
+        "name": "lime wedges",
+        "amount": "4"
+      },
+      {
+        "name": "sugar",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "mint leaves",
+        "amount": "12"
+      },
+      {
+        "name": "club soda",
+        "amount": "top with"
+      }
+    ],
+    "steps": [
+      "Build all ingredients in a highball glass and lightly muddle.",
+      "Add crushed ice and stir.",
+      "Top with club soda and stir lightly before serving.",
+      "Garnish with a sprig of fresh mint and a raspberry."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "A sprig of fresh mint and a raspberry",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Raspberry Mojito 50 ml BACARDÍ Raspberry rum 3 raspberries 4 lime wedges 2 tsp sugar 12 mint leaves top with club soda Raspberry Mojito Recipe One step at a time 1 Build Build all ingredients in a highball glass and lightly muddle. 2 Stir Add crushed ice and stir. 3 Top Top with club soda and stir lightly before serving. 4 Garnish Garnish with a sprig of fresh mint and a raspberry.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Raspberry Mojito Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Raspberry Mojito Cocktail Recipe | How to make a Raspberry Mojito | BACARDÍ Global",
+    "og:description": "Learn how to make the best Raspberry Mojito Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/raspberry-mojito/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:19:49+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/bd56a3ef-1663-4025-af29-aa4f2b95be95/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Raspberry-Mojito_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Raspberry Mojito Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Raspberry Mojito Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Raspberry Mojito",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/raspberry-mojito/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

@@ -1,0 +1,69 @@
+{
+  "cocktail_id": "tormenta-negra",
+  "source_url": "https://www.bacardi.com/rum-cocktails/tormenta-negra/",
+  "brand": "Bacardi",
+  "name": "Tormenta Negra",
+  "title": "Tormenta Negra Rum Cocktail Recipe | How to make a Tormenta Negra | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Negra rum",
+  "short_description": "A dark, spicy rum and ginger beer cocktail finished with lime, bitters, and an orange wheel.",
+  "marketing_description": "Spanish for “Black Storm,” this is a twist on the classic rum and ginger beer cocktail with a more intense BACARDÍ Carta Negra profile.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Negra rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "lime wedges",
+        "amount": "3"
+      },
+      {
+        "name": "Angostura® bitters",
+        "amount": "3 dash"
+      },
+      {
+        "name": "ginger beer",
+        "amount": "100 ml"
+      },
+      {
+        "name": "orange wheel",
+        "amount": "as garnish"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with cubed ice, and squeeze in the lime wedges.",
+      "Pour in the BACARDÍ Carta Negra rum and ginger beer.",
+      "Add the bitters and stir gently before serving.",
+      "Garnish with an orange wheel."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "orange wheel",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Tormenta Negra 50 ml BACARDÍ Carta Negra rum 3 lime wedges 3 dash Angostura® bitters 100 ml ginger beer orange wheel as garnish Step 1 Fill a highball glass with cubed ice, and squeeze in the lime wedges. Step 2 Pour in the BACARDÍ Carta Negra Rum and ginger beer. Step 3 Add the bitters and stir gently before serving. Step 4 Garnish with an orange wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Tormenta Negra Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Tormenta Negra Rum Cocktail Recipe | How to make a Tormenta Negra | BACARDÍ Global",
+    "og:description": "Learn how to make the best Tormenta Negra Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/tormenta-negra/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T09:14:35+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/d9a8368e-8964-4032-80d1-013b8deff28f/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Tormenta-Negra_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Tormenta Negra Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Tormenta Negra Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Tormenta Negra",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/tormenta-negra/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

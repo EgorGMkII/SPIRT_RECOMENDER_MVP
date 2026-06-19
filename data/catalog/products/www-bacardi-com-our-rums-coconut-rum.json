@@ -1,0 +1,77 @@
+{
+  "product_id": "bacardi-coconut-rum",
+  "source_url": "https://www.bacardi.com/our-rums/coconut-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Coconut",
+  "title": "BACARDÍ Coconut Rum | Coconut Flavoured Rum | Caribbean Rum | BACARDÍ Global",
+  "category": "flavoured rum",
+  "short_description": "BACARDÍ Coconut brings the beach to your backyard.",
+  "marketing_description": "With clean, mellow flavors, BACARDÍ Coconut brings the beach to your backyard. The perfect blend of white rum and essence of real coconut will transport you to a tropical paradise, even when it’s raining outside.",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "",
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "recommended_rums": [
+    "BACARDÍ RUM PUNCH",
+    "BACARDÍ BAHAMA MAMA",
+    "BACARDÍ LIME",
+    "BACARDÍ LIMON",
+    "BACARDÍ Dragonberry"
+  ],
+  "faq_items": [
+    {
+      "question": "What can you mix flavoured rum with?",
+      "answer": "Flavored rum gives your taste buds an extra element of surprise. You can mix flavored rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "Is flavoured rum sweet?",
+      "answer": "Flavored, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ COCONUT ... BACARDÍ rum and coconut. What could taste more like summer sun and sandy beaches? The perfect blend of white rum and essence of real coconut will transport you to a tropical paradise, even when it’s raining outside. Transport yourself to a tropical paradise.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "With clean, mellow flavors, BACARDÍ Coconut brings the beach to your backyard. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Coconut Rum | Coconut Flavoured Rum | Caribbean Rum | BACARDÍ Global",
+    "og:description": "With clean, mellow flavors, BACARDÍ Coconut brings the beach to your backyard. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "og:url": "https://www.bacardi.com/our-rums/coconut-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:30:31+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21143059/FY23_Bacardi_Global_Our_Rums_Bacardi_Coconut-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary",
+    "twitter:title": "Discover BACARDÍ Coconut Rum",
+    "twitter:description": "With clean, mellow flavors, BACARDÍ Coconut brings the beach to your backyard. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "flavored rum",
+    "twitter:image:alt": "BACARDÍ Coconut Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/coconut-rum/"
+  },
+  "extraction_confidence": 0.89,
+  "extraction_warnings": [
+    "No explicit tasting notes section was present; sensory fields left empty.",
+    "Product page contains navigation, related-content, and footer noise that was ignored.",
+    "No ABV, age statement, country, barrel type, awards, or ingredient list was explicitly provided beyond the marketing copy mentioning white rum and real coconut essence."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

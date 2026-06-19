@@ -1,0 +1,37 @@
+{
+  "product_id": "bacardi-dragonberry-rum",
+  "source_url": "https://www.bacardi.com/our-rums/dragonberry-rum/",
+  "brand": "BACARDÍ",
+  "name": "DRAGONBERRY",
+  "category": "flavoured rum",
+  "short_description": "Acquire the taste for exotic dragon fruit, blended with the sweetness of juicy strawberries.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "fruity"
+  ],
+  "usage_tags": [
+    "cocktail",
+    "mixer"
+  ],
+  "cocktail_names": [
+    "Dragonberry & Ginger Ale Cocktail"
+  ],
+  "searchable_text": "BACARDÍ Dragonberry is a flavoured rum built around exotic dragon fruit and juicy strawberry sweetness. Bright, fruity and bold, it offers a playful tropical-style profile with a sweet, easygoing character. It’s designed for mixing rather than sipping neat, with a smooth, crowd-pleasing taste that works well in simple highballs and fruit-forward cocktails. Serve it with ginger ale for a Dragonberry and ginger ale cocktail, or mix it with cola or lemonade for an easy, refreshing serve. Use as a fruity cocktail base, mixer-friendly rum, and sweet tropical flavor tag.",
+  "display_description": "Acquire the taste for exotic dragon fruit, blended with the sweetness of juicy strawberries.",
+  "evidence_fields": {
+    "name": "DRAGONBERRY",
+    "category": "flavoured rum",
+    "short_description": "Acquire the taste for exotic dragon fruit, blended with the sweetness of juicy strawberries.",
+    "tasting_summary": "",
+    "how_to_serve": "Try our Dragonberry and ginger ale cocktail. You can also mix flavoured rum with a wide range of mixers, from simple cola to refreshing lemonade.",
+    "cocktail_names": [
+      "Dragonberry & Ginger Ale Cocktail"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-dragonberry-rum.json",
+  "warnings": [
+    "No tasting notes section found; sensory fields left empty.",
+    "Page includes navigation, related content, and FAQ blocks that were ignored where unrelated.",
+    "Product name is presented as 'DRAGONBERRY' in the H1; full product naming inferred from page title and URL."
+  ]
+}

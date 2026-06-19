@@ -1,0 +1,72 @@
+{
+  "cocktail_id": "rum-punch",
+  "source_url": "https://www.bacardi.com/rum-cocktails/rum-punch/",
+  "brand": "Bacardi",
+  "name": "Rum Punch",
+  "title": "Rum Punch Cocktail Recipe | How to make a Rum Punch | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A fruit-forward punch combining Bacardi Spiced rum, Bacardi Carta Blanca rum, and mixed juices.",
+  "marketing_description": "Having a get together? Serve up Rum Punch. Combining BACARDÍ Spiced rum, BACARDÍ Carta Blanca white rum and a blend of fruit juices, it's a party pleaser.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "150 ml"
+      },
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "75 ml"
+      },
+      {
+        "name": "grenadine",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "orange juice",
+        "amount": "150 ml"
+      },
+      {
+        "name": "cranberry juice",
+        "amount": "75 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "150 ml"
+      }
+    ],
+    "steps": [
+      "Mix: In a large container, combine all the liquid ingredients.",
+      "Chill: Refrigerate the mix until chilled.",
+      "Get set: Just before serving, pour into a large punch bowl, stirring in ice."
+    ]
+  },
+  "glassware": "large punch bowl",
+  "garnish": "floating lemon slices; serve with a single lemon wheel",
+  "method": "mix",
+  "raw_text_excerpt": "How to make a Rum Punch 150 ml BACARDÍ Spiced rum 75 ml BACARDÍ Carta Blanca rum 37.5 ml grenadine 150 ml orange juice 75 ml cranberry juice 150 ml pineapple juice ... Just before serving, pour into a large punch bowl, stirring in ice. Garnish the bowl with floating lemon slices. Serve with a single lemon wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Rum Punch Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Rum Punch Cocktail Recipe | How to make a Rum Punch | BACARDÍ Global",
+    "og:description": "Learn how to make the best Rum Punch Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/rum-punch/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:15:04+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/ce651b11-e3f0-4e6a-83f1-b1814ef0ed60/Bacardi_Spicedrumpunch_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Rum Punch Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Rum Punch Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Rum Punch",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/rum-punch/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

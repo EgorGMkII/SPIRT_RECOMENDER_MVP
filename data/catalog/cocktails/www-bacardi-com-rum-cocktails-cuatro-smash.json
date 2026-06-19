@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "cuatro-smash",
+  "source_url": "https://www.bacardi.com/rum-cocktails/cuatro-smash/",
+  "brand": "Bacardi",
+  "name": "Cuatro Smash",
+  "title": "Cuatro Smash Rum Cocktail Recipe | How to make a Cuatro Smash | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro rum",
+  "short_description": "A refreshing highball-style rum cocktail with elderflower, ruby red grapefruit, and tonic.",
+  "marketing_description": "Enjoy this Caribbean smash hit featuring BACARDÍ Añejo Cuatro rum, ST-GERMAIN elderflower liqueur, grapefruit juice and tonic. The Cuatro Smash is highly refreshing and universally enjoyable.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro rum",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "ST-GERMAIN elderflower liqueur",
+        "amount": "25 ml"
+      },
+      {
+        "name": "ruby red grapefruit juice",
+        "amount": "25 ml"
+      },
+      {
+        "name": "tonic water",
+        "amount": "25 ml"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients except the tonic water in a shaker with plenty of ice, and shake.",
+      "Strain into a highball glass filled with crushed or cubed ice.",
+      "Top with tonic water.",
+      "Garnish with a grapefruit peel and a mint sprig."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "grapefruit peel and a mint sprig",
+  "method": "shake",
+  "raw_text_excerpt": "Enjoy this Caribbean 'smash' hit featuring BACARDÍ Añejo Cuatro rum, ST-GERMAIN elderflower liqueur, grapefruit juice and tonic. How to make a Cuatro Smash 37.5 ml BACARDÍ Añejo Cuatro rum 25 ml ST-GERMAIN elderflower liqueur 25 ml ruby red grapefruit juice 25 ml tonic water 1 Build Combine all ingredients except the tonic water in a shaker with plenty of ice, and shake. 2 Strain Strain into a highball glass filled with crushed or cubed ice. 3 Top Top with tonic water. 4 Garnish Garnish with a grapefruit peel and a mint sprig.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Cuatro Smash Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "TTTTTTT",
+    "og:description": "FFFFFFFFF",
+    "og:url": "https://www.bacardi.com/rum-cocktails/cuatro-smash/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:06:51+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/0836d9df-fa7a-49d0-ac34-a4e46703e572/FY21_Bacardi_Cuatro_Cuatro-Smash_Website_Bw_Cdp_Herobanner_Desktop_PB1?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Cuatro Smash Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Cuatro Smash Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Cuatro Smash",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/cuatro-smash/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

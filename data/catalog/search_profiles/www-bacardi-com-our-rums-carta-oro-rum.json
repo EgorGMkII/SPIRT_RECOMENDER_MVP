@@ -1,0 +1,41 @@
+{
+  "product_id": "bacardi-carta-oro",
+  "source_url": "https://www.bacardi.com/our-rums/carta-oro-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Carta Oro",
+  "category": "gold rum",
+  "short_description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+  "tasting_summary": "BACARDÍ Carta Oro rum brings together rich, soothing flavours like vanilla, buttery caramel, toasted almond and sweet banana notes balanced by the warm zest of orange peel and a light, oaky finish. Nuts and butter Rich and toasted Dry and slightly sweet",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "caramel",
+    "banana",
+    "citrus"
+  ],
+  "usage_tags": [
+    "cocktail"
+  ],
+  "cocktail_names": [
+    "Cuba Libre",
+    "Ginger Snap Rum Toddy"
+  ],
+  "searchable_text": "BACARDÍ Carta Oro is a gold rum with a mellow, toasted character and golden color, aged in toasted oak barrels and charcoal filtered. It opens with a nutty, buttery aroma, then shows a rich, toasted palate of vanilla, buttery caramel, toasted almond, sweet banana, and zesty orange peel. The finish is light, oaky, dry, and slightly sweet, with a smooth, soothing texture. Best served in bold, punchy cocktails, especially a Cuba Libre or rum toddy. Useful search tags: gold rum, vanilla, caramel, banana, citrus, oak, mellow, smooth, cocktail rum.",
+  "display_description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+  "evidence_fields": {
+    "name": "BACARDÍ Carta Oro",
+    "category": "gold rum",
+    "short_description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+    "tasting_summary": "BACARDÍ Carta Oro rum brings together rich, soothing flavours like vanilla, buttery caramel, toasted almond and sweet banana notes balanced by the warm zest of orange peel and a light, oaky finish. Nuts and butter Rich and toasted Dry and slightly sweet",
+    "how_to_serve": "Best for bursts of flavour. BACARDÍ Carta Oro craves zesty, punchy, and bold cocktails to acquaint with.",
+    "cocktail_names": [
+      "Cuba Libre",
+      "Ginger Snap Rum Toddy"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-oro-rum.json",
+  "warnings": [
+    "Page title uses 'BACARDÍ Gold Rum' while H1 uses 'BACARDÍ Carta Oro'; both appear to refer to the same product.",
+    "No explicit ABV, age statement, country, price, or ingredient list for this product was provided beyond general FAQ information."
+  ]
+}

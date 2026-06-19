@@ -1,0 +1,62 @@
+{
+  "cocktail_id": "ocho-old-fashioned",
+  "source_url": "https://www.bacardi.com/rum-cocktails/ocho-old-fashioned/",
+  "brand": "Bacardi",
+  "name": "Ocho Old Fashioned",
+  "title": "Ocho Old Fashioned Cocktail Recipe | How to make a Ocho Old Fashioned | BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Ocho rum",
+  "short_description": "A rum-based twist on the classic Old Fashioned made with BACARDÍ Reserva Ocho, simple syrup, and Angostura bitters.",
+  "marketing_description": "A twist on an old favorite, this cocktail swaps whisky for BACARDÍ Reserva Ocho to bring a smooth Caribbean character to the classic.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Ocho rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "6.25 ml"
+      },
+      {
+        "name": "Angostura® bitters",
+        "amount": "2 dashes"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a rocks glass.",
+      "Fill with ice.",
+      "Stir until well mixed and very cold.",
+      "Garnish with an orange peel twist."
+    ]
+  },
+  "glassware": "rocks glass",
+  "garnish": "orange peel twist",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Ocho Old Fashioned 50 ml BACARDÍ Reserva Ocho rum 6.25 ml simple syrup 2 dashes Angostura® bitters Step 1 Pour Add all ingredients into a rocks glass. Step 2 Chill Fill with ice. Step 3 Stir Stir until well mixed and very cold. Step 4 Garnish Garnish with an orange peel twist.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "A twist on an old favourite, learn how to make an Ocho Old Fashioned Cocktail. Check out our BACARDÍ receipe here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Learn how to make an old fashioned cocktail with BACARDÍ Rum",
+    "og:description": "A twist on an old favourite, learn how to make an Ocho Old Fashioned Cocktail. Check out our BACARDÍ receipe here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/ocho-old-fashioned/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:14:15+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/69619b47-8b7c-4602-9c66-67215f38d022/Bacardi_Ochooldfashioned_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Ocho Old Fashioned Cocktail Recipe",
+    "twitter:description": "A twist on an old favorite, learn how to make an Ocho Old Fashioned Cocktail. Check out our BACARDÍ recipe here and start mixing!",
+    "og:type": "article",
+    "keywords": "old fashioned cocktail, how to make an old fashion, old fashion ingredients",
+    "twitter:image:alt": "BACARDÍ Ocho Old Fashioned",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/ocho-old-fashioned/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

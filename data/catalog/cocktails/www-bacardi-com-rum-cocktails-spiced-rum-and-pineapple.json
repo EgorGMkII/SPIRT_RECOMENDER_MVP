@@ -1,0 +1,58 @@
+{
+  "cocktail_id": "spiced-rum-and-pineapple",
+  "source_url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-pineapple/",
+  "brand": "Bacardi",
+  "name": "Spiced Rum & Pineapple",
+  "title": "Spiced Rum & Pineapple Juice Cocktail Recipe | How to make a Spiced Rum & Pineapple Juice | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A simple tropical highball that combines BACARDÍ Spiced rum with pineapple juice over ice.",
+  "marketing_description": "BACARDÍ Spiced into pineapple juice to spice up a sweet drink. It's easy to make and even easier to impress friends. Packed with vibrant tropical flavour, this cocktail is sunshine in a glass.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "Fill a highball or Tiki glass with cubed or crushed ice.",
+      "Pour in the BACARDÍ Spiced rum.",
+      "Add chilled pineapple juice. Give it all a gentle stir.",
+      "Garnish with a pineapple wedge and a pineapple leaf."
+    ]
+  },
+  "glassware": "highball or Tiki glass",
+  "garnish": "pineapple wedge and a pineapple leaf",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a SPICED RUM & PINEAPPLE 50 ml BACARDÍ Spiced rum 100 ml pineapple juice Servings Copy Spiced with Pineapple ingredients Copied! Spiced with Pineapple recipe One step at a time 1 Chill Fill a highball or Tiki glass with cubed or crushed ice. 2 Pour Pour in the BACARDÍ Spiced rum. 3 Stir Add chilled pineapple juice. Give it all a gentle stir. 4 Garnish Garnish with a pineapple wedge and a pineapple leaf.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Spiced & Pineapple Juice Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Spiced Rum & Pineapple Juice Cocktail Recipe | How to make a Spiced Rum & Pineapple Juice | BACARDÍ Global",
+    "og:description": "Learn how to make the best Spiced & Pineapple Juice Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-pineapple/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-04-21T11:18:09+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/78abe059-3022-462e-ab6f-7cdba9afd88e/FY21_UK_Bacardi_Spiced_Globalassettoolkit_Pineapplespiced_Website_Banner_3200x1800_755886-6?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Spiced & Pineapple Juice Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Spiced & Pineapple Juice Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "spiced rum, cocktails",
+    "twitter:image:alt": "BACARDÍ Spiced & Pineapple Juice",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-pineapple/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

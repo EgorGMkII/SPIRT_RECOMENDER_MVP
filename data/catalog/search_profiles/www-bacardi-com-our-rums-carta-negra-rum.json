@@ -1,0 +1,47 @@
+{
+  "product_id": "bacardi-carta-negra",
+  "source_url": "https://www.bacardi.com/our-rums/carta-negra-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Carta Negra",
+  "category": "dark rum",
+  "short_description": "BACARDÍ Carta Negra rum is a medium-bodied black rum, crafted with passion by the Maestros de Ron BACARDÍ.",
+  "tasting_summary": "A journey that begins with sweet, tropical fruit, buttery caramel and vanilla notes and ends with a smoky liquorice and molasses finish. Toasted and nutty Tropical and medium-bodied Smoky and molasses",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "caramel",
+    "fruity"
+  ],
+  "usage_tags": [
+    "neat"
+  ],
+  "cocktail_names": [
+    "Tormenta Negra",
+    "Rum Punch",
+    "Hurricane",
+    "Jungle Bird",
+    "Zombie"
+  ],
+  "searchable_text": "BACARDÍ Carta Negra is a medium-bodied dark rum with rich black-rum character, expertly blended and matured in heavily charred oak barrels. It opens with toasted, nutty aromas and a tropical, fruity palate layered with buttery caramel and vanilla. The finish turns smoky, with liquorice and molasses notes. Smooth and full-flavored, it can be enjoyed neat or used to add depth and spice in cocktails. Well suited to rum punch, Hurricane, Jungle Bird, Zombie, and Tormenta Negra, with useful tags for vanilla, oak, caramel, fruity, smoky, molasses, and neat sipping.",
+  "display_description": "BACARDÍ Carta Negra rum is a medium-bodied black rum, crafted with passion by the Maestros de Ron BACARDÍ.",
+  "evidence_fields": {
+    "name": "BACARDÍ Carta Negra",
+    "category": "dark rum",
+    "short_description": "BACARDÍ Carta Negra rum is a medium-bodied black rum, crafted with passion by the Maestros de Ron BACARDÍ.",
+    "tasting_summary": "A journey that begins with sweet, tropical fruit, buttery caramel and vanilla notes and ends with a smoky liquorice and molasses finish. Toasted and nutty Tropical and medium-bodied Smoky and molasses",
+    "how_to_serve": "Spice it up or keep it neat, any combination will be one to savour.",
+    "cocktail_names": [
+      "Tormenta Negra",
+      "Rum Punch",
+      "Hurricane",
+      "Jungle Bird",
+      "Zombie"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-negra-rum.json",
+  "warnings": [
+    "Page contains navigation, related content, and FAQ blocks that were ignored where not relevant.",
+    "Category inferred from title and page context as dark rum/black rum.",
+    "Recommended rums list preserves source casing and ordering as shown on page."
+  ]
+}

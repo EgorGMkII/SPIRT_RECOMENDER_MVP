@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "frozen-pina-colada",
+  "source_url": "https://www.bacardi.com/rum-cocktails/frozen-pina-colada/",
+  "brand": "Bacardi",
+  "name": "Frozen Piña Colada",
+  "title": "Frozen Pina Colada Cocktail Recipe | How to make a Frozen Pina Colada | BACARDÍ Global",
+  "main_rum": "BACARDÍ Coconut rum",
+  "short_description": "A frozen tropical cocktail blended with coconut rum, coconut cream, pineapple juice, and ice.",
+  "marketing_description": "You've met the frozen Piña Colada, and you know where to enjoy it. See you on the pool deck!",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Coconut rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "coco Reàl®",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "ice",
+        "amount": "1 cup(s)"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients in a blender.",
+      "Add 1 cup of ice and blend until a slushy consistency forms.",
+      "Serve in a highball glass.",
+      "Garnish with a pineapple wedge and a cherry flag."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "a pineapple wedge and a cherry flag",
+  "method": "blend",
+  "raw_text_excerpt": "How to make a Frozen Piña Colada Ingredients 50 ml BACARDÍ Coconut rum 37.5 ml coco Reàl® 37.5 ml pineapple juice 1 cup(s) ice ... Combine all ingredients in a blender. Add 1 cup of ice and blend until a slushy consistency forms. Serve in a highball glass. Garnish with a pineapple wedge and a cherry flag.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Frozen Pina Colada Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Frozen Pina Colada Cocktail Recipe | How to make a Frozen Pina Colada | BACARDÍ Global",
+    "og:description": "Learn how to make the best Frozen Pina Colada Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/frozen-pina-colada/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-05-30T14:11:53+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/400486ac-d022-4d1a-9e99-362df12c461c/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_FRozen-Pina-Colada_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Frozen Pina Colada Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Frozen Pina Colada Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Frozen Pina Colada",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/frozen-pina-colada/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

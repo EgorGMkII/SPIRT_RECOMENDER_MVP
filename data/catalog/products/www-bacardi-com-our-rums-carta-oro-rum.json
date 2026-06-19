@@ -1,0 +1,73 @@
+{
+  "product_id": "bacardi-carta-oro",
+  "source_url": "https://www.bacardi.com/our-rums/carta-oro-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Carta Oro",
+  "title": "BACARDÍ Gold Rum | Gold Rum | Amber Rum | BACARDÍ Global",
+  "category": "gold rum",
+  "short_description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+  "marketing_description": "BACARDÍ Carta Oro’s rich flavours and golden complexion in toasted oak barrels. The secret behind its unique mellow character? A blend of charcoals known only to them. BACARDÍ Carta Oro craves zesty, punchy, and bold cocktails to acquaint with.",
+  "tasting_notes": "BACARDÍ Carta Oro rum brings together rich, soothing flavours like vanilla, buttery caramel, toasted almond and sweet banana notes balanced by the warm zest of orange peel and a light, oaky finish.",
+  "nose": "Nuts and butter",
+  "palate": "Rich and toasted",
+  "finish": "Dry and slightly sweet",
+  "process": "BACARDÍ Carta Oro’s rich flavours and golden complexion in toasted oak barrels. The secret behind its unique mellow character? A blend of charcoals known only to them. The secret to BACARDÍ Carta Oro's mellow character lies within a unique blend of charcoal. Ingredients are fermented, then distilled, aged, filtered and blended.",
+  "how_to_serve": "Best for bursts of flavour. BACARDÍ Carta Oro craves zesty, punchy, and bold cocktails to acquaint with.",
+  "cocktail_names": [
+    "Cuba Libre",
+    "Ginger Snap Rum Toddy"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Carta Blanca",
+    "BACARDÍ Carta Negra",
+    "BACARDÍ Spiced",
+    "BACARDÍ Añejo Cuatro",
+    "BACARDÍ Reserva Ocho"
+  ],
+  "faq_items": [
+    {
+      "question": "What is gold rum?",
+      "answer": "Gold rum, also known as amber rum, usually provides rich and smooth flavors after being aged in barrels."
+    },
+    {
+      "question": "What is the difference between dark, gold and white rum?",
+      "answer": "Rum is a wonderfully complex and diverse spirit. Color can give us clues about time spent aging or the flavors that might be found within. Dark can be bold, sweet (or dry) and even smoky, gold is rich and soothing, and white is smooth, subtle and often refreshing. But color can be misleading. The best way to truly understand a rum is to taste it for yourself."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ Carta Oro The Maestros de Ron BACARDÍ craft BACARDÍ Carta Oro’s rich flavours and golden complexion in toasted oak barrels. The secret behind its unique mellow character? A blend of charcoals known only to them. Tasting Notes BACARDÍ Carta Oro rum brings together rich, soothing flavours like vanilla, buttery caramel, toasted almond and sweet banana notes balanced by the warm zest of orange peel and a light, oaky finish. Nose Nuts and butter Palate Rich and toasted Finish Dry and slightly sweet BACARDÍ Carta Oro craves zesty, punchy, and bold cocktails to acquaint with. View all cocktails Cuba Libre Ginger Snap Rum Toddy ... FAQ WHAT IS GOLD RUM? Gold rum, also known as amber rum, usually provides rich and smooth flavors after being aged in barrels.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Gold Rum | Gold Rum | Amber Rum | BACARDÍ Global",
+    "og:description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+    "og:url": "https://www.bacardi.com/our-rums/carta-oro-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:28:25+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21135837/UK_Hero_Bacardi_CartaOro_mobile-scaled-1-1.jpg",
+    "og:image:width": "1000",
+    "og:image:height": "1250",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Gold Rum",
+    "twitter:description": "A soothing rum balanced with notes of buttery caramel and zesty orange. BACARDÍ Gold ignites your glass with the flavors of sunshine.",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "gold rum",
+    "twitter:image:alt": "BACARDÍ Gold Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/carta-oro-rum/"
+  },
+  "extraction_confidence": 0.93,
+  "extraction_warnings": [
+    "Page title uses 'BACARDÍ Gold Rum' while H1 uses 'BACARDÍ Carta Oro'; both appear to refer to the same product.",
+    "No explicit ABV, age statement, country, price, or ingredient list for this product was provided beyond general FAQ information."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

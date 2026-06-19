@@ -1,0 +1,57 @@
+{
+  "cocktail_id": "limitada-neat",
+  "source_url": "https://www.bacardi.com/rum-cocktails/limitada-neat/",
+  "brand": "Bacardi",
+  "name": "Limitada Neat",
+  "title": "Limitada Neat Rum Cocktail Recipe | How to make a Limitada Neat | BACARDÍ Global",
+  "main_rum": "BACARDÍ Reserva Limitada rum",
+  "short_description": "A neat serve of BACARDÍ Gran Reserva Limitada rum in an old fashioned glass, served without garnish.",
+  "marketing_description": "BACARDÍ Gran Reserva Limitada rum is the ultimate expression of luxury, reserved for moments that call for something dignified and best shared.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Reserva Limitada rum",
+        "amount": "50 ml"
+      }
+    ],
+    "steps": [
+      "Use an old fashioned glass, un-chilled.",
+      "Pour BACARDÍ Gran Reserva Limitada rum into the glass.",
+      "Serve, no garnish.",
+      "Sip and savour."
+    ]
+  },
+  "glassware": "Old fashioned glass, un-chilled",
+  "garnish": "No garnish",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Limitada Neat 50 ml BACARDÍ Reserva Limitada rum Servings Copy Limitada Neat ingredients Copied! Limitada Neat Recipe One step at a time 1 Get Set Use an old fashioned glass, un-chilled. 2 Pour Pour BACARDÍ Gran Reserva Limitada rum into the glass. 3 Serve Serve, no garnish. 4 Savour Sip and savour.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Limitada Neat Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Limitada Neat Rum Cocktail Recipe | How to make a Limitada Neat | BACARDÍ Global",
+    "og:description": "Learn how to make the best Limitada Neat Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/limitada-neat/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T07:26:06+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/902c1e4f-9e0b-4385-a7c0-6be3d2cd7116/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Limitada-Neat_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Limitada Neat Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Limitada Neat Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Limitada Neat",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/limitada-neat/"
+  },
+  "extraction_confidence": 0.88,
+  "extraction_warnings": [
+    "The page explicitly names BACARDÍ Gran Reserva Limitada rum in the instructions, while the ingredient line says BACARDÍ Reserva Limitada rum; kept both as shown and used the ingredient line as the recipe ingredient.",
+    "No explicit prep time or difficulty provided.",
+    "No explicit garnish beyond 'no garnish' provided."
+  ],
+  "parser_version": "llm-cocktail-parser-v1"
+}

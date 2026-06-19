@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "ginger-snap",
+  "source_url": "https://www.bacardi.com/rum-cocktails/ginger-snap/",
+  "brand": "Bacardi",
+  "name": "Ginger Snap",
+  "title": "Ginger Snap Rum Cocktail Recipe | How to make a Ginger Snap Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Oro Gold Rum",
+  "short_description": "A festive highball that swaps vodka for BACARDÍ Carta Oro Gold rum and ginger ale.",
+  "marketing_description": "We’ve given the mule a festive, Caribbean twist by swapping clear vodka for BACARDÍ Carta Oro Gold rum. Perfect for any holiday soireé.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Oro Gold Rum",
+        "amount": "44 ml"
+      },
+      {
+        "name": "Ginger Ale",
+        "amount": "89 ml"
+      },
+      {
+        "name": "Ice",
+        "amount": null
+      },
+      {
+        "name": "Lime wheel",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Pour in the BACARDÍ Carta Oro Gold rum and ginger ale.",
+      "Mix gently.",
+      "Garnish with a lime wheel."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Lime wheel",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Ginger Snap 44 ml BACARDÍ Carta Oro Gold Rum 89 ml Ginger Ale ... Fill a highball glass with ice. Pour in the BACARDÍ Carta Oro Gold rum and ginger ale. Mix gently. Garnish with a lime wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Ginger Snap Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Ginger Snap Rum Cocktail Recipe | How to make a Ginger Snap Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Ginger Snap Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/ginger-snap/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:14:17+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/23734810-83a5-45fa-ae86-8bf022a9d614/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Spiced-Ginger-Ale_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Ginger Snap Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Ginger Snap Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Ginger Snap",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/ginger-snap/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

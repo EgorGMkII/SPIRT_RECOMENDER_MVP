@@ -1,0 +1,70 @@
+{
+  "cocktail_id": "mojito-group-serve",
+  "source_url": "https://www.bacardi.com/rum-cocktails/mojito-group-serve/",
+  "brand": "Bacardi",
+  "name": "Mojito jug",
+  "title": "Mojito Group Serve Cocktail Recipe | How to make a Mojito for the Group | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca rum",
+  "short_description": "A refreshing group-size mojito made with BACARDÍ Carta Blanca rum, lime, mint, simple syrup, and soda water.",
+  "marketing_description": "Real mojitos are made with BACARDÍ. Press some mint and lime, then pour in BACARDÍ Carta Blanca rum and club soda for a refreshing Cuban classic.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "300 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "150 ml"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "112.5 ml"
+      },
+      {
+        "name": "mint leaves",
+        "amount": null
+      },
+      {
+        "name": "soda water",
+        "amount": "top with"
+      }
+    ],
+    "steps": [
+      "Combine the first three ingredients together in a punch bowl with torn mint leaves.",
+      "Pour mix over crushed ice in individual highball glasses.",
+      "Top each with club soda.",
+      "Garnish with a mint sprig and a lime wedge."
+    ]
+  },
+  "glassware": "punch bowl; individual highball glasses",
+  "garnish": "mint sprig and a lime wedge",
+  "method": "combine",
+  "raw_text_excerpt": "How to make a Mojito jug 300 ml BACARDÍ Carta Blanca rum 150 ml lime juice 112.5 ml simple syrup mint leaves top with soda water Punch Bowl ... Step 1 Combine the first three ingredients together in a punch bowl with torn mint leaves. Step 2 Pour mix over crushed ice in individual highball glasses. Step 3 Fizz Top each with club soda. Step 4 Garnish with a mint sprig and a lime wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "A text description of the image used for sharing, conveying the essential nature of an image to users who are visually impaired.",
+    "og:locale": "en_US",
+    "og:title": "Mojito Group Serve Cocktail Recipe | How to make a Mojito for the Group | BACARDÍ Global",
+    "og:description": "Learn how to make a Mojito big enough to share with friends! Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/mojito-group-serve/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-05-30T11:38:43+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/909dd52a-f143-4fa7-b30d-46eec676f453/FY24_Global_Bacardi_Lifestyle_Festival_Mojito_CloseUp_ColorCorrect_Static_Digital_5792x8688?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Mojito group serve Cocktail Recipe",
+    "twitter:description": "Learn how to make a Mojito big enough to share with friends! Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "mojito",
+    "twitter:image:alt": "BACARDÍ Mojito group serve",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/mojito-group-serve/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

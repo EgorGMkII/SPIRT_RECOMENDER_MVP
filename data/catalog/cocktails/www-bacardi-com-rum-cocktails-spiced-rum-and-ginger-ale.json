@@ -1,0 +1,57 @@
+{
+  "cocktail_id": "spiced-and-ginger",
+  "source_url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-ginger-ale/",
+  "brand": "Bacardi",
+  "name": "Spiced & Ginger",
+  "title": "Spiced Rum & Ginger Ale Cocktail Recipe | How to make a Spiced Rum & Ginger Ale Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A refreshing highball of BACARDÍ Spiced rum and ginger ale finished with lime.",
+  "marketing_description": "Refresh with this snappy little number. BACARDÍ Spiced rum, bubbly ginger and a zesty hint of lime come together in one tasty cocktail.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger ale",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "Fill a glass with ice cubes.",
+      "Pour in the BACARDÍ Spiced rum, followed by the ginger ale.",
+      "Give it all a gentle stir.",
+      "Garnish with a lime wedge."
+    ]
+  },
+  "glassware": null,
+  "garnish": "lime wedge",
+  "method": "stir",
+  "raw_text_excerpt": "Ingredients 50 ml BACARDÍ Spiced rum 100 ml ginger ale ... 1 Chill Fill a glass with ice cubes. 2 Pour Pour in the BACARDÍ Spiced rum, followed by the ginger ale. 3 Stir Give it all a gentle stir. 4 Garnish Garnish with a lime wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Spiced Rum & Ginger Ale Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Spiced Rum & Ginger Ale Cocktail Recipe | How to make a Spiced Rum & Ginger Ale Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Spiced Rum & Ginger Ale Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-ginger-ale/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:48:00+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/23734810-83a5-45fa-ae86-8bf022a9d614/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Spiced-Ginger-Ale_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Spiced & Ginger Ale Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Spiced Rum & Ginger Ale Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Spiced & Ginger Ale",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-ginger-ale/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

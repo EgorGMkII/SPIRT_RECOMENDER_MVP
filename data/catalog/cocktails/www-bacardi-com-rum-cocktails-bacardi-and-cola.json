@@ -1,0 +1,60 @@
+{
+  "cocktail_id": "bacardi-and-cola",
+  "source_url": "https://www.bacardi.com/rum-cocktails/bacardi-and-cola/",
+  "brand": "Bacardi",
+  "name": "BACARDÍ & Cola",
+  "title": "BACARDÍ Rum & Cola Cocktail Recipe | How to make a BACARDÍ Rum & Cola | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca rum",
+  "short_description": "A classic Bacardi rum and cola made with BACARDÍ Carta Blanca and chilled cola over ice.",
+  "marketing_description": "Like many of the world's greatest pairings, a rum and cola is best if made with 'the original' BACARDÍ. BACARDÍ Carta Blanca rum was designed to be the ultimate mixing spirit.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "cola",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Pour in the BACARDÍ Carta Blanca white rum, followed by chilled cola, and give it all a gentle stir.",
+      "Add the chilled cola.",
+      "Give it all a gentle stir."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "No garnish.",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a BACARDÍ & Cola 50 ml BACARDÍ Carta Blanca rum 100 ml cola ... Fill a highball glass with ice. Pour in the BACARDÍ Carta Blanca white rum, followed by chilled cola, and give it all a gentle stir. Add the chilled cola. Stir Give it all a gentle stir. No garnish.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make a classic BACARDÍ Rum & Cola Cocktail. Mix this classic cocktail using fresh mint, white rum, sugar, zesty lime and cooling soda water.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Rum & Cola Cocktail Recipe | How to make a BACARDÍ Rum & Cola | BACARDÍ Global",
+    "og:description": "Learn how to make a classic BACARDÍ Rum & Cola Cocktail. Mix this classic cocktail using fresh mint, white rum, sugar, zesty lime and cooling soda water.",
+    "og:url": "https://www.bacardi.com/rum-cocktails/bacardi-and-cola/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:11:43+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/368ce95d-d736-4e00-ba77-414124ca659f/FY21_Bacardi_Lifestyleproduct_Bright-Dapple_Bacardi_Cola_Bwchb01?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Bacardi & Cola Cocktail Recipe",
+    "twitter:description": "Learn how to make a classic Rum & Cola Cocktail. Mix this classic cocktail using fresh mint, white rum, sugar, zesty lime and cooling soda water.",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Bacardi & Cola",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/bacardi-and-cola/"
+  },
+  "extraction_confidence": 0.96,
+  "extraction_warnings": [
+    "Recipe steps on the page appear duplicated/redundant; preserved as written and condensed into ordered steps.",
+    "Main rum is explicit as BACARDÍ Carta Blanca rum, also referenced as BACARDÍ Superior in FAQ; used page's primary rum naming."
+  ],
+  "parser_version": "llm-cocktail-parser-v1"
+}

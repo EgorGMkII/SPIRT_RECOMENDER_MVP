@@ -1,0 +1,10 @@
+{
+  "session_id": "s1",
+  "liked_flavors": [],
+  "disliked_flavors": [
+    "coconut",
+    "sweet"
+  ],
+  "liked_cocktails": [],
+  "disliked_cocktails": []
+}

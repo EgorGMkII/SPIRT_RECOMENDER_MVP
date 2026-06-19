@@ -1,0 +1,74 @@
+{
+  "cocktail_id": "mojito",
+  "source_url": "https://www.bacardi.com/rum-cocktails/mojito/",
+  "brand": "Bacardi",
+  "name": "Mojito",
+  "title": "Mojito Cocktail | Mojito Recipe | How to make a Mojito | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca",
+  "short_description": "A classic Mojito made with BACARDÍ Carta Blanca rum, fresh lime, mint, soda, and sugar syrup.",
+  "marketing_description": "This Original Mojito cocktail recipe blends BACARDÍ Carta Blanca rum, lime, mint, and a touch of sweetness. Whether you're mixing a single glass or a pitcher for friends, follow these simple steps to create a Mojito that's sure to impress!",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": "EASY",
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "50 ML"
+      },
+      {
+        "name": "fresh lime juice",
+        "amount": "25 ML"
+      },
+      {
+        "name": "soda",
+        "amount": "25 ML"
+      },
+      {
+        "name": "sugar syrup (1:1)",
+        "amount": "15 ML"
+      },
+      {
+        "name": "mint",
+        "amount": "small handful"
+      },
+      {
+        "name": "crushed ice",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "In a highball glass, add BACARDÍ Carta Blanca rum, fresh lime juice, sugar syrup, and soda water.",
+      "Add mint leaves to the glass, gently pressing with a bar spoon to release their oils. Leave the spoon in the glass.",
+      "Fill 3/4 of the glass with crushed ice. Churn the mixture with a bar spoon to combine. Top with crushed ice.",
+      "Garnish with a fresh mint sprig. Serve immediately and enjoy your perfectly crafted BACARDÍ Mojito!"
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Fresh mint sprig",
+  "method": "build",
+  "raw_text_excerpt": "WHAT YOU WILL NEED Mojito 50 ML BACARDÍ CARTA BLANCA RUM 25 ML FRESH LIME JUICE 25 ML SODA 15 ML SUGAR SYRUP (1:1) SMALL HANDFUL OF MINT CRUSHED ICE HIGHBALL GLASS ... Step 1 Fill In a highball glass, add BACARDÍ Carta Blanca rum, fresh lime juice, sugar syrup, and soda water.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Mojito Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Mojito Cocktail | Mojito Recipe | How to make a Mojito | BACARDÍ Global",
+    "og:description": "Learn how to make the best Mojito Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/mojito/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-06-25T07:01:20+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/909dd52a-f143-4fa7-b30d-46eec676f453/FY24_Global_Bacardi_Lifestyle_Festival_Mojito_CloseUp_ColorCorrect_Static_Digital_5792x8688?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Mojito Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Mojito Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "Mojito cocktails, how to make a mojito, mojito ingredients, mojito drink",
+    "twitter:image:alt": "BACARDÍ Mojito",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/mojito/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

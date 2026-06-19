@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "coconut-mismo",
+  "source_url": "https://www.bacardi.com/rum-cocktails/coconut-mismo/",
+  "brand": "Bacardi",
+  "name": "Coconut Mismo",
+  "title": "Coconut Mismo Rum Cocktail Recipe | How to make a Coconut Mismo Cocktail | BACARDÍ Global",
+  "main_rum": "BACARDÍ Coconut rum",
+  "short_description": "A simple highball cocktail of BACARDÍ Coconut rum and soda water served over ice and finished with lime.",
+  "marketing_description": "BACARDÍ Coconut gives the Mismo a smooth tropical kick.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "ice",
+        "amount": "Fill a tall highball glass with cubed ice."
+      },
+      {
+        "name": "BACARDÍ Coconut rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "soda water",
+        "amount": "150 ml"
+      },
+      {
+        "name": "lime wedge",
+        "amount": "Garnish with a lime wedge."
+      }
+    ],
+    "steps": [
+      "Fill a tall highball glass with cubed ice.",
+      "Pour in the BACARDÍ Coconut.",
+      "Add the soda water and stir well before serving.",
+      "Garnish with a lime wedge."
+    ]
+  },
+  "glassware": "tall highball glass",
+  "garnish": "lime wedge",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Coconut Mismo 50 ml BACARDÍ Coconut rum 150 ml soda water ... Fill a tall highball glass with cubed ice. Pour in the BACARDÍ Coconut. Add the soda water and stir well before serving. Garnish with a lime wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Coconut Mismo Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Coconut Mismo Rum Cocktail Recipe | How to make a Coconut Mismo Cocktail | BACARDÍ Global",
+    "og:description": "Learn how to make the best Coconut Mismo Rum Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/coconut-mismo/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T08:58:10+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/3bceec11-5eb2-45f1-82af-c573017237fb/FY21_Bacardi_Coconut_Coconut-Mismo_Website_Bw_Cdp_Herobanner_Desktop_PB1?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Coconut Mismo Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Coconut Mismo Rum Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Coconut Mismo",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/coconut-mismo/"
+  },
+  "extraction_confidence": 0.97,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

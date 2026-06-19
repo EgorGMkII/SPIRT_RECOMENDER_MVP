@@ -1,0 +1,76 @@
+{
+  "product_id": "bacardi-limon-rum",
+  "source_url": "https://www.bacardi.com/our-rums/limon-rum/",
+  "brand": "BACARDÍ",
+  "name": "LIMÓN",
+  "title": "BACARDÍ Limón Rum | Lemon Rum | Lemon Flavoured Rum | BACARDÍ Global",
+  "category": "flavored rum",
+  "short_description": "BACARDÍ Limón flavored rum glistens like sunshine in your glass.",
+  "marketing_description": "We named BACARDÍ Limón rum after the Spanish word for lemon. But it gets its fresh flavour from a blend of three citrus fruits; lemon, lime and grapefruit. So what does it taste like? Sunshine!",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "BACARDÍ LIMÓN RUM MIXES PERFECTLY WITH LEMONADE TO MAKE OUR SIGNATURE BACARDÍ LIMÓNADE.",
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Limon & Lemonade",
+    "BACARDÍ Lime & Soda",
+    "BACARDÍ LIME",
+    "BACARDÍ Coconut",
+    "BACARDÍ CARTA BLANCA"
+  ],
+  "faq_items": [
+    {
+      "question": "WHAT CAN YOU MIX FLAVORED RUM WITH?",
+      "answer": "Flavored rum gives your taste buds an extra element of surprise. You can mix flavored rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "IS FLAVORED RUM SWEET?",
+      "answer": "Flavored, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "HOW DO YOU MAKE RUM?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ Limón Rum | Lemon Rum | Lemon Flavoured Rum | BACARDÍ Global ... We named BACARDÍ Limón rum after the Spanish word for lemon. But it gets its fresh flavour from a blend of three citrus fruits; lemon, lime and grapefruit. So what does it taste like? Sunshine! BACARDÍ LIMÓN RUM MIXES PERFECTLY WITH LEMONADE TO MAKE OUR SIGNATURE BACARDÍ LIMÓNADE.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "With three crisp, citrus flavors, BACARDÍ Limón flavored rum glistens like sunshine in your glass. Discover BACARDÍ flavoured rum range and explore exciting new cocktails",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Limón Rum | Lemon Rum | Lemon Flavoured Rum | BACARDÍ Global",
+    "og:description": "With three crisp, citrus flavors, BACARDÍ Limón flavored rum glistens like sunshine in your glass. Discover BACARDÍ flavoured rum range and explore exciting new cocktails",
+    "og:url": "https://www.bacardi.com/our-rums/limon-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:45:05+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21143211/FY23_Bacardi_Global_Our_Rums_Bacardi_Limon-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "BACARDÍ Limon Rum",
+    "twitter:description": "With three crisp, citrus flavors, BACARDÍ Limón flavored rum glistens like sunshine in your glass. Discover BACARDÍ flavoured rum range and explore exciting new cocktails",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "flavored rum",
+    "twitter:image:alt": "Discover BACARDÍ Limon Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/limon-rum/"
+  },
+  "extraction_confidence": 0.95,
+  "extraction_warnings": [
+    "No explicit tasting notes section was present; sensory details were inferred only where clearly presented in marketing copy.",
+    "Navigation, related products, and FAQ blocks were present and partially ignored where unrelated."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

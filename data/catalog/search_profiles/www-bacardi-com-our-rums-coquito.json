@@ -1,0 +1,33 @@
+{
+  "product_id": "bacardi-coquito",
+  "source_url": "https://www.bacardi.com/our-rums/coquito/",
+  "brand": "BACARDÍ",
+  "name": "Coquito",
+  "category": "coconut liqueur",
+  "short_description": "A cream-based coconut liqueur, Coquito is a traditional Puerto Rican holiday cocktail.",
+  "tasting_summary": "A silky coconut flavor, toasty spices and hints of vanilla and cinnamon that celebrate the Caribbean culture and holidays.",
+  "flavor_tags": [
+    "vanilla",
+    "cinnamon",
+    "coconut"
+  ],
+  "usage_tags": [
+    "cocktail"
+  ],
+  "cocktail_names": [],
+  "searchable_text": "BACARDÍ Coquito is a cream-based coconut liqueur and traditional Puerto Rican holiday cocktail made with BACARDÍ Superior Rum. It delivers a silky, smooth coconut profile with toasty festive spices, vanilla, and cinnamon, evoking Caribbean holiday flavors. Rich and creamy in texture, it works well served chilled or as a ready-to-enjoy dessert-style drink, and it can also add coconut, spice, and vanilla depth to holiday cocktails. Flavor tags: coconut, vanilla, cinnamon, spiced, creamy, Caribbean, festive, cocktail.",
+  "display_description": "A cream-based coconut liqueur, Coquito is a traditional Puerto Rican holiday cocktail.",
+  "evidence_fields": {
+    "name": "Coquito",
+    "category": "coconut liqueur",
+    "short_description": "A cream-based coconut liqueur, Coquito is a traditional Puerto Rican holiday cocktail.",
+    "tasting_summary": "A silky coconut flavor, toasty spices and hints of vanilla and cinnamon that celebrate the Caribbean culture and holidays.",
+    "how_to_serve": "",
+    "cocktail_names": []
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-coquito.json",
+  "warnings": [
+    "Navigation, related products, and footer content were present and ignored.",
+    "No ABV, age statement, country, barrel type, or ingredients were explicitly provided beyond the descriptive copy."
+  ]
+}

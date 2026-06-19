@@ -1,0 +1,71 @@
+{
+  "cocktail_id": "cuatro-highball",
+  "source_url": "https://www.bacardi.com/rum-cocktails/cuatro-highball/",
+  "brand": "Bacardi",
+  "name": "Cuatro Highball",
+  "title": "Cuatro Highball Cocktail Recipe | How to make a Cuatro Highball | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro rum",
+  "short_description": "A refreshing highball with Bacardí Añejo Cuatro, ginger ale, and optional Angostura bitters, served over ice with lime.",
+  "marketing_description": "As day becomes night, savour the refreshing Caribbean flavours of Añejo Cuatro rum and ginger ale. It's called the Cuatro Highball, or as we like to say, paradise in a glass.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger ale",
+        "amount": "100 ml"
+      },
+      {
+        "name": "Angostura® bitters",
+        "amount": "1 dash (optional)"
+      },
+      {
+        "name": "lime wedges",
+        "amount": "2"
+      }
+    ],
+    "steps": [
+      "Build long over cubed ice.",
+      "Add a squeeze of lime and garnish with a lime slice.",
+      "Add a dash of bitters if desired.",
+      "Garnish with a squeeze of lime and a lime wheel."
+    ]
+  },
+  "glassware": "Highball glass",
+  "garnish": "Lime slice and lime wheel",
+  "method": "Build",
+  "raw_text_excerpt": "How to make a Cuatro Highball 50 ml BACARDÍ Añejo Cuatro rum 100 ml ginger ale 1 dash Angostura® bitters (optional) 2 lime wedges Step 1 Ice Build long over cubed ice. Step 2 Build Garnish with a squeeze of lime and a lime slice. Step 3 Dash Add a dash of bitters if desired. Step 4 Garnish Garnish with a squeeze of lime and a lime wheel.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make this signature Cuatro Highball Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Cuatro Highball Cocktail Recipe | How to make a Cuatro Highball | BACARDÍ Global",
+    "og:description": "Learn how to make this signature Cuatro Highball Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/cuatro-highball/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:02:03+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/25/2020/08/20073918/bacardi-mojito_sml_580x820..png",
+    "og:image:width": "580",
+    "og:image:height": "820",
+    "og:image:type": "image/png",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Cuatro Highball Cocktail Recipe",
+    "twitter:description": "Learn how to make this signature Cuatro Highball Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "cuatro highball, añejo cuatro, cocktails",
+    "twitter:image:alt": "BACARDÍ Cuatro Highball",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/cuatro-highball/"
+  },
+  "extraction_confidence": 0.94,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

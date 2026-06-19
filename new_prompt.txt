@@ -1,0 +1,295 @@
+Implement a simplified retrieval architecture and update the project to use normalized natural-language search queries with FAISS instead of tag-driven search.
+
+Context:
+We already have LLM-generated ProductCard JSON files in:
+
+data/catalog/products/
+
+These ProductCards are rich provenance-preserving records. They contain useful product data but also metadata, FAQ items, warnings and related products.
+
+Important architectural change:
+The project should move away from tag-centric retrieval logic.
+
+The primary retrieval flow should become:
+
+User query (natural language)
+→ normalize query into a concise search description
+→ embed normalized query
+→ FAISS similarity search over product profiles
+→ return top-k candidates
+→ optional LLM reranking/explanation later
+
+Do not build a complex tag ontology.
+Do not build tag-based filtering as the primary retrieval mechanism.
+Do not implement full food-pairing logic yet.
+Do not implement final LangGraph agent behavior yet.
+
+Please update any project documentation, architecture descriptions, retrieval-related modules, README files, design documents, and comments that still describe retrieval as tag-based. Replace them with the new normalized-query + FAISS retrieval approach.
+
+Single-shot example of the desired behavior:
+
+User query:
+
+"I want a smooth rum with vanilla and oak notes that works well in cocktails."
+
+Normalized search query:
+
+"Rum with vanilla and oak flavors. Suitable for cocktails. Smooth and approachable profile."
+
+FAISS search:
+
+* embed normalized query
+* search ProductSearchProfile.searchable_text
+* return top-k candidate products
+
+Example result:
+
+1. Plantation Original Dark
+2. Mount Gay Eclipse
+3. Doorly's 5 Year
+
+The retrieval system should rely primarily on semantic similarity between normalized query text and product profile text, not on matching tags.
+
+Implement:
+
+1. ProductSearchProfile
+
+Create a Pydantic schema for normalized searchable product profiles.
+
+Fields:
+
+* product_id
+* source_url
+* brand
+* name
+* category
+* short_description
+* tasting_summary
+* flavor_tags
+* usage_tags
+* cocktail_names
+* searchable_text
+* display_description
+* evidence_fields
+* source_product_card_path
+* warnings
+
+Keep tags lightweight and secondary.
+
+Tags may still exist as metadata for display, debugging, analytics, or future filtering, but retrieval should not depend on them.
+
+2. ProductCard -> ProductSearchProfile converter
+
+Implement deterministic conversion where possible.
+
+searchable_text should include only fields about the current product:
+
+* name
+* category
+* short_description
+* marketing_description
+* tasting_notes
+* nose
+* palate
+* finish
+* process
+* how_to_serve
+* cocktail_names
+
+Do NOT include:
+
+* source_metadata
+* faq_items
+* recommended_rums
+* extraction_warnings
+* footer/menu/legal/social text
+
+The goal is to create a clean semantic representation optimized for embeddings and vector search.
+
+3. Query normalization layer
+
+Add a lightweight query normalization component.
+
+Input:
+
+"I need a sweet rum with caramel notes for mixing cocktails."
+
+Output:
+
+"Sweet rum with caramel flavors. Suitable for cocktails and mixing drinks."
+
+Requirements:
+
+* deterministic implementation first
+* no LLM dependency required for MVP
+* simple rule-based normalization is acceptable
+* output should be concise and embedding-friendly
+
+Add module:
+
+sommelier/retrieval/query_normalizer.py
+
+Provide:
+
+* normalize_query(text: str) -> str
+
+4. Lightweight tag extraction
+
+Keep simple deterministic keyword extraction for metadata only.
+
+Examples:
+
+* "vanilla" -> vanilla
+* "oak", "oaky", "toasted oak" -> oak
+* "honey" -> honey
+* "clove" -> clove
+* "pepper" -> pepper
+* "cinnamon" -> cinnamon
+* "toffee", "caramel" -> caramel
+* "floral", "flower", "orange blossom", "rose", "lavender" -> floral
+* "fruit", "fruity", "banana", "apricot", "lime" -> fruity / banana / citrus where appropriate
+* "cocktail", "mixing", "mixer" -> cocktail / mixer
+* "sipping", "neat" -> sipping / neat
+* "highball" -> highball
+
+Do not call LLM for tags.
+
+Do not create arbitrary tags.
+
+Unknown descriptors should simply be ignored.
+
+Again: tags are not the primary retrieval mechanism.
+
+5. CLI
+
+Add CLI:
+
+python -m sommelier.catalog.build_search_profiles
+
+Options:
+
+* --input-dir data/catalog/products
+* --output-dir data/catalog/search_profiles
+* --force
+* --limit
+
+6. FAISS vector index
+
+Implement a simple FAISS index over ProductSearchProfile.searchable_text.
+
+Add module:
+
+sommelier/retrieval/faiss_index.py
+
+It should support:
+
+* build index from search profiles
+* save index to data/indexes/
+* load index
+* search by query text
+* internally normalize query before embedding
+* return product_id, score, matched profile metadata
+
+If embeddings are not configured yet:
+
+* support a deterministic fake embedding mode for tests
+* do not call real APIs in tests
+
+Use the existing project conventions.
+
+7. CLI for index building
+
+Add CLI:
+
+python -m sommelier.retrieval.build_faiss_index
+
+Options:
+
+* --profiles-dir data/catalog/search_profiles
+* --index-dir data/indexes
+* --force
+
+8. Tests
+
+Add tests for:
+
+* ProductSearchProfile schema
+* ProductCard -> ProductSearchProfile conversion
+* metadata/FAQ/recommended_rums excluded from searchable_text
+* query normalization
+* lightweight tag extraction
+* FAISS wrapper with fake embeddings
+* search returns expected product_id from fixture data
+* normalized query is used during retrieval
+
+9. Update project architecture documentation
+
+Review and update project files that describe retrieval behavior.
+
+Replace descriptions such as:
+
+"query -> tags -> filtering -> products"
+
+with:
+
+"query -> normalized query -> embeddings -> FAISS search -> candidate products"
+
+Update:
+
+* README files
+* architecture/design documents
+* retrieval documentation
+* developer notes
+* comments describing retrieval flow
+* any planning documents that still assume tag-first retrieval
+
+10. Notebook update
+
+Update test.ipynb to demonstrate the new retrieval flow.
+
+Add cells to:
+
+* build search profiles from ProductCards
+* inspect one ProductSearchProfile
+* normalize a user query
+* build FAISS index
+* run a normalized query against the index
+* show top-k product candidates
+
+Include an example:
+
+User query:
+
+"I want a vanilla and oak rum for cocktails."
+
+Show:
+
+* original query
+* normalized query
+* top-k FAISS results
+
+Important:
+This is an MVP retrieval layer.
+
+Keep the architecture simple:
+
+ProductCard
+→ ProductSearchProfile
+→ searchable_text
+→ embeddings
+→ FAISS
+→ top-k candidates
+
+Avoid introducing complex ontologies, advanced tag systems, or heavy filtering logic.
+
+After implementation:
+
+* run tests
+* update architecture documentation
+* update retrieval-related project files to reflect the new approach
+* build search profiles for existing ProductCards
+* build FAISS index if possible
+* show one ProductSearchProfile example
+* show one normalized query example
+* show one vector search example
+* report files changed, commands run, test results, documentation updates, and remaining TODOs.

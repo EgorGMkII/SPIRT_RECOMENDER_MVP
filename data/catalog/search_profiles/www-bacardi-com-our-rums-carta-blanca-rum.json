@@ -1,0 +1,65 @@
+{
+  "product_id": "bacardi-carta-blanca",
+  "source_url": "https://www.bacardi.com/our-rums/carta-blanca-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Carta Blanca",
+  "category": "white rum",
+  "short_description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+  "tasting_summary": "A classic profile. BACARDÍ Carta Blanca rum serves up orange blossom, lavender and rose, teamed with apricot, lime, light coconut and ripe banana. Almonds and fruit Smooth and creamy Dry, clean, fresh",
+  "flavor_tags": [
+    "vanilla",
+    "oak",
+    "floral",
+    "fruity",
+    "banana",
+    "citrus",
+    "coconut"
+  ],
+  "usage_tags": [
+    "cocktail",
+    "mixer"
+  ],
+  "cocktail_names": [
+    "Mojito",
+    "Daiquiri",
+    "BACARDÍ & Cola",
+    "Piña Colada",
+    "Rum Punch",
+    "Rum Mule",
+    "Hurricane",
+    "Strawberry Daiquiri Cocktail (Frozen)",
+    "BACARDÍ Coquito",
+    "Zombie",
+    "Mojito jug",
+    "Blood Moon"
+  ],
+  "searchable_text": "BACARDÍ Carta Blanca is a classic white rum made for mixing, light and aromatic with a smooth, creamy palate and a dry, clean, fresh finish. It opens with almond and fruit on the nose, then shows delicate floral and fruity notes of orange blossom, lavender, rose, apricot, lime, light coconut, ripe banana, soft vanilla and a touch of oak. Filtered for distinctive smoothness and aged in American white oak barrels, it blends seamlessly without overpowering other ingredients. Ideal for classic cocktails like the Mojito and Daiquiri, plus rum punch, rum and cola, Piña Colada, and other bright, refreshing cocktail builds.",
+  "display_description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+  "evidence_fields": {
+    "name": "BACARDÍ Carta Blanca",
+    "category": "white rum",
+    "short_description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+    "tasting_summary": "A classic profile. BACARDÍ Carta Blanca rum serves up orange blossom, lavender and rose, teamed with apricot, lime, light coconut and ripe banana. Almonds and fruit Smooth and creamy Dry, clean, fresh",
+    "how_to_serve": "Perfect for classic rum cocktails like the Mojito. The Perfect Mixer. Ideal for mixing.",
+    "cocktail_names": [
+      "Mojito",
+      "Daiquiri",
+      "BACARDÍ & Cola",
+      "Piña Colada",
+      "Rum Punch",
+      "Rum Mule",
+      "Hurricane",
+      "Strawberry Daiquiri Cocktail (Frozen)",
+      "BACARDÍ Coquito",
+      "Zombie",
+      "Mojito jug",
+      "Blood Moon"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-carta-blanca-rum.json",
+  "warnings": [
+    "Some marketing copy uses BACARDÍ Superior Rum wording while the page H1 says BACARDÍ Carta Blanca.",
+    "Cocktail and recommended-rum lists were long; only clearly related items were retained.",
+    "Navigation, footer, and unrelated related-content text were ignored."
+  ]
+}

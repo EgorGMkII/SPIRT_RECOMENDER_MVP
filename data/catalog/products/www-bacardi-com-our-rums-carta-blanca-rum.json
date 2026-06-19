@@ -1,0 +1,84 @@
+{
+  "product_id": "bacardi-carta-blanca",
+  "source_url": "https://www.bacardi.com/our-rums/carta-blanca-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Carta Blanca",
+  "title": "BACARDÍ Superior Rum | White Rum | BACARDÍ Global",
+  "category": "white rum",
+  "short_description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+  "marketing_description": "In 1862, after 10 years of perfecting his rums, Don Facundo Bacardí Massó introduced the world to his BACARDÍ Carta Blanca rum. A sublime rum for cocktails, it doesn’t dominate other flavours nor does it disappear when mixed. Perfect for classic rum cocktails like the Mojito. BACARDÍ Carta Blanca is a light and aromatic white rum with delicate floral and fruity notes, ideal for mixing. A rum destined for mixing. Unleash a world of new flavours and experiment with BACARDÍ Carta Blanca white rum in all your favourite cocktails.",
+  "tasting_notes": "A classic profile. BACARDÍ Carta Blanca rum serves up orange blossom, lavender and rose, teamed with apricot, lime, light coconut and ripe banana.",
+  "nose": "Almonds and fruit",
+  "palate": "Smooth and creamy",
+  "finish": "Dry, clean, fresh",
+  "process": "Filtered to perfection. This distinctive spirit is aged in American white oak barrels and shaped through a secret blend of charcoal for a distinctive smoothness, making it perfect for classic rum cocktails.",
+  "how_to_serve": "Perfect for classic rum cocktails like the Mojito. The Perfect Mixer. Ideal for mixing.",
+  "cocktail_names": [
+    "Mojito",
+    "Daiquiri",
+    "BACARDÍ & Cola",
+    "Piña Colada",
+    "Rum Punch",
+    "Rum Mule",
+    "Hurricane",
+    "Strawberry Daiquiri Cocktail (Frozen)",
+    "BACARDÍ Coquito",
+    "Zombie",
+    "Mojito jug",
+    "Blood Moon"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Spiced",
+    "BACARDÍ Rum Punch",
+    "BACARDÍ Carta Oro",
+    "BACARDÍ Coconut",
+    "BACARDÍ Añejo Cuatro"
+  ],
+  "faq_items": [
+    {
+      "question": "What is white rum?",
+      "answer": "White rum is usually a light-bodied variant with a soft, sweet taste. It’s often used in light refreshing cocktails, especially favourites, like the Mojito and Daiquiri."
+    },
+    {
+      "question": "Is rum sweet?",
+      "answer": "Many think that, since rum is made from sugar cane, it must be sweet. But rum comes in a range of sweetness, from barely-there to an all-out sugar rush."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ CARTA BLANCA ... A sublime rum for cocktails, it doesn’t dominate other flavours nor does it disappear when mixed. Perfect for classic rum cocktails like the Mojito. ... Tasting Notes Floral and fruity, BACARDÍ Carta Blanca rum serves up orange blossom, lavender and rose, teamed with apricot, lime, light coconut and ripe banana. Nose Almonds and fruit Palate Smooth and creamy Finish Dry, clean, fresh ... Filtered to perfection This distinctive spirit is aged in American white oak barrels and shaped through a secret blend of charcoal ... The Perfect Mixer BACARDÍ Carta Blanca is a light and aromatic white rum with delicate floral and fruity notes, ideal for mixing.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Superior Rum | White Rum | BACARDÍ Global",
+    "og:description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+    "og:url": "https://www.bacardi.com/our-rums/carta-blanca-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:25:25+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/22074947/FY20_Bacardi_Lifestyleproduct_Dowhatmovesyou_Packshot_Blancamojito_Group_Jug_Still_PortraitLandscape-1-2.jpg",
+    "og:image:width": "1000",
+    "og:image:height": "1500",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Superior Rum",
+    "twitter:description": "Savor the original premium white rum. With soft hints of almond and vanilla, BACARDÍ Superior blends seamlessly into the perfect cocktail.",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "white rum",
+    "twitter:image:alt": "BACARDÍ Superior Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/carta-blanca-rum/"
+  },
+  "extraction_confidence": 0.95,
+  "extraction_warnings": [
+    "Some marketing copy uses BACARDÍ Superior Rum wording while the page H1 says BACARDÍ Carta Blanca.",
+    "Cocktail and recommended-rum lists were long; only clearly related items were retained.",
+    "Navigation, footer, and unrelated related-content text were ignored."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

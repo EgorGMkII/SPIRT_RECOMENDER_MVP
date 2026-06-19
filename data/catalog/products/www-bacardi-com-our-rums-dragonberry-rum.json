@@ -1,0 +1,73 @@
+{
+  "product_id": "bacardi-dragonberry-rum",
+  "source_url": "https://www.bacardi.com/our-rums/dragonberry-rum/",
+  "brand": "BACARDÍ",
+  "name": "DRAGONBERRY",
+  "title": "BACARDÍ Dragonberry Rum | Dragonberry Flavoured Rum | BACARDÍ Global",
+  "category": "flavoured rum",
+  "short_description": "Acquire the taste for exotic dragon fruit, blended with the sweetness of juicy strawberries.",
+  "marketing_description": "BACARDÍ Dragonberry rum brings you a bold new flavour that's unlike any spirit you've ever tasted. It's perfect for mixing cocktails to remember.",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "Try our Dragonberry and ginger ale cocktail. You can also mix flavoured rum with a wide range of mixers, from simple cola to refreshing lemonade.",
+  "cocktail_names": [
+    "Dragonberry & Ginger Ale Cocktail"
+  ],
+  "recommended_rums": [
+    "BACARDÍ RUM PUNCH",
+    "BACARDÍ BAHAMA MAMA",
+    "BACARDÍ Raspberry",
+    "BACARDÍ Lime",
+    "BACARDÍ LIMON"
+  ],
+  "faq_items": [
+    {
+      "question": "WHAT CAN YOU MIX FLAVORED RUM WITH?",
+      "answer": "Flavored rum gives your taste buds an extra element of surprise. You can mix flavored rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "IS FLAVORED RUM SWEET?",
+      "answer": "Flavored, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "HOW DO YOU MAKE RUM?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "DRAGONBERRY Acquire the taste for exotic dragon fruit, blended with the sweetness of juicy strawberries. BACARDÍ Dragonberry rum brings you a bold new flavour that's unlike any spirit you've ever tasted. TRY OUR BACARDI DRAGONBERRY & GINGER ALE COCKTAIL, IT'S DELICIOUS AND REFRESHING!",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Sip on strawberries full to bursting and the subtle flavors of dragon fruit. This rum is perfect for mixing cocktails to remember - try our Dragonberry Rum today",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Dragonberry Rum | Dragonberry Flavoured Rum | BACARDÍ Global",
+    "og:description": "Sip on strawberries full to bursting and the subtle flavors of dragon fruit. This rum is perfect for mixing cocktails to remember - try our Dragonberry Rum today",
+    "og:url": "https://www.bacardi.com/our-rums/dragonberry-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:33:16+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21142844/FY23_Bacardi_Global_Our_Rums_Bacardi_Dragonberry-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Dragonberry Rum",
+    "twitter:description": "Sip on strawberries full to bursting and the subtle flavors of dragon fruit. This rum is perfect for mixing cocktails to remember - try our Dragonberry Rum today",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "flavored rum",
+    "twitter:image:alt": "BACARDÍ Dragonberry Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/dragonberry-rum/"
+  },
+  "extraction_confidence": 0.88,
+  "extraction_warnings": [
+    "No tasting notes section found; sensory fields left empty.",
+    "Page includes navigation, related content, and FAQ blocks that were ignored where unrelated.",
+    "Product name is presented as 'DRAGONBERRY' in the H1; full product naming inferred from page title and URL."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

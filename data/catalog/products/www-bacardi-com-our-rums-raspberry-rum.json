@@ -1,0 +1,74 @@
+{
+  "product_id": "bacardi-raspberry-rum",
+  "source_url": "https://www.bacardi.com/our-rums/raspberry-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Raspberry Rum",
+  "title": "BACARDÍ Raspberry Rum | Raspberry Flavoured Rum | Fruity Rum | BACARDÍ Global",
+  "category": "flavoured rum",
+  "short_description": "A crisp blend of white rum and raspberry flavours.",
+  "marketing_description": "Is it sweet? Is it tart? Or a mouth-watering combination of the two? BACARDÍ Raspberry is a crisp blend of white rum and raspberry flavours.",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "Add BACARDÍ Raspberry to your favourite soda for a tangy treat.",
+  "cocktail_names": [
+    "Limonade Raspberry Mojito",
+    "Lime Cooler",
+    "Rum Rita"
+  ],
+  "recommended_rums": [
+    "BACARDÍ RUM PUNCH",
+    "BACARDÍ Hurricane",
+    "BACARDÍ Dragonberry",
+    "BACARDÍ LIME",
+    "BACARDÍ LIMON"
+  ],
+  "faq_items": [
+    {
+      "question": "WHAT CAN YOU MIX FLAVORED RUM WITH?",
+      "answer": "Flavored rum gives your taste buds an extra element of surprise. You can mix flavored rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "IS FLAVORED RUM SWEET?",
+      "answer": "Flavored, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "HOW DO YOU MAKE RUM?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ Raspberry is a crisp blend of white rum and raspberry flavours. ADD BACARDÍ RASPBERRY TO YOUR FAVOURITE SODA FOR A TANGY TREAT. BACARDÍ COCKTAILS PACKED WITH FRUIT Make simple cocktails that pack a punch. From sweet coconut to crisp raspberry, discover new recipes made with our flavoured rums.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Enjoy a bit of everything with this deeply satisfying flavored rum infused with sweet and tart notes of raspberry and citrus. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Raspberry Rum | Raspberry Flavoured Rum | Fruity Rum | BACARDÍ Global",
+    "og:description": "Enjoy a bit of everything with this deeply satisfying flavored rum infused with sweet and tart notes of raspberry and citrus. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "og:url": "https://www.bacardi.com/our-rums/raspberry-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:52:01+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21143233/FY23_Bacardi_Global_Our_Rums_Bacardi_Raspberry-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Raspberry Rum",
+    "twitter:description": "Enjoy a bit of everything with this deeply satisfying flavored rum infused with sweet and tart notes of raspberry and citrus. Discover the full BACARDÍ Flavoured Rum Range today - great for sharing with friends",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "flavored rum",
+    "twitter:image:alt": "BACARDÍ Raspberry Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/raspberry-rum/"
+  },
+  "extraction_confidence": 0.95,
+  "extraction_warnings": [
+    "No explicit tasting notes sections for nose, palate, or finish were present on the page.",
+    "Navigation, footer, related content, and social blocks were present and ignored."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

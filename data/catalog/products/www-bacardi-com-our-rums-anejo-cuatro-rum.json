@@ -1,0 +1,77 @@
+{
+  "product_id": "bacardi-anejo-cuatro-rum",
+  "source_url": "https://www.bacardi.com/our-rums/anejo-cuatro-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Añejo Cuatro Rum",
+  "title": "BACARDÍ Añejo Cuatro Rum | Golden Aged Rum | BACARDÍ Global",
+  "category": "gold rum",
+  "short_description": "A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour.",
+  "marketing_description": "A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour. Use BACARDÍ Añejo Cuatro rum to imbue your cocktails with a flair of sophistication.",
+  "tasting_notes": "Enjoy notes of mild vanilla, toasted oak, clove and honey with a smooth finish.",
+  "nose": "Vanilla and cinnamon",
+  "palate": "Dark honey and clove",
+  "finish": "Toffee and oak",
+  "process": "",
+  "how_to_serve": "Use BACARDÍ Añejo Cuatro rum to imbue your cocktails with a flair of sophistication.",
+  "cocktail_names": [
+    "Cuatro Highball",
+    "Cuatro Mismo",
+    "Cuatro Remix",
+    "Cuatro Smash",
+    "Cuatro Cuba Libre"
+  ],
+  "recommended_rums": [
+    "BACARDÍ carta blanca",
+    "BACARDÍ carta oro",
+    "BACARDÍ SPICED",
+    "BACARDÍ RESERVA OCHO",
+    "BACARDÍ RESERVA DIEZ"
+  ],
+  "faq_items": [
+    {
+      "question": "WHAT DOES AÑEJO MEAN?",
+      "answer": "Añejo comes from the Spanish word for ‘aged’."
+    },
+    {
+      "question": "WHAT IS AGED RUM?",
+      "answer": "Rum can be aged anywhere from one year upwards. Aging rum can add additional complexity to its flavour and mouthfeel."
+    },
+    {
+      "question": "HOW DO YOU MAKE RUM?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ AÑEJO CUATRO A blend of rums aged for a minimum of four years under the Caribbean sun, BACARDÍ Añejo Cuatro 4 year old rum has a unique taste and a soft, golden colour. Tasting Notes Enjoy notes of mild vanilla, toasted oak, clove and honey with a smooth finish. Nose Vanilla and cinnamon Palate Dark honey and clove Finish Toffee and oak Cuatro means ‘four’, after the years the spirit has spent aging beneath the Caribbean sun.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "With color like shimmering gold, BACARDÍ Añejo Cuatro delivers flavors smooth like honey, complemented by mild vanilla and toasted oak.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Añejo Cuatro Rum | Golden Aged Rum | BACARDÍ Global",
+    "og:description": "With color like shimmering gold, BACARDÍ Añejo Cuatro delivers flavors smooth like honey, complemented by mild vanilla and toasted oak.",
+    "og:url": "https://www.bacardi.com/our-rums/anejo-cuatro-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T11:37:57+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/22090053/FY23_Bacardi_Global_Our_Rums_Bacardi_Anjeo_4-1.jpg",
+    "og:image:width": "1000",
+    "og:image:height": "1124",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Anejo Cuatro Rum",
+    "twitter:description": "With color like shimmering gold, BACARDÍ Añejo Cuatro rum delivers flavors smooth like honey, complemented by mild vanilla and toasted oak.",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "gold rum",
+    "twitter:image:alt": "BACARDÍ Anejo Cuatro Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/anejo-cuatro-rum/"
+  },
+  "extraction_confidence": 0.97,
+  "extraction_warnings": [
+    "Navigation, related-product lists, and footer content were present and ignored.",
+    "FAQ section included general rum information; only supported answers were extracted.",
+    "No explicit ABV, barrel type, country of origin, or ingredients beyond the FAQ text were present."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

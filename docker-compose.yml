@@ -1,0 +1,17 @@
+services:
+  sommelier-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-sommelier-assistant:latest
+    container_name: ai-sommelier-assistant
+    ports:
+      - "8012:8012"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

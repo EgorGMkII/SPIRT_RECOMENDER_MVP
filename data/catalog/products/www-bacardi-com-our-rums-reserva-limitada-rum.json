@@ -1,0 +1,70 @@
+{
+  "product_id": "bacardi-gran-reserva-limitada",
+  "source_url": "https://www.bacardi.com/our-rums/reserva-limitada-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Gran Reserva Limitada",
+  "title": "BACARDÍ Gran Reserva Limitada | Bacardi 12 Year Rum | Rich and Complex Aged Rum | BACARDÍ Global",
+  "category": "aged rum",
+  "short_description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+  "marketing_description": "BACARDÍ Gran Reserva Limitada is a blend of scarce rum stocks, including some of our oldest.",
+  "tasting_notes": "Rich and complex. Smooth notes of butterscotch and dried fruit melt away to a long, dry finish.",
+  "nose": "Almond and vanilla",
+  "palate": "Dried raisins and chocolate",
+  "finish": "Soft oak and raisin",
+  "process": "A blend of rare rum reserves results in dry vanilla and dark fruit notes that lead into a long, oaky, smooth finish.",
+  "how_to_serve": "Perfect to sip and savor.",
+  "cocktail_names": [],
+  "recommended_rums": [
+    "BACARDÍ Carta Oro",
+    "BACARDÍ Spiced",
+    "BACARDÍ Añejo Cuatro",
+    "BACARDÍ Reserva Ocho",
+    "BACARDÍ Reserva Diez"
+  ],
+  "faq_items": [
+    {
+      "question": "What is aged rum?",
+      "answer": "Rum can be aged anywhere from one year upwards. Aging rum can add additional complexity to its flavor and mouthfeel."
+    },
+    {
+      "question": "What is the difference between dark, gold and white rum?",
+      "answer": "Rum is a wonderfully complex and diverse spirit. Color can give us clues about time spent aging or the flavors that might be found within. Dark can be bold, sweet (or dry) and even smoky, gold is rich and soothing, and white is smooth, subtle and often refreshing. But color can be misleading. The best way to truly understand a rum is to taste it for yourself."
+    },
+    {
+      "question": "How do you make rum?",
+      "answer": "Rum is made using only three ingredients: molasses from sugarcane, yeast and water. Ingredients are fermented, then distilled, aged, filtered and blended."
+    }
+  ],
+  "raw_text_excerpt": "BACARDÍ GRAN RESERVA LIMITADA A blend of rare rum reserves results in dry vanilla and dark fruit notes that lead into a long, oaky, smooth finish. LIMITLESS FLAVOR Tasting Notes Rich and complex. Smooth notes of butterscotch and dried fruit melt away to a long, dry finish. Nose Almond and vanilla Palate Dried raisins and chocolate Finish Soft oak and raisin BACARDÍ Gran Reserva Limitada is a blend of scarce rum stocks, including some of our oldest.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Gran Reserva Limitada | Bacardi 12 Year Rum | Rich and Complex Aged Rum | BACARDÍ Global",
+    "og:description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+    "og:url": "https://www.bacardi.com/our-rums/reserva-limitada-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:37:18+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21135013/2400x3000_Limitada-1-1200x1500.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1500",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Reserva Limitada Rum",
+    "twitter:description": "A smooth and delightful rum from the BACARDÍ Premium range, Gran Reserva Limitada is perfect to sip and savor. Each golden glass delivers a medley of warm flavors.",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "aged rum",
+    "twitter:image:alt": "BACARDÍ Reserva Limitada Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/reserva-limitada-rum/"
+  },
+  "extraction_confidence": 0.96,
+  "extraction_warnings": [
+    "Page contains navigation, related-product, and FAQ content mixed with product copy; unrelated sections were ignored.",
+    "Title mentions \"Bacardi 12 Year Rum\", but no explicit age statement was found in the page body."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

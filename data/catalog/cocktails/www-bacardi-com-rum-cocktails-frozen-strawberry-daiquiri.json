@@ -1,0 +1,73 @@
+{
+  "cocktail_id": "frozen-strawberry-daiquiri",
+  "source_url": "https://www.bacardi.com/rum-cocktails/frozen-strawberry-daiquiri/",
+  "brand": "Bacardi",
+  "name": "Strawberry Daiquiri (frozen)",
+  "title": "Strawberry Daiquiri (frozen) Cocktail Recipe | How to make a Strawberry Daiquiri (frozen) | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca rum",
+  "short_description": "A frozen strawberry daiquiri made with BACARDÍ Carta Blanca rum, lime juice, simple syrup, strawberries, and crushed ice.",
+  "marketing_description": "Bring on the summertime vibes with a Frozen Strawberry Daiquiri, a sweeter take on the traditional daiquiri cocktail.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "fresh lime juice",
+        "amount": "25 ml"
+      },
+      {
+        "name": "simple syrup (1:1)",
+        "amount": "25 ml"
+      },
+      {
+        "name": "strawberries",
+        "amount": "6"
+      },
+      {
+        "name": "crushed ice",
+        "amount": "1 cup(s)"
+      },
+      {
+        "name": "single strawberry",
+        "amount": "as garnish"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients in a blender.",
+      "Add 1 cup of crushed ice and blend until a slushy consistency forms.",
+      "Serve in individual coupettes or tall cocktail glasses.",
+      "Garnish with a single strawberry."
+    ]
+  },
+  "glassware": "individual coupettes or tall cocktail glasses",
+  "garnish": "single strawberry",
+  "method": "blend",
+  "raw_text_excerpt": "Ingredients 50 ml BACARDÍ Carta Blanca rum 25 ml fresh lime juice 25 ml simple syrup (1:1) 6 strawberries 1 cup(s) crushed ice single strawberry as garnish ... Step 1 Combine all ingredients in a blender. Step 2 Blend Add 1 cup of crushed ice and blend until a slushy consistency forms. Step 3 Serve in individual coupettes or tall cocktail glasses. Step 4 Garnish with a single strawberry.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Frozen Strawberry Daiquiri Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Strawberry Daiquiri (frozen) Cocktail Recipe | How to make a Strawberry Daiquiri (frozen) | BACARDÍ Global",
+    "og:description": "Learn how to make the best Frozen Strawberry Daiquiri Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/frozen-strawberry-daiquiri/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-05-30T11:32:54+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/b29d9ab1-002e-45d1-bcf7-b071a70330d8/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Strawberry-Daiquiri_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Frozen Strawberry Daiquiri Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Frozen Strawberry Daiquiri Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Frozen Strawberry Daiquiri",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/frozen-strawberry-daiquiri/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

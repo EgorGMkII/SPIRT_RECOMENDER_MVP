@@ -1,0 +1,77 @@
+{
+  "product_id": "bacardi-lime-rum",
+  "source_url": "https://www.bacardi.com/our-rums/lime-rum/",
+  "brand": "BACARDÍ",
+  "name": "BACARDÍ Lime",
+  "title": "BACARDÍ Lime Rum | Lime Flavoured Rum | Citrus Rum | BACARDÍ Global",
+  "category": "flavoured rum",
+  "short_description": "If an impromptu beach party had a flavour – BACARDÍ Lime would be it.",
+  "marketing_description": "Our expertly blended BACARDÍ Lime rum delivers the zest. Simply add it to your favorite beverage and let the dancing begin!",
+  "tasting_notes": "",
+  "nose": "",
+  "palate": "",
+  "finish": "",
+  "process": "",
+  "how_to_serve": "Simply add it to your favorite beverage. Build a BACARDÍ Lime and soda for the perfect simple serve.",
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "recommended_rums": [
+    "BACARDÍ Lime & Soda",
+    "BACARDÍ Limon & Lemonade",
+    "BACARDÍ LIMON",
+    "BACARDÍ COCONUT",
+    "BACARDÍ DRAGONBERRY"
+  ],
+  "faq_items": [
+    {
+      "question": "WHAT CAN YOU MIX FLAVORED RUM WITH?",
+      "answer": "Flavored rum gives your taste buds an extra element of surprise. You can mix flavored rum with a wide range of mixers, from simple cola to refreshing lemonade."
+    },
+    {
+      "question": "IS FLAVORED RUM SWEET?",
+      "answer": "Flavored, fruity rums come in a range of tasting experiences, from soft and sweet to sour and tangy."
+    },
+    {
+      "question": "HOW DO YOU MAKE RUM?",
+      "answer": "We make rum by distilling sugarcane molasses and fermenting it with yeast and water. Rum originates from Barbados with its roots going back as far as the 17th century."
+    }
+  ],
+  "raw_text_excerpt": "LIME If an impromptu beach party had a flavour – BACARDÍ Lime would be it. Our expertly blended BACARDÍ Lime rum delivers the zest. Simply add it to your favorite beverage and let the dancing begin! Build a BACARDÍ Lime and soda for the perfect simple serve.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Try BACARDÍ Lime for a tangy twist in your cocktails. Great for a party, BACARDÍ lime rum will bring everyone together for a night to remember",
+    "og:locale": "en_US",
+    "og:title": "BACARDÍ Lime Rum | Lime Flavoured Rum | Citrus Rum | BACARDÍ Global",
+    "og:description": "Try BACARDÍ Lime for a tangy twist in your cocktails. Great for a party, BACARDÍ lime rum will bring everyone together for a night to remember",
+    "og:url": "https://www.bacardi.com/our-rums/lime-rum/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T12:42:29+00:00",
+    "og:image": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/2020/08/21142945/FY23_Bacardi_Global_Our_Rums_Bacardi_Lime-2-1-1200x1348.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "1348",
+    "og:image:type": "image/jpeg",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Discover BACARDÍ Lime Rum",
+    "twitter:description": "Try BACARDÍ Lime for a tangy twist in your cocktails. Great for a party, BACARDÍ lime rum will bring everyone together for a night to remember",
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "1 minute",
+    "og:type": "article",
+    "keywords": "flavored rum",
+    "twitter:image:alt": "BACARDÍ Lime Rum",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/our-rums/lime-rum/"
+  },
+  "extraction_confidence": 0.9,
+  "extraction_warnings": [
+    "No explicit tasting notes section was present; sensory fields left empty.",
+    "Page contains navigation, related content, and footer material that were ignored.",
+    "Recommended rums list appears under a 'LIKE THIS? TRY THESE' section and may include mixed serve/product suggestions."
+  ],
+  "parser_version": "llm-product-parser-v1"
+}

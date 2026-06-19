@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "cuatro-mismo",
+  "source_url": "https://www.bacardi.com/rum-cocktails/cuatro-mismo/",
+  "brand": "Bacardi",
+  "name": "Cuatro Mismo",
+  "title": "Cuatro Mismo Cocktail Recipe | How to make a Cuatro Mismo | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro rum",
+  "short_description": "A light, easy-drinking highball of BACARDÍ Añejo Cuatro rum and soda water finished with lime.",
+  "marketing_description": "As the story goes, tourists in Cuba saw locals drinking BACARDÍ and soda water, so they ordered the same thing. It’s the “I’ll have what she’s having” of the cocktail world.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "soda water",
+        "amount": "100 ml"
+      },
+      {
+        "name": "ice",
+        "amount": null
+      },
+      {
+        "name": "lime wedge",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice.",
+      "Pour in the BACARDÍ Añejo Cuatro rum.",
+      "Add the soda water and stir well before serving.",
+      "Garnish with a lime wedge."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "lime wedge",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Cuatro Mismo 50 ml BACARDÍ Añejo Cuatro rum 100 ml soda water ... Fill a highball glass with ice. Pour in the BACARDÍ Añejo Cuatro rum. Add the soda water and stir well before serving. Garnish with a lime wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Cuatro Mismo Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Cuatro Mismo Cocktail Recipe | How to make a Cuatro Mismo | BACARDÍ Global",
+    "og:description": "Learn how to make the best Cuatro Mismo Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/cuatro-mismo/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-09T14:03:22+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/86ae0571-01b6-4b09-a33c-8165b0fdef30/Bacardi_Cuatromismo_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Cuatro Mismo Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Cuatro Mismo Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Cuatro Mismo",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/cuatro-mismo/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

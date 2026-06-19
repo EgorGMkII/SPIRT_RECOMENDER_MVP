@@ -1,0 +1,78 @@
+{
+  "cocktail_id": "pina-colada",
+  "source_url": "https://www.bacardi.com/rum-cocktails/pina-colada/",
+  "brand": "Bacardi",
+  "name": "Piña Colada (shaken)",
+  "title": "Pina Colada Cocktail | Pina Colada Recipe | How to make a Pina Colada | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca",
+  "short_description": "A shaken Piña Colada made with BACARDÍ Carta Blanca, fresh pineapple, coconut water, and crushed ice for a bright tropical cocktail.",
+  "marketing_description": "Discover our invigorating Piña Colada recipe using BACARDÍ Carta Blanca rum. This tropical cocktail combines fresh pineapple juice, coconut water, and white rum for a refreshing taste of the Caribbean. Learn how to make a Piña Colada the traditional shaken way – no blender needed!",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca",
+        "amount": "50 ml"
+      },
+      {
+        "name": "coconut water",
+        "amount": "37.5 ml"
+      },
+      {
+        "name": "fresh pineapple juice",
+        "amount": "25 ml"
+      },
+      {
+        "name": "pineapple",
+        "amount": "3-4 chunks"
+      },
+      {
+        "name": "caster sugar",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "pineapple wedge",
+        "amount": null
+      },
+      {
+        "name": "crushed ice",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "Add fresh pineapple and caster sugar to a cocktail shaker. Gently crush the pineapple with a muddler or the back of a spoon to release its sweet, tropical juice.",
+      "Pour BACARDÍ Carta Blanca Rum, pineapple juice, and coconut water into the shaker.",
+      "Add ice to the shaker, seal it tightly, and shake-shake-shake for 15-20 seconds until well-chilled.",
+      "Strain the mixture over crushed ice in a hurricane glass or a tall highball glass. Garnish with a fresh pineapple wedge."
+    ]
+  },
+  "glassware": "Hurricane glass or a tall highball glass",
+  "garnish": "Fresh pineapple wedge",
+  "method": "Shake",
+  "raw_text_excerpt": "BASE RUM BACARDÍ Carta Blanca COCKTAILS Piña Colada (shaken) Discover our invigorating Piña Colada recipe using BACARDÍ Carta Blanca rum. WHAT YOU WILL NEED Piña Colada (shaken) Ingredients 50 ml BACARDÍ Carta Blanca 37.5 ml coconut water 25 ml fresh pineapple juice 3-4 chunks of pineapple 2 tsp caster sugar pineapple wedge crushed ice HURRICANE/HIGHBALL GLASS...",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Pina Colada Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Pina Colada Cocktail | Pina Colada Recipe | How to make a Pina Colada | BACARDÍ Global",
+    "og:description": "Learn how to make the best Pina Colada Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/pina-colada/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-06-25T07:46:00+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/f69af7c1-ddf5-4c7a-a071-ef99c16ef60c/FY22_Bacardi_Social-Shoot_Beach_Pina-Colada_Global?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Pina Colada Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Pina Colada Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "piña colada, cocktails",
+    "twitter:image:alt": "BACARDÍ Pina Colada",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/pina-colada/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

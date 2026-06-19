@@ -1,0 +1,44 @@
+{
+  "product_id": "bacardi-limon-rum",
+  "source_url": "https://www.bacardi.com/our-rums/limon-rum/",
+  "brand": "BACARDÍ",
+  "name": "LIMÓN",
+  "category": "flavored rum",
+  "short_description": "BACARDÍ Limón flavored rum glistens like sunshine in your glass.",
+  "tasting_summary": null,
+  "flavor_tags": [
+    "fruity",
+    "citrus",
+    "pineapple",
+    "coconut"
+  ],
+  "usage_tags": [],
+  "cocktail_names": [
+    "Limonade",
+    "Raspberry Mojito",
+    "Lime Cooler",
+    "Coconut Rum & Pineapple Juice",
+    "Rum Rita"
+  ],
+  "searchable_text": "BACARDÍ LIMÓN is a flavored rum with a bright citrus profile, named after the Spanish word for lemon. It blends the fresh taste of lemon, lime, and grapefruit for a sunny, zesty character. The aroma and palate lean clean, juicy, and fruit-forward, with a crisp citrus finish and an easy, refreshing smoothness. Best served mixed, especially with lemonade in the signature BACARDÍ Limónade, and well suited to light, tropical, and citrus-driven cocktails like mojitos, rum ritas, and cooler-style drinks. Flavor tags: citrus, lemon, lime, grapefruit, fruity, refreshing, bright.",
+  "display_description": "BACARDÍ Limón flavored rum glistens like sunshine in your glass.",
+  "evidence_fields": {
+    "name": "LIMÓN",
+    "category": "flavored rum",
+    "short_description": "BACARDÍ Limón flavored rum glistens like sunshine in your glass.",
+    "tasting_summary": "",
+    "how_to_serve": "BACARDÍ LIMÓN RUM MIXES PERFECTLY WITH LEMONADE TO MAKE OUR SIGNATURE BACARDÍ LIMÓNADE.",
+    "cocktail_names": [
+      "Limonade",
+      "Raspberry Mojito",
+      "Lime Cooler",
+      "Coconut Rum & Pineapple Juice",
+      "Rum Rita"
+    ]
+  },
+  "source_product_card_path": "c:\\Users\\egorg\\Documents\\SPIRT_TEST\\data\\catalog\\products\\www-bacardi-com-our-rums-limon-rum.json",
+  "warnings": [
+    "No explicit tasting notes section was present; sensory details were inferred only where clearly presented in marketing copy.",
+    "Navigation, related products, and FAQ blocks were present and partially ignored where unrelated."
+  ]
+}

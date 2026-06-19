@@ -1,0 +1,58 @@
+{
+  "cocktail_id": "spiced-rum-and-cola",
+  "source_url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-cola/",
+  "brand": "Bacardi",
+  "name": "Spiced & Cola",
+  "title": "Spiced Rum & Cola Cocktail Recipe | How to make a Spiced Rum & Cola | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A simple highball pairing BACARDÍ Spiced rum with chilled cola and a gentle stir over ice.",
+  "marketing_description": "A fun twist on the classic rum and Coke, BACARDÍ Spiced & Cola is a party pleaser that's sure to surprise the tastebuds. Get set to spice things up.",
+  "recipe": {
+    "servings": "1",
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "cola",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with cubed ice.",
+      "Pour in the BACARDÍ Spiced.",
+      "Add the chilled cola.",
+      "Give it all a gentle stir."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": null,
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Spiced & Cola 50 ml BACARDÍ Spiced rum 100 ml cola Servings Copy Spiced & Cola ingredients Copied! Spiced & Cola Recipe One step at a time 1 Chill Fill a highball glass with cubed ice. 2 Pour Pour in the BACARDÍ Spiced. 3 Fizz Add the chilled cola. 4 Stir Give it all a gentle stir.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make a classic Spiced Rum & Cola Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Spiced Rum & Cola Cocktail Recipe | How to make a Spiced Rum & Cola | BACARDÍ Global",
+    "og:description": "Learn how to make a classic Spiced Rum & Cola Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-cola/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:46:36+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/125f7450-5b9b-4a49-a569-fa8a1b8c173b/Bacardi_Spiced-Cola_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary_large_image",
+    "twitter:title": "Spiced & Cola Cocktail Recipe",
+    "twitter:description": "Learn how to make a classic Spiced Rum & Cola Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "keywords": "spiced rum, cocktails",
+    "twitter:image:alt": "BACARDÍ Spiced & Cola",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/spiced-rum-and-cola/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

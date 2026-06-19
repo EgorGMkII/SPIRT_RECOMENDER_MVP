@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "spiced-mule",
+  "source_url": "https://www.bacardi.com/rum-cocktails/spiced-mule/",
+  "brand": "Bacardi",
+  "name": "Spiced Mule",
+  "title": "Spiced Mule Cocktail Recipe | How to make a Spiced Mule | BACARDÍ Global",
+  "main_rum": "BACARDÍ Spiced rum",
+  "short_description": "A zesty rum mule made with BACARDÍ Spiced rum, ginger beer, and Angostura bitters.",
+  "marketing_description": "Combine BACARDÍ Spiced rum with ginger beer and a dash of bitters for a zesty take on the rum mule. It's a mule with a bit more kick.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Spiced rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger beer",
+        "amount": "100 ml"
+      },
+      {
+        "name": "Angostura® bitters",
+        "amount": "2 dashes"
+      },
+      {
+        "name": "lime slice",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Fill a mule glass with ice.",
+      "Combine BACARDÍ Spiced rum, ginger beer and the bitters into a glass.",
+      "Stir and pour into the mule glass.",
+      "Garnish with a lime slice."
+    ]
+  },
+  "glassware": "mule glass",
+  "garnish": "lime slice",
+  "method": "stir",
+  "raw_text_excerpt": "Combine BACARDÍ Spiced rum with ginger beer and a dash of bitters for a zesty take on the rum mule. It's a mule with a bit more kick. Ingredients 50 ml BACARDÍ Spiced rum 100 ml ginger beer 2 dashes Angostura® bitters 1 lime slice ... 1 Chill Fill a mule glass with ice. 2 Combine Combine BACARDÍ Spiced rum, ginger beer and the bitters into a glass. 3 Pour Stir and pour into the mule glass. 4 Garnish Garnish with a lime slice.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Spiced Mule Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Spiced Mule Cocktail Recipe | How to make a Spiced Mule | BACARDÍ Global",
+    "og:description": "Learn how to make the best Spiced Mule Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/spiced-mule/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2024-08-12T08:56:07+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/aebb67c8-87ee-402d-ae86-d20ab825063e/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Spiced-Mule_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Spiced Mule Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Spiced Mule Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Spiced Mule",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/spiced-mule/"
+  },
+  "extraction_confidence": 0.98,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

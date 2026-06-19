@@ -1,0 +1,77 @@
+{
+  "cocktail_id": "zombie",
+  "source_url": "https://www.bacardi.com/rum-cocktails/zombie/",
+  "brand": "Bacardi",
+  "name": "Zombie",
+  "title": "Zombie Cocktail | Zombie Cocktail Recipe | How to make a Zombie | BACARDÍ Global",
+  "main_rum": "BACARDÍ Carta Blanca rum",
+  "short_description": "A bold tiki-style Zombie cocktail made with light and dark BACARDÍ rum, citrus, triple sec, and grenadine.",
+  "marketing_description": "The infamous drink that instigated the tiki cocktail movement. Known for its blend of exotic rums, Zombie thrills with its bold, rich flavour. It’s ideal for all year round.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Carta Blanca rum",
+        "amount": "30 ml"
+      },
+      {
+        "name": "BACARDÍ Carta Negra rum",
+        "amount": "20 ml"
+      },
+      {
+        "name": "triple sec",
+        "amount": "15 ml"
+      },
+      {
+        "name": "orange juice",
+        "amount": "30 ml"
+      },
+      {
+        "name": "lime juice",
+        "amount": "15 ml"
+      },
+      {
+        "name": "simple syrup",
+        "amount": "15 ml"
+      },
+      {
+        "name": "grenadine",
+        "amount": "5 ml"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a shaker full of ice, and give it a good shake.",
+      "Strain and pour into a highball glass filled with crushed ice.",
+      "Give it a stir with a bar spoon.",
+      "Garnish with a cherry and orange slice."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "cherry and orange slice",
+  "method": "shake",
+  "raw_text_excerpt": "How to make a Zombie Ingredients 30 ml BACARDÍ Carta Blanca rum 20 ml BACARDÍ Carta Negra rum 15 ml triple sec 30 ml orange juice 15 ml lime juice 15 ml simple syrup 5 ml grenadine ... Strain and pour into a highball glass filled with crushed ice. ... Garnish with a cherry and orange slice.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Zombie Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Zombie Cocktail | Zombie Cocktail Recipe | How to make a Zombie | BACARDÍ Global",
+    "og:description": "Learn how to make the best Zombie Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/zombie/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:12:00+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/ec38579f-d04c-4fd2-88e6-63666ed005ce/FY21_US_Bacardi_Hero-Cocktail_Marketing_Asset_Zombie_PBX-tiff?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Zombie Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Zombie Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Zombie",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/zombie/"
+  },
+  "extraction_confidence": 0.97,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}

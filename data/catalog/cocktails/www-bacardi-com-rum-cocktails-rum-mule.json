@@ -1,0 +1,65 @@
+{
+  "cocktail_id": "rum-mule",
+  "source_url": "https://www.bacardi.com/rum-cocktails/rum-mule/",
+  "brand": "Bacardi",
+  "name": "Rum Mule",
+  "title": "Rum Mule | Rum Mule Cocktail Recipe | How to make a Rum Mule | BACARDÍ Global",
+  "main_rum": "BACARDÍ Añejo Cuatro Rum",
+  "short_description": "A crisp mule variation that swaps vodka for BACARDÍ Añejo Cuatro Rum and is topped with ginger beer.",
+  "marketing_description": "The Moscow Mule is a classic, but let's shake things up by replacing vodka with BACARDÍ Añejo Cuatro Rum. It's light and it's crisp, so let loose and let the spirit move you.",
+  "recipe": {
+    "servings": null,
+    "prep_time": null,
+    "difficulty": null,
+    "ingredients": [
+      {
+        "name": "BACARDÍ Añejo Cuatro Rum",
+        "amount": "50 ml"
+      },
+      {
+        "name": "ginger beer",
+        "amount": "100 ml"
+      },
+      {
+        "name": "Ice",
+        "amount": null
+      },
+      {
+        "name": "lime wedge",
+        "amount": null
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with cubed ice.",
+      "Pour in the BACARDÍ Añejo Cuatro Rum followed by chilled ginger beer.",
+      "Give it all a gentle stir.",
+      "Garnish with a lime wedge."
+    ]
+  },
+  "glassware": "highball glass",
+  "garnish": "lime wedge",
+  "method": "stir",
+  "raw_text_excerpt": "How to make a Rum Mule 50 ml BACARDÍ Añejo Cuatro Rum 100 ml ginger beer ... Fill a highball glass with cubed ice. Pour in the BACARDÍ Añejo Cuatro Rum followed by chilled ginger beer. Stir. Garnish with a lime wedge.",
+  "source_metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "description": "Learn how to make the best Rum Mule Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:locale": "en_US",
+    "og:title": "Rum Mule | Rum Mule Cocktail Recipe | How to make a Rum Mule | BACARDÍ Global",
+    "og:description": "Learn how to make the best Rum Mule Cocktail. Check out our BACARDÍ receipe and ingredient list here and start mixing!",
+    "og:url": "https://www.bacardi.com/rum-cocktails/rum-mule/",
+    "og:site_name": "Bacardi Global",
+    "article:modified_time": "2025-01-16T12:16:32+00:00",
+    "og:image": "https://assets.bacardicontenthub.com/transform/03146860-f413-41cf-b1d9-068492724c00/Bacardi_Bacardi-Mule_Headerbanner_Desktop_PBX?io=transform:fit,width:1920,height:1080&format=jpg&quality=75",
+    "twitter:card": "Summary",
+    "twitter:title": "Rum Mule Cocktail Recipe",
+    "twitter:description": "Learn how to make the best Rum Mule Cocktail. Check out our BACARDÍ recipe and ingredient list here and start mixing!",
+    "og:type": "article",
+    "twitter:image:alt": "BACARDÍ Rum Mule",
+    "msapplication-TileImage": "https://d323g1xugy1rkz.cloudfront.net/wp-content/uploads/sites/32/2020/12/10111719/FAV-Icon-192x192-min.png",
+    "canonical": "https://www.bacardi.com/rum-cocktails/rum-mule/"
+  },
+  "extraction_confidence": 0.99,
+  "extraction_warnings": [],
+  "parser_version": "llm-cocktail-parser-v1"
+}
