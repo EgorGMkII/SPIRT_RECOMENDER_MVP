@@ -5,9 +5,17 @@ const button = form.querySelector("button");
 const statusNode = document.querySelector("#status");
 
 const sessionIdKey = "sommelier_session_id";
+
+function createSessionId() {
+  if (window.crypto && typeof window.crypto.randomUUID === "function") {
+    return window.crypto.randomUUID();
+  }
+  return `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 let sessionId = localStorage.getItem(sessionIdKey);
 if (!sessionId) {
-  sessionId = crypto.randomUUID();
+  sessionId = createSessionId();
   localStorage.setItem(sessionIdKey, sessionId);
 }
 
@@ -49,8 +57,11 @@ function appendMessage(role, text) {
 async function loadCatalogStatus() {
   try {
     const response = await fetch("/api/catalog/status");
+    if (!response.ok) {
+      throw new Error(`Catalog status failed: ${response.status}`);
+    }
     const status = await response.json();
-    statusNode.textContent = `${status.product_profiles_count} ромов · ${status.cocktail_profiles_count} коктейля`;
+    statusNode.textContent = `${status.product_profiles_count} ромов · ${status.cocktail_profiles_count} коктейлей`;
   } catch (error) {
     statusNode.textContent = "Каталог недоступен";
   }
