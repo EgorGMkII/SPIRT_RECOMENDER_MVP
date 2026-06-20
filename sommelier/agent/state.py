@@ -9,7 +9,6 @@ from sommelier.agent.schemas import IntentType, ParsedIntent
 from sommelier.agent.tracer import ToolTrace
 from sommelier.retrieval.cocktail_search import CocktailSearchResult
 from sommelier.retrieval.faiss_index import SearchResult
-from sommelier.retrieval.schemas import RankedRecommendation
 
 
 class AgentState(BaseModel):
@@ -33,7 +32,6 @@ class AgentState(BaseModel):
     use_llm_food_query: bool = False
     use_llm_profile_update: bool = False
     tool_traces: list[ToolTrace] = Field(default_factory=list)
-    retrieved_candidates: list[RankedRecommendation] = Field(default_factory=list)
     search_query: str | None = None
     expanded_query: str | None = None
     retrieval_results: list[SearchResult] = Field(default_factory=list)

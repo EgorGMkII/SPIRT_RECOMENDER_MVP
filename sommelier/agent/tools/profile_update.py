@@ -25,8 +25,8 @@ Return exactly one JSON object with:
 
 Rules:
 - Extract only explicit stable preferences.
-- "I like/love..." or "люблю/нравится..." can create liked preferences.
-- "I dislike/hate/avoid..." or "не люблю/не нравится/без/избегаю..." can create disliked preferences.
+- "I like/love..." or "\u043b\u044e\u0431\u043b\u044e/\u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f..." can create liked preferences.
+- "I dislike/hate/avoid..." or "\u043d\u0435 \u043b\u044e\u0431\u043b\u044e/\u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f/\u0431\u0435\u0437/\u0438\u0437\u0431\u0435\u0433\u0430\u044e..." can create disliked preferences.
 - If the user merely asks for something once, put it in ignored, not preferences.
 - Normalize values to short English lowercase terms where possible.
 - Examples: vanilla, oak, coconut, sweet, mojito, pina colada.

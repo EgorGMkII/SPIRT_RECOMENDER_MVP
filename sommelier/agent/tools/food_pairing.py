@@ -9,19 +9,16 @@ from sommelier.retrieval.food_pairing_query import search_for_food_pairing
 class FoodPairingInput(BaseModel):
     """Input for food pairing recommendations."""
 
-    food_text: str | None = None
+    food_text: str
     top_k: int = Field(default=5, ge=1, le=20)
     index_dir: Path = Path("data/indexes")
-    food_tags: list[str] = Field(default_factory=list)
-    product_tags: list[str] = Field(default_factory=list)
 
 
 def food_pairing(payload: FoodPairingInput) -> ToolResult:
     """Return rum candidates inferred from food-query expansion."""
 
-    food_text = payload.food_text or " ".join(payload.food_tags)
     result = search_for_food_pairing(
-        food_text=food_text,
+        food_text=payload.food_text,
         top_k=payload.top_k,
         index_dir=payload.index_dir,
     )

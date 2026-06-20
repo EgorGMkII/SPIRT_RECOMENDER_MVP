@@ -12,11 +12,13 @@ Bacardi pages
   -> LLM ProductCard JSON
   -> ProductSearchProfile JSON
   -> normalized natural-language query
-  -> FAISS-compatible vector search
+  -> FAISS vector search + BM25 lexical search
   -> top-k candidate products
 ```
 
-Retrieval is intentionally not tag-first. Lightweight flavor and usage tags may be stored as metadata, but the primary search path is semantic similarity between a normalized user query and `ProductSearchProfile.searchable_text`.
+Retrieval is intentionally not tag-first. Lightweight flavor and usage tags may be stored as metadata, but the primary rum search path is a normalized natural-language query searched against `ProductSearchProfile.searchable_text` with FAISS and BM25.
+
+Cocktail retrieval uses LLM-normalized cocktail queries over compact `CocktailSearchProfile` records with BM25, then the final answer generator chooses at most two recommendations from the retrieved candidates.
 
 Food pairing is also retrieval-based. The current Bacardi source pages do not provide a reliable direct food-pairing database, so MVP food pairing expands a food description into a rum search query and returns vector-search candidates with a caveat that the pairing is inferred, not source-backed.
 

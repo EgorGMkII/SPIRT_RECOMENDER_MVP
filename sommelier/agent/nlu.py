@@ -50,23 +50,23 @@ Rules:
 - Return JSON only.
 
 Examples:
-User: мне не нравится слишком сладкое и кокос
-JSON: {{"intent":"profile_update","query":"мне не нравится слишком сладкое и кокос","confidence":0.95}}
+User: \u043c\u043d\u0435 \u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0441\u043b\u0430\u0434\u043a\u043e\u0435 \u0438 \u043a\u043e\u043a\u043e\u0441
+JSON: {{"intent":"profile_update","query":"\u043c\u043d\u0435 \u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0441\u043b\u0430\u0434\u043a\u043e\u0435 \u0438 \u043a\u043e\u043a\u043e\u0441","confidence":0.95}}
 
-User: мне нравится мохито, но не люблю пина коладу
-JSON: {{"intent":"profile_update","query":"мне нравится мохито, но не люблю пина коладу","confidence":0.95}}
+User: \u043c\u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u043c\u043e\u0445\u0438\u0442\u043e, \u043d\u043e \u043d\u0435 \u043b\u044e\u0431\u043b\u044e \u043f\u0438\u043d\u0430 \u043a\u043e\u043b\u0430\u0434\u0443
+JSON: {{"intent":"profile_update","query":"\u043c\u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u043c\u043e\u0445\u0438\u0442\u043e, \u043d\u043e \u043d\u0435 \u043b\u044e\u0431\u043b\u044e \u043f\u0438\u043d\u0430 \u043a\u043e\u043b\u0430\u0434\u0443","confidence":0.95}}
 
-User: тогда посоветуй ром для коктейлей, но без сладкого профиля
-JSON: {{"intent":"search_products","query":"ром для коктейлей без сладкого профиля","confidence":0.95}}
+User: \u0442\u043e\u0433\u0434\u0430 \u043f\u043e\u0441\u043e\u0432\u0435\u0442\u0443\u0439 \u0440\u043e\u043c \u0434\u043b\u044f \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0435\u0439, \u043d\u043e \u0431\u0435\u0437 \u0441\u043b\u0430\u0434\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044f
+JSON: {{"intent":"search_products","query":"\u0440\u043e\u043c \u0434\u043b\u044f \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0435\u0439 \u0431\u0435\u0437 \u0441\u043b\u0430\u0434\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044f","confidence":0.95}}
 
-User: хочу ром с дубом, ванилью и пряностями
-JSON: {{"intent":"search_products","query":"ром с дубом, ванилью и пряностями","confidence":0.95}}
+User: \u0445\u043e\u0447\u0443 \u0440\u043e\u043c \u0441 \u0434\u0443\u0431\u043e\u043c, \u0432\u0430\u043d\u0438\u043b\u044c\u044e \u0438 \u043f\u0440\u044f\u043d\u043e\u0441\u0442\u044f\u043c\u0438
+JSON: {{"intent":"search_products","query":"\u0440\u043e\u043c \u0441 \u0434\u0443\u0431\u043e\u043c, \u0432\u0430\u043d\u0438\u043b\u044c\u044e \u0438 \u043f\u0440\u044f\u043d\u043e\u0441\u0442\u044f\u043c\u0438","confidence":0.95}}
 
-User: какой коктейль сделать с лаймом и мятой?
-JSON: {{"intent":"cocktail_expansion","query":"коктейль с лаймом и мятой","confidence":0.95}}
+User: \u043a\u0430\u043a\u043e\u0439 \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0441 \u043b\u0430\u0439\u043c\u043e\u043c \u0438 \u043c\u044f\u0442\u043e\u0439\u003f
+JSON: {{"intent":"cocktail_expansion","query":"\u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u0441 \u043b\u0430\u0439\u043c\u043e\u043c \u0438 \u043c\u044f\u0442\u043e\u0439","confidence":0.95}}
 
-User: нужен ром к стейку
-JSON: {{"intent":"food_pairing","query":"ром к стейку","confidence":0.95}}
+User: \u043d\u0443\u0436\u0435\u043d \u0440\u043e\u043c \u043a \u0441\u0442\u0435\u0439\u043a\u0443
+JSON: {{"intent":"food_pairing","query":"\u0440\u043e\u043c \u043a \u0441\u0442\u0435\u0439\u043a\u0443","confidence":0.95}}
 
 User message:
 {message}

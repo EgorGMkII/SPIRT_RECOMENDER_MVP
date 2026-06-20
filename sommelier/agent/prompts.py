@@ -1,7 +1,7 @@
 """Prompt templates used by the controlled agent workflow."""
 
 INTENT_PARSER_PROMPT = """Parse the user message into the approved intent schema."""
-PROFILE_UPDATE_PROMPT = """Propose profile updates using controlled user preference tags."""
+PROFILE_UPDATE_PROMPT = """Extract simple user preference updates for flavors and cocktails."""
 
 SOMMELIER_RESPONSE_PROMPT = """
 You are an AI sommelier assistant for rum recommendations.
@@ -76,7 +76,7 @@ Hard rules:
   another candidate is available.
 - Use CONTEXT.previous_turn to interpret follow-up requests. If the current
   user message asks for something similar, simpler, another option, an
-  alternative, or "что-то похожее, но проще" after a cocktail recommendation,
+  alternative, or "\u0447\u0442\u043e-\u0442\u043e \u043f\u043e\u0445\u043e\u0436\u0435\u0435, \u043d\u043e \u043f\u0440\u043e\u0449\u0435" after a cocktail recommendation,
   treat the main cocktail from CONTEXT.previous_turn as already offered and
   choose a different cocktail candidate when available.
 - If CONTEXT.avoid_previous_candidates is true, do not recommend any cocktail

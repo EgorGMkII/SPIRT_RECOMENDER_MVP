@@ -38,7 +38,7 @@ Good output style:
 "Rum for grilled beef and mushrooms. Rich aged profile with oak, caramel, spice, vanilla, toasted or earthy notes. Suitable for dinner pairing."
 
 User food text:
-мясо с грибами, но не сладкий ром
+\u043c\u044f\u0441\u043e \u0441 \u0433\u0440\u0438\u0431\u0430\u043c\u0438, \u043d\u043e \u043d\u0435 \u0441\u043b\u0430\u0434\u043a\u0438\u0439 \u0440\u043e\u043c
 
 Search query:
 "Rum for meat and mushrooms. Dry, savory-friendly aged profile with oak, spice, toasted or earthy notes. Suitable for dinner pairing."

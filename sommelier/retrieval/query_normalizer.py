@@ -27,16 +27,16 @@ Examples:
 User: I want a smooth rum with vanilla and oak notes that works well in cocktails.
 Search query: Smooth rum with vanilla and oak flavors. Suitable for cocktails. Approachable profile with gentle barrel notes.
 
-User: нужен ром для ужина, буду есть мясо с грибами
+User: \u043d\u0443\u0436\u0435\u043d \u0440\u043e\u043c \u0434\u043b\u044f \u0443\u0436\u0438\u043d\u0430, \u0431\u0443\u0434\u0443 \u0435\u0441\u0442\u044c \u043c\u044f\u0441\u043e \u0441 \u0433\u0440\u0438\u0431\u0430\u043c\u0438
 Search query: Rum for dinner with meat and mushrooms. Rich enough for savory food, with oak, spice, caramel, toasted or earthy depth.
 
-User: хочу что-то сухое, не сладкое, можно пить чистым
+User: \u0445\u043e\u0447\u0443 \u0447\u0442\u043e-\u0442\u043e \u0441\u0443\u0445\u043e\u0435, \u043d\u0435 \u0441\u043b\u0430\u0434\u043a\u043e\u0435, \u043c\u043e\u0436\u043d\u043e \u043f\u0438\u0442\u044c \u0447\u0438\u0441\u0442\u044b\u043c
 Search query: Dry rum for sipping neat. Clean, mature or barrel-influenced profile with balanced complexity.
 
-User: ром для мохито, без кокоса
+User: \u0440\u043e\u043c \u0434\u043b\u044f \u043c\u043e\u0445\u0438\u0442\u043e, \u0431\u0435\u0437 \u043a\u043e\u043a\u043e\u0441\u0430
 Search query: Rum for mojito cocktails. Fresh light rum profile for mint and lime.
 
-User: тогда посоветуй ром для коктейлей, но без сладкого профиля
+User: \u0442\u043e\u0433\u0434\u0430 \u043f\u043e\u0441\u043e\u0432\u0435\u0442\u0443\u0439 \u0440\u043e\u043c \u0434\u043b\u044f \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0435\u0439, \u043d\u043e \u0431\u0435\u0437 \u0441\u043b\u0430\u0434\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044f
 Search query: Rum for cocktails with a dry, clean, balanced and fresh profile.
 
 User: {query}

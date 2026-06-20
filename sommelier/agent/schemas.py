@@ -2,7 +2,7 @@
 
 from enum import StrEnum
 from pydantic import BaseModel, Field
-from sommelier.retrieval.schemas import RankedRecommendation, SearchRequest
+from sommelier.retrieval.schemas import SearchRequest
 
 
 class IntentType(StrEnum):
@@ -29,5 +29,5 @@ class ToolResult(BaseModel):
 
     tool_name: str
     summary: str
-    recommendations: list[RankedRecommendation] = Field(default_factory=list)
+    recommendations: list[dict] = Field(default_factory=list)
     metadata: dict = Field(default_factory=dict)

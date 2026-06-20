@@ -1,0 +1,51 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.*
+
+# Docker/local deployment files
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+.docker/
+
+# Project-local agent instructions and docs not intended for upload
+AGENTS.md
+Agents.md
+agents.md
+docs/
+
+# Tests and notebooks
+tests/
+test*.ipynb
+.pytest_cache/
+.tmp_pytest/
+.test_tmp/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Runtime data produced by the web app / notebooks
+data/sessions/
+data/traces/
+data/user_profiles/
+
+# Local editor and OS noise
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

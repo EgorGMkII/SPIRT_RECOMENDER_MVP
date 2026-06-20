@@ -84,7 +84,7 @@ Rules:
   set is_followup=true.
 - If it is a follow-up, preserve the previous topic unless the user clearly switches topics.
 - For cocktail follow-ups like "something similar but simpler" or
-  "а есть что-то похожее, но проще?", keep intent=cocktail_expansion and MUST
+  "\u0430 \u0435\u0441\u0442\u044c \u0447\u0442\u043e-\u0442\u043e \u043f\u043e\u0445\u043e\u0436\u0435\u0435, \u043d\u043e \u043f\u0440\u043e\u0449\u0435\u003f", keep intent=cocktail_expansion and MUST
   set avoid_previous_candidates=true.
 - If the user asks for a similar, simpler, alternative, or another option after a
   recommendation, set avoid_previous_candidates=true and make effective_user_message
@@ -97,13 +97,13 @@ Rules:
 - Return JSON only.
 
 Examples:
-- Previous topic: cocktail. Current: "а есть что-то похожее, но проще?"
+- Previous topic: cocktail. Current: "\u0430 \u0435\u0441\u0442\u044c \u0447\u0442\u043e-\u0442\u043e \u043f\u043e\u0445\u043e\u0436\u0435\u0435, \u043d\u043e \u043f\u0440\u043e\u0449\u0435\u003f"
   -> follow-up cocktail_expansion, avoid_previous_candidates=true.
-- Previous topic: cocktail. Current: "хочу ром с дубом, ванилью и пряностями"
+- Previous topic: cocktail. Current: "\u0445\u043e\u0447\u0443 \u0440\u043e\u043c \u0441 \u0434\u0443\u0431\u043e\u043c, \u0432\u0430\u043d\u0438\u043b\u044c\u044e \u0438 \u043f\u0440\u044f\u043d\u043e\u0441\u0442\u044f\u043c\u0438"
   -> not a follow-up, search_products.
-- Previous topic: rum recommendation. Current: "мне не нравится слишком сладкое и кокос"
+- Previous topic: rum recommendation. Current: "\u043c\u043d\u0435 \u043d\u0435 \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0441\u043b\u0430\u0434\u043a\u043e\u0435 \u0438 \u043a\u043e\u043a\u043e\u0441"
   -> not a follow-up, profile_update.
-- Previous topic: profile update. Current: "тогда посоветуй ром для коктейлей, но без сладкого профиля"
+- Previous topic: profile update. Current: "\u0442\u043e\u0433\u0434\u0430 \u043f\u043e\u0441\u043e\u0432\u0435\u0442\u0443\u0439 \u0440\u043e\u043c \u0434\u043b\u044f \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0435\u0439, \u043d\u043e \u0431\u0435\u0437 \u0441\u043b\u0430\u0434\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044f"
   -> not a follow-up, search_products.
 
 Previous turn:

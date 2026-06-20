@@ -11,7 +11,7 @@ Rewrite the user's cocktail request as one concise English search query for BM25
 Keep important cocktail names, rum names, ingredients, flavors, and recipe intent.
 Translate Russian terms to English when needed.
 Do not include negative or avoided ingredients/flavors as BM25 search terms.
-If the user says "без кокоса", "without coconut", "not sweet", or "avoid X",
+If the user says "\u0431\u0435\u0437 \u043a\u043e\u043a\u043e\u0441\u0430", "without coconut", "not sweet", or "avoid X",
 omit the avoided term from the search query and express the desired positive style
 when useful, such as "fresh", "dry", "citrus", "light", or "refreshing".
 Do not answer the user.
@@ -19,22 +19,22 @@ Do not invent ingredients.
 Return plain text only, no JSON and no bullets.
 
 Examples:
-User: дай рецепт мохито
+User: \u0434\u0430\u0439 \u0440\u0435\u0446\u0435\u043f\u0442 \u043c\u043e\u0445\u0438\u0442\u043e
 Search query: mojito cocktail recipe mint lime white rum
 
-User: коктейль с ананасом и кокосом
+User: \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u0441 \u0430\u043d\u0430\u043d\u0430\u0441\u043e\u043c \u0438 \u043a\u043e\u043a\u043e\u0441\u043e\u043c
 Search query: pineapple coconut rum cocktail
 
-User: что сделать с carta blanca
-Search query: BACARDÍ Carta Blanca rum cocktail recipe
+User: \u0447\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0441 carta blanca
+Search query: BACARD\u00cd Carta Blanca rum cocktail recipe
 
-User: простой коктейль с колой
+User: \u043f\u0440\u043e\u0441\u0442\u043e\u0439 \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u0441 \u043a\u043e\u043b\u043e\u0439
 Search query: easy simple rum cola cocktail
 
-User: освежающий коктейль без кокоса
+User: \u043e\u0441\u0432\u0435\u0436\u0430\u044e\u0449\u0438\u0439 \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u0431\u0435\u0437 \u043a\u043e\u043a\u043e\u0441\u0430
 Search query: refreshing citrus light rum cocktail
 
-User: коктейль похожий на мохито, но не сладкий
+User: \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u044c \u043f\u043e\u0445\u043e\u0436\u0438\u0439 \u043d\u0430 \u043c\u043e\u0445\u0438\u0442\u043e, \u043d\u043e \u043d\u0435 \u0441\u043b\u0430\u0434\u043a\u0438\u0439
 Search query: mojito style fresh lime mint light rum cocktail
 
 User: {query}
