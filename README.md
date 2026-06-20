@@ -1,56 +1,149 @@
-
 # AI Sommelier Assistant
 
-Python MVP for an AI sommelier assistant focused on rum recommendations.
+MVP AI-сомелье для рекомендаций рома и коктейлей на базе локального каталога Bacardi.
 
-Current pipeline:
+Проект не является свободным ReAct-агентом, где модель сама выбирает произвольные действия. Логика построена как контролируемый workflow: Python-код управляет маршрутом, поиском, памятью, профилем пользователя и сохранением трейсов, а LLM используется точечно для языковых задач.
+
+## Что умеет система
+
+- рекомендовать ром под вкус пользователя;
+- подбирать ром под еду, например мясо, стейк, рыбу или десерт;
+- советовать коктейли по ингредиентам, стилю или похожести;
+- учитывать простые пользовательские предпочтения;
+- понимать follow-up вопросы вроде “а что-то похожее, но проще?”;
+- сохранять память сессии, профиль пользователя и историю внутренних шагов.
+
+## Общая логика
 
 ```text
-Bacardi pages
+сообщение пользователя
+  -> загрузка памяти сессии
+  -> разрешение follow-up контекста
+  -> определение intent
+  -> обновление профиля или retrieval
+  -> генерация финального ответа
+  -> сохранение памяти, профиля и trace
+```
+
+Основные intent:
+
+- `search_products` - прямой поиск рома;
+- `food_pairing` - подбор рома под еду;
+- `cocktail_expansion` - поиск коктейлей;
+- `profile_update` - обновление вкусового профиля;
+- `unknown` - fallback.
+
+Если сообщение является только обновлением профиля, агент не запускает поиск и отвечает коротким подтверждением. Если сообщение содержит запрос на рекомендацию с ограничением, например “посоветуй ром для коктейлей, но без сладкого профиля”, оно идёт в поиск, а не в profile update.
+
+## Каталог данных
+
+Данные собираются из страниц Bacardi:
+
+```text
+страницы Bacardi
   -> raw HTML
-  -> parsed page JSON
-  -> LLM ProductCard JSON
-  -> ProductSearchProfile JSON
-  -> normalized natural-language query
-  -> FAISS vector search + BM25 lexical search
-  -> top-k candidate products
+  -> очищенный текст страницы
+  -> LLM ProductCard / CocktailCard
+  -> компактные search profiles
+  -> индексы для retrieval
 ```
 
-Retrieval is intentionally not tag-first. Lightweight flavor and usage tags may be stored as metadata, but the primary rum search path is a normalized natural-language query searched against `ProductSearchProfile.searchable_text` with FAISS and BM25.
+`ProductCard` и `CocktailCard` сохраняют богатую структуру карточки. Для поиска они дополнительно переводятся в компактные профили:
 
-Cocktail retrieval uses LLM-normalized cocktail queries over compact `CocktailSearchProfile` records with BM25, then the final answer generator chooses at most two recommendations from the retrieved candidates.
+- `ProductSearchProfile` для рома;
+- `CocktailSearchProfile` для коктейлей.
 
-Food pairing is also retrieval-based. The current Bacardi source pages do not provide a reliable direct food-pairing database, so MVP food pairing expands a food description into a rum search query and returns vector-search candidates with a caveat that the pairing is inferred, not source-backed.
+В поисковые профили попадает только информация о самом продукте или коктейле: название, стиль, описание, вкусовой профиль, подача, рецепты и релевантные коктейльные названия. FAQ, footer, юридический текст, warnings и нерелевантные related-блоки не должны раздувать поисковый текст.
 
-Useful commands:
+## Поиск рома
 
-```powershell
-python -m sommelier.ingestion.crawl_bacardi --max-products 3
-python -m sommelier.ingestion.parse_products_llm --limit 3 --force
-python -m sommelier.catalog.build_search_profiles --force --use-llm-searchable-text
-python -m sommelier.retrieval.build_faiss_index --force --use-openai-embeddings
-python -B -m pytest -p no:cacheprovider
+Поиск рома работает гибридно:
+
+```text
+запрос пользователя
+  -> LLM-нормализация поисковой формулировки
+  -> FAISS semantic search
+  -> BM25 lexical search
+  -> merge кандидатов
+  -> LLM выбирает и объясняет результат
 ```
 
-Web app:
+Важная деталь: негативные ограничения не используются как обычные поисковые термы. Например, фраза “без кокоса” не должна поднимать в выдаче ромы с кокосом только потому, что слово “кокос” совпало. Поэтому retrieval query формулируется позитивно, а полный исходный запрос передаётся финальной LLM, чтобы она выбрала лучший вариант с учётом запретов.
+
+## Food pairing
+
+В исходных страницах Bacardi нет надёжной базы прямых пар “ром -> еда”. Поэтому food pairing в MVP сделан как inference-based query expansion:
+
+```text
+еда пользователя
+  -> LLM формулирует, какой профиль рома может подойти
+  -> поиск по ProductSearchProfile
+  -> ответ с caveat
+```
+
+Ответ должен звучать как рекомендация по сходству профиля, а не как факт “Bacardi рекомендует этот ром к этому блюду”.
+
+## Поиск коктейлей
+
+Коктейли ищутся отдельно от рома:
+
+```text
+запрос про коктейль
+  -> LLM-нормализация коктейльного запроса
+  -> BM25 по CocktailSearchProfile
+  -> LLM формирует ответ и рецепт
+```
+
+Если пользователь просит похожий, более простой или альтернативный вариант, follow-up resolver использует прошлый turn и может попросить retrieval не повторять главный предыдущий коктейль.
+
+## Память и профиль
+
+Память сессии хранит последний turn: сообщение, effective message, intent, ответ и кандидатов. Она нужна для follow-up вопросов.
+
+Профиль пользователя хранит только простые явные предпочтения:
+
+- любимые вкусы;
+- нелюбимые вкусы;
+- любимые коктейли;
+- нелюбимые коктейли.
+
+Профиль не используется как жёсткий фильтр на retrieval-этапе. Он передаётся в финальную LLM вместе с найденными кандидатами, чтобы модель могла выбрать и объяснить вариант с учётом предпочтений.
+
+## Где используется LLM
+
+LLM применяется в ограниченных местах:
+
+- структурное извлечение карточек из страниц;
+- определение intent;
+- разрешение follow-up контекста;
+- нормализация поискового запроса;
+- расширение food query в rum search query;
+- нормализация cocktail query;
+- извлечение profile update;
+- финальная формулировка ответа.
+
+LLM не должна придумывать новые продукты, цены, доступность, ингредиенты, рецепты или source-backed claims. Финальный ответ строится только из кандидатов и evidence, которые уже вернул retrieval.
+
+## Web запуск
+
+Локально:
 
 ```powershell
 python -m uvicorn sommelier.web.app:app --host 127.0.0.1 --port 8000
 ```
 
-Docker deployment on port 8012:
+Docker на порту `8012`:
 
 ```bash
 cp .env.example .env
-# edit .env with real API credentials
-docker compose up --build -d
+# заполнить .env реальными API credentials
+docker-compose up --build -d
 ```
 
-Open:
+Открыть:
 
 ```text
 http://<vm-host>:8012
 ```
 
-The container mounts `./data` to `/app/data`, so catalog/index files and runtime
-session/profile/trace JSON files persist across restarts.
+Контейнер монтирует `./data` в `/app/data`, поэтому каталог, индексы, сессии, профили и trace-файлы переживают перезапуск.
