@@ -12,6 +12,7 @@ services:
     environment:
       PYTHONUNBUFFERED: "1"
       SOMMELIER_DB_PATH: "/app/runtime/sommelier.sqlite3"
+      SOMMELIER_LLM_KEEPALIVE_SECONDS: "${SOMMELIER_LLM_KEEPALIVE_SECONDS:-600}"
     volumes:
       - ./data:/app/data
       - sommelier-runtime:/app/runtime
