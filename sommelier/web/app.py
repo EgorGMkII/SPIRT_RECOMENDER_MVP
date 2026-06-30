@@ -4,15 +4,17 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+from sommelier.storage.session_repository import SessionRepository
 from sommelier.web.api import router
 
 WEB_DIR = Path(__file__).parent
 
 
-def create_app() -> FastAPI:
+def create_app(repository: SessionRepository | None = None) -> FastAPI:
     """Create and configure the web application."""
 
     app = FastAPI(title="AI Sommelier Assistant")
+    app.state.repository = repository
     app.include_router(router)
     app.mount("/static", StaticFiles(directory=WEB_DIR / "static"), name="static")
 

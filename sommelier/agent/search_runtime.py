@@ -12,7 +12,6 @@ DEFAULT_INDEX_DIR = Path("data/indexes")
 DEFAULT_PROFILES_DIR = Path("data/catalog/search_profiles")
 DEFAULT_FAISS_TOP_K = 2
 DEFAULT_BM25_TOP_K = 2
-DEFAULT_COCKTAIL_TOP_K = 5
 
 
 def load_agent_index(index_dir: Path = DEFAULT_INDEX_DIR) -> FaissIndex:
@@ -31,9 +30,16 @@ def hybrid_search(
     query: str,
     normalize: bool = True,
     use_llm_query: bool = False,
+    faiss_top_k: int = DEFAULT_FAISS_TOP_K,
+    bm25_top_k: int = DEFAULT_BM25_TOP_K,
+    excluded_product_ids: list[str] | None = None,
+    limit: int | None = None,
 ) -> tuple[list, dict[str, list[str]], dict]:
     """Return FAISS and BM25 candidates with duplicate products merged."""
 
+    excluded = set(excluded_product_ids or [])
+    faiss_fetch_k = faiss_top_k + len(excluded)
+    bm25_fetch_k = bm25_top_k + len(excluded)
     normalized_query = (
         normalize_query(query, use_llm=use_llm_query)
         if normalize
@@ -43,9 +49,13 @@ def hybrid_search(
     try:
         faiss_results = load_agent_index().search(
             normalized_query,
-            top_k=DEFAULT_FAISS_TOP_K,
+            top_k=faiss_fetch_k,
             normalize=False,
         )
+        faiss_results = [
+            result for result in faiss_results
+            if result.product_id not in excluded
+        ][:faiss_top_k]
         debug["faiss_error"] = None
     except Exception as exc:
         faiss_results = []
@@ -54,9 +64,13 @@ def hybrid_search(
     try:
         bm25_results = load_agent_bm25_index().search(
             normalized_query,
-            top_k=DEFAULT_BM25_TOP_K,
+            top_k=bm25_fetch_k,
             normalize=False,
         )
+        bm25_results = [
+            item for item in bm25_results
+            if item.result.product_id not in excluded
+        ][:bm25_top_k]
         debug["bm25_error"] = None
     except Exception as exc:
         bm25_results = []
@@ -94,4 +108,13 @@ def hybrid_search(
             merged.append(result)
             seen.add(result.product_id)
 
+    if limit is not None:
+        merged = merged[:limit]
+        kept_ids = {result.product_id for result in merged}
+        sources = {
+            product_id: product_sources
+            for product_id, product_sources in sources.items()
+            if product_id in kept_ids
+        }
+    debug["excluded_product_ids"] = sorted(excluded)
     return merged, sources, debug

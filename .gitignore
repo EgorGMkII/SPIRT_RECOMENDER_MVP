@@ -43,6 +43,9 @@ dist/
 data/sessions/
 data/traces/
 data/user_profiles/
+data/*.sqlite3
+data/*.sqlite3-wal
+data/*.sqlite3-shm
 
 # Local editor and OS noise
 .idea/

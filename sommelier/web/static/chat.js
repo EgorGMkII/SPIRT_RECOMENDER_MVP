@@ -5,6 +5,15 @@ const button = form.querySelector("button");
 const statusNode = document.querySelector("#status");
 
 const sessionIdKey = "sommelier_session_id";
+const DEFAULT_GREETING = `Привет! Круто, что зашёл в наш бар. Меня зовут Бакард-ИИ. Я профессиональный бармен и так давно работаю в этом баре, что помню времена, когда коктейль «Апероль Шприц» считался экзотикой.
+
+Чем я могу быть полезен:
+1. Могу детально рассказать про каждый напиток: какие у него вкусовые особенности, с какой едой его лучше сочетать и в какие коктейли добавлять.
+2. Могу подготовить персональную подборку напитков в зависимости от твоих предпочтений и критериев поиска.
+3. Могу подобрать и составить список вкуснейших коктейлей в зависимости от повода, твоего настроения и вкусовых предпочтений.
+4. Могу рассказать тебе истории из нашего бара.
+
+Давай начнём наше знакомство. Как тебя зовут? Что хотелось бы сегодня?`;
 
 function createSessionId() {
   if (window.crypto && typeof window.crypto.randomUUID === "function") {
@@ -54,6 +63,38 @@ function appendMessage(role, text) {
   return node;
 }
 
+function setFormEnabled(enabled) {
+  input.disabled = !enabled;
+  button.disabled = !enabled;
+}
+
+async function loadChatHistory() {
+  setFormEnabled(false);
+  messages.replaceChildren();
+  try {
+    const response = await fetch(
+      `/api/sessions/${encodeURIComponent(sessionId)}/messages`
+    );
+    if (!response.ok) {
+      throw new Error(`History request failed: ${response.status}`);
+    }
+    const payload = await response.json();
+    if (payload.messages.length === 0) {
+      appendMessage("assistant", DEFAULT_GREETING);
+      return;
+    }
+    for (const message of payload.messages) {
+      appendMessage(message.role, message.content);
+    }
+  } catch (error) {
+    appendMessage("assistant", DEFAULT_GREETING);
+    console.warn("Chat history is unavailable", error);
+  } finally {
+    setFormEnabled(true);
+    input.focus();
+  }
+}
+
 async function loadCatalogStatus() {
   try {
     const response = await fetch("/api/catalog/status");
@@ -67,11 +108,8 @@ async function loadCatalogStatus() {
   }
 }
 
-appendMessage(
-  "assistant",
-  "Спроси меня о роме, сочетании с едой или коктейле. Я использую локальный каталог Bacardi и помню эту сессию."
-);
 loadCatalogStatus();
+loadChatHistory();
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();

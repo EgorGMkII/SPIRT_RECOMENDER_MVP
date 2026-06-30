@@ -11,6 +11,11 @@ services:
       - .env
     environment:
       PYTHONUNBUFFERED: "1"
+      SOMMELIER_DB_PATH: "/app/runtime/sommelier.sqlite3"
     volumes:
       - ./data:/app/data
+      - sommelier-runtime:/app/runtime
     restart: unless-stopped
+
+volumes:
+  sommelier-runtime:

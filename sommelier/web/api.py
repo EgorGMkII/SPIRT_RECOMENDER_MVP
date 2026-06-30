@@ -2,16 +2,20 @@
 
 from pathlib import Path
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 from sommelier.agent.graph import run_agent_turn
-from sommelier.agent.memory_store import load_session_memory
-from sommelier.agent.profile_store import load_user_profile
 from sommelier.agent.state import AgentState
-from sommelier.agent.trace_store import load_trace_events
+from sommelier.storage.session_repository import (
+    SessionRepository,
+    get_default_repository,
+)
 from sommelier.web.schemas import (
     CatalogStatus,
+    ChatHistoryResponse,
+    ChatMessage,
     ChatRequest,
     ChatResponse,
+    FeedbackStatsResponse,
     ProfileDebugResponse,
     SessionDebugResponse,
     TraceDebugResponse,
@@ -28,61 +32,49 @@ def _build_candidates(state: AgentState) -> list[dict]:
     """Build compact candidate payloads for the web client."""
 
     candidates: list[dict] = []
-    for result in state.retrieval_results:
-        profile = result.profile
-        candidates.append(
-            {
-                "kind": "rum",
-                "id": result.product_id,
-                "name": profile.name,
-                "score": round(result.score, 4),
-                "sources": state.retrieval_sources.get(result.product_id, []),
-                "description": profile.display_description,
-                "tasting_summary": profile.tasting_summary,
-                "flavor_tags": profile.flavor_tags,
-                "usage_tags": profile.usage_tags,
-            }
-        )
-    for result in state.cocktail_results:
-        profile = result.profile
-        candidates.append(
-            {
-                "kind": "cocktail",
-                "id": result.cocktail_id,
-                "name": profile.name,
-                "score": round(result.score, 4),
-                "main_rum": profile.main_rum,
-                "description": profile.description,
-                "ingredients": profile.ingredients,
-                "recipe_steps": profile.recipe_steps,
-                "matched_tokens": result.matched_tokens,
-            }
-        )
+    used = {(ref.kind, ref.id) for ref in (state.final_answer_result.used_result_refs if state.final_answer_result else [])}
+    for card in state.cards:
+        if (card.kind, card.id) in used:
+            candidates.append(card.model_dump(mode="json"))
     return candidates
 
 
+def _repository(request: Request) -> SessionRepository:
+    return request.app.state.repository or get_default_repository()
+
+
+@router.get(
+    "/api/analytics/feedback",
+    response_model=FeedbackStatsResponse,
+)
+def feedback_analytics(
+    request: Request,
+    session_id: str | None = None,
+) -> FeedbackStatsResponse:
+    """Return global or per-session feedback totals."""
+
+    return FeedbackStatsResponse(
+        session_id=session_id,
+        **_repository(request).load_feedback_stats(session_id),
+    )
+
+
 @router.post("/api/chat", response_model=ChatResponse)
-def chat(request: ChatRequest) -> ChatResponse:
+def chat(payload: ChatRequest, request: Request) -> ChatResponse:
     """Handle a chat request through the agent layer."""
 
     state = run_agent_turn(
         AgentState(
-            session_id=request.session_id,
-            user_message=request.message,
-            use_llm_followup=True,
-            use_llm_intent=True,
-            use_llm_query=True,
-            use_llm_food_query=True,
-            use_llm_profile_update=True,
-            use_llm_answer=True,
-        )
+            session_id=payload.session_id,
+            user_request=payload.message,
+        ),
+        config={"configurable": {"repository": _repository(request)}},
     )
     return ChatResponse(
-        session_id=request.session_id,
-        answer=state.final_answer or "",
-        intent=str(state.parsed_intent.intent) if state.parsed_intent else None,
-        effective_user_message=state.effective_user_message,
-        is_followup=state.is_followup,
+        session_id=payload.session_id,
+        answer=state.final_answer_result.answer if state.final_answer_result else "",
+        follow_up=state.turn_resolution.follow_up if state.turn_resolution else False,
+        effective_request=state.turn_resolution.effective_request if state.turn_resolution else None,
         profile=state.user_profile.model_dump(mode="json") if state.user_profile else None,
         candidates=_build_candidates(state),
         traces=[trace.model_dump(mode="json") for trace in state.tool_traces],
@@ -112,10 +104,10 @@ def catalog_status() -> CatalogStatus:
 
 
 @router.get("/api/sessions/{session_id}", response_model=SessionDebugResponse)
-def session_debug(session_id: str) -> SessionDebugResponse:
+def session_debug(session_id: str, request: Request) -> SessionDebugResponse:
     """Return durable session memory for debugging."""
 
-    memory = load_session_memory(session_id)
+    memory = _repository(request).load_session_memory(session_id)
     return SessionDebugResponse(
         session_id=session_id,
         memory=memory.model_dump(mode="json"),
@@ -123,21 +115,37 @@ def session_debug(session_id: str) -> SessionDebugResponse:
 
 
 @router.get("/api/traces/{session_id}", response_model=TraceDebugResponse)
-def trace_debug(session_id: str) -> TraceDebugResponse:
+def trace_debug(session_id: str, request: Request) -> TraceDebugResponse:
     """Return durable tool traces for debugging."""
 
     return TraceDebugResponse(
         session_id=session_id,
-        traces=load_trace_events(session_id),
+        traces=_repository(request).load_trace_events(session_id),
     )
 
 
 @router.get("/api/profiles/{session_id}", response_model=ProfileDebugResponse)
-def profile_debug(session_id: str) -> ProfileDebugResponse:
+def profile_debug(session_id: str, request: Request) -> ProfileDebugResponse:
     """Return durable user profile for debugging."""
 
-    profile = load_user_profile(session_id)
+    profile = _repository(request).load_user_profile(session_id)
     return ProfileDebugResponse(
         session_id=session_id,
         profile=profile.model_dump(mode="json"),
+    )
+
+
+@router.get(
+    "/api/sessions/{session_id}/messages",
+    response_model=ChatHistoryResponse,
+)
+def chat_history(session_id: str, request: Request) -> ChatHistoryResponse:
+    """Return the full UI transcript without exposing it to the agent."""
+
+    return ChatHistoryResponse(
+        session_id=session_id,
+        messages=[
+            ChatMessage.model_validate(message)
+            for message in _repository(request).load_messages(session_id)
+        ],
     )

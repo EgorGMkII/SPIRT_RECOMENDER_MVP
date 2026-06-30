@@ -1,5 +1,7 @@
 """Request and response models for the web API."""
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -15,12 +17,25 @@ class ChatResponse(BaseModel):
 
     session_id: str
     answer: str
-    intent: str | None = None
-    effective_user_message: str | None = None
-    is_followup: bool = False
+    follow_up: bool
+    effective_request: str | None = None
     profile: dict | None = None
     candidates: list[dict] = Field(default_factory=list)
     traces: list[dict] = Field(default_factory=list)
+
+
+class ChatMessage(BaseModel):
+    """One full transcript message used only by the web client."""
+
+    role: Literal["user", "assistant"]
+    content: str
+
+
+class ChatHistoryResponse(BaseModel):
+    """Complete transcript for one browser session."""
+
+    session_id: str
+    messages: list[ChatMessage] = Field(default_factory=list)
 
 
 class CatalogStatus(BaseModel):
@@ -53,3 +68,15 @@ class ProfileDebugResponse(BaseModel):
 
     session_id: str
     profile: dict | None = None
+
+
+class FeedbackStatsResponse(BaseModel):
+    """Aggregated independent feedback analytics."""
+
+    session_id: str | None = None
+    total: int = 0
+    neutral: int = 0
+    purchase_intent: int = 0
+    negative_feedback: int = 0
+    successful_turns: int = 0
+    failed_turns: int = 0
