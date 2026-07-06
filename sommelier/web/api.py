@@ -74,6 +74,11 @@ def chat(payload: ChatRequest, request: Request) -> ChatResponse:
         session_id=payload.session_id,
         answer=state.final_answer_result.answer if state.final_answer_result else "",
         follow_up=state.turn_resolution.follow_up if state.turn_resolution else False,
+        request_scope=(
+            state.turn_resolution.request_scope
+            if state.turn_resolution
+            else "conversation"
+        ),
         effective_request=state.turn_resolution.effective_request if state.turn_resolution else None,
         profile=state.user_profile.model_dump(mode="json") if state.user_profile else None,
         candidates=_build_candidates(state),

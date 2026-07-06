@@ -67,6 +67,31 @@ class SessionRepository:
             for row in rows
         ]
 
+    def load_recent_messages(
+        self,
+        session_id: str,
+        limit: int = 4,
+    ) -> list[dict[str, str]]:
+        """Return the newest messages in chronological order."""
+
+        if limit <= 0:
+            return []
+        with connect(self.db_path) as connection:
+            rows = connection.execute(
+                """
+                SELECT role, content
+                FROM messages
+                WHERE session_id = ?
+                ORDER BY id DESC
+                LIMIT ?
+                """,
+                (session_id, limit),
+            ).fetchall()
+        return [
+            {"role": str(row["role"]), "content": str(row["content"])}
+            for row in reversed(rows)
+        ]
+
     def load_trace_events(self, session_id: str) -> list[dict]:
         with connect(self.db_path) as connection:
             rows = connection.execute(

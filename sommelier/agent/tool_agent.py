@@ -1,12 +1,14 @@
 """Bounded native tool-calling loop for compact turn memory."""
 
 import json
+import logging
 from typing import Any
 
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, ToolMessage
 from langchain_core.runnables import RunnableConfig
 
 from sommelier.agent.contracts import (
+    CatalogListOutput,
     CocktailCandidate,
     CocktailSearchOutput,
     ProductCandidate,
@@ -24,11 +26,23 @@ from sommelier.agent.search_tools import AGENT_TOOLS, TOOL_MAP
 from sommelier.agent.state import AgentState
 from sommelier.agent.tracer import ToolTrace
 
+logger = logging.getLogger(__name__)
+
 TOOL_PROMPT = """Decide whether a tool is needed.
 Catalog tools: search_products, search_products_for_food, search_cocktails,
-lookup_by_id.
+lookup_by_id, list_catalog.
 Cart tools: add_cart, dellete_cart, show_cart.
 Identify the requested action before choosing a tool:
+- turn_resolution.request_scope is the authoritative description of the
+  CURRENT action. Saved turns provide context but must not replace that scope;
+- request_scope="cocktail" with an exact shown rum name in effective_request
+  is already a complete request: call search_cocktails now. Do not answer that
+  cocktails could be selected later and do not ask for an extra preference
+  before performing the requested search;
+- request_scope="catalog_listing" means the user explicitly wants the complete
+  catalog of names. Call list_catalog exactly once with kind="product" for
+  rums/products or kind="cocktail" for cocktails. Do not use a ranked search
+  and do not load full cards;
 - a new recommendation normally requires the matching search tool;
 - search_products_for_food is ONLY for pairing rum with edible food: a dish,
   ingredient, meal or cuisine;
@@ -239,6 +253,65 @@ def tool_calling_agent(
                     "messages": [AIMessage(content="Required cart tool missing.")],
                     "errors": state.errors + ["required_cart_tool_missing"],
                 }
+    if _cocktail_search_is_required(state):
+        called = response.tool_calls[0]["name"] if response.tool_calls else None
+        if called != "search_cocktails":
+            correction = HumanMessage(
+                content=(
+                    "REQUIRED ACTION: request_scope is cocktail and "
+                    "effective_request names a shown product. Call "
+                    "search_cocktails now; do not defer the requested search."
+                )
+            )
+            response = bound.invoke([*history, response, correction])
+            if not isinstance(response, AIMessage):
+                response = AIMessage(
+                    content=getattr(response, "content", str(response))
+                )
+            if len(response.tool_calls) > 1:
+                response = AIMessage(
+                    content="",
+                    tool_calls=[response.tool_calls[0]],
+                )
+            called = response.tool_calls[0]["name"] if response.tool_calls else None
+            if called != "search_cocktails":
+                return {
+                    "messages": [
+                        AIMessage(content="Required cocktail search missing.")
+                    ],
+                    "errors": state.errors + ["required_cocktail_search_missing"],
+                }
+    listing_kind = _required_catalog_listing_kind(state)
+    if listing_kind is not None:
+        call = response.tool_calls[0] if response.tool_calls else None
+        if (
+            call is None
+            or call["name"] != "list_catalog"
+            or call.get("args", {}).get("kind") != listing_kind
+        ):
+            correction = HumanMessage(
+                content=(
+                    "REQUIRED ACTION: this is a complete catalog-list request. "
+                    f'Call list_catalog now with kind="{listing_kind}".'
+                )
+            )
+            response = bound.invoke([*history, response, correction])
+            if not isinstance(response, AIMessage):
+                response = AIMessage(
+                    content=getattr(response, "content", str(response))
+                )
+            if len(response.tool_calls) > 1:
+                response = AIMessage(content="", tool_calls=[response.tool_calls[0]])
+            call = response.tool_calls[0] if response.tool_calls else None
+            if (
+                call is None
+                or call["name"] != "list_catalog"
+                or call.get("args", {}).get("kind") != listing_kind
+            ):
+                return {
+                    "messages": [AIMessage(content="Required catalog listing missing.")],
+                    "errors": state.errors + ["required_catalog_listing_missing"],
+                }
     return {"messages": history + [response] if not state.messages else [response]}
 
 
@@ -259,6 +332,9 @@ def _recent_shown_refs(state: AgentState) -> set[tuple[str, str]]:
 
 
 def _parse_cards(name: str, output: dict) -> list[ProductCandidate | CocktailCandidate]:
+    if name == "list_catalog":
+        CatalogListOutput.model_validate(output)
+        return []
     if name == "lookup_by_id":
         raw = output["card"]
         model = CocktailCandidate if raw.get("kind") == "cocktail" else ProductCandidate
@@ -275,6 +351,41 @@ def _product_refs_available_to_add(state: AgentState) -> set[str]:
         for item in turn.shown_results
         if item.kind == "product"
     } | {card.id for card in state.cards if card.kind == "product"}
+
+
+def _cocktail_search_is_required(state: AgentState) -> bool:
+    if (
+        state.tool_call_count != 0
+        or state.turn_resolution is None
+        or state.turn_resolution.request_scope != "cocktail"
+    ):
+        return False
+    effective = " ".join(
+        state.turn_resolution.effective_request.lower().split()
+    )
+    return any(
+        " ".join(item.name.lower().split()) in effective
+        for turn in state.session_memory.turns
+        for item in turn.shown_results
+        if item.kind == "product"
+    )
+
+
+def _required_catalog_listing_kind(state: AgentState) -> str | None:
+    if (
+        state.tool_call_count != 0
+        or state.turn_resolution is None
+        or state.turn_resolution.request_scope != "catalog_listing"
+    ):
+        return None
+    text = (
+        f"{state.user_request} {state.turn_resolution.effective_request}"
+    ).lower()
+    if "коктейл" in text or "cocktail" in text:
+        return "cocktail"
+    if "ром" in text or "rum" in text or "product" in text:
+        return "product"
+    return None
 
 
 def _execute_cart_tool(
@@ -348,12 +459,18 @@ def execute_tool(state: AgentState) -> dict:
                 else "invalid_tool_input"
             )
         except Exception:
+            logger.exception(
+                "Tool execution failed: tool=%s session=%s turn=%s",
+                name,
+                state.session_id,
+                state.turn_id,
+            )
             error = "tool_execution_failed"
 
     cards = list(state.cards)
     if error is None and name not in CART_TOOL_MAP:
         returned = _parse_cards(name, output)
-        if name != "lookup_by_id":
+        if name not in {"lookup_by_id", "list_catalog"}:
             shown = _recent_shown_refs(state)
             returned = [card for card in returned if (card.kind, card.id) not in shown]
             if "candidates" in output:
@@ -386,8 +503,14 @@ def execute_tool(state: AgentState) -> dict:
                         f"cart_items={len(updated_memory.cart)}"
                         if name in CART_TOOL_MAP
                         else (
-                            f"returned_after_filter={returned_count}; "
-                            f"cards_in_current_turn={len(cards)}"
+                            (
+                                f"catalog_items={output.get('total', 0)}"
+                                if name == "list_catalog"
+                                else (
+                                    f"returned_after_filter={returned_count}; "
+                                    f"cards_in_current_turn={len(cards)}"
+                                )
+                            )
                         )
                     )
                 ),

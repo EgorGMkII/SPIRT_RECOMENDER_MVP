@@ -5,6 +5,16 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 MAX_TURNS = 12
+RequestScope = Literal[
+    "product",
+    "cocktail",
+    "recipe",
+    "food_pairing",
+    "cart",
+    "profile",
+    "catalog_listing",
+    "conversation",
+]
 
 
 class MemoryModel(BaseModel):
@@ -28,6 +38,7 @@ class CartItem(MemoryModel):
 
 class TurnMemory(MemoryModel):
     follow_up: bool
+    request_scope: RequestScope = "conversation"
     user_request: str = Field(min_length=1, max_length=1200)
     initial_request: str = Field(min_length=1, max_length=1200)
     effective_request: str = Field(min_length=1, max_length=1200)

@@ -7,7 +7,7 @@ from typing import Any
 from langgraph.graph import END, START, StateGraph
 from langchain_core.runnables import RunnableConfig
 
-from sommelier.agent.contracts import FinalAnswerResult
+from sommelier.agent.contracts import CatalogListOutput, FinalAnswerResult
 from sommelier.agent.feedback import classify_feedback
 from sommelier.agent.memory import ShownResult, TurnMemory, enforce_memory_limits
 from sommelier.agent.profile import apply_profile_patch
@@ -82,6 +82,14 @@ answer for that action. Do not reuse recommendation phrasing for every turn:
    This rule does not apply when the user explicitly delegates the choice with
    wording such as "на свой вкус", "удиви меня" or "выбери сам".
 
+8. Complete catalog listing:
+   when request_scope="catalog_listing", reproduce every exact name returned
+   by list_catalog, once and in the returned order. A short heading and a
+   numbered or bulleted list are allowed. Do not rank, recommend, describe or
+   add catalog facts. Return used_result_refs=[] because browsing a complete
+   name list is not a recommendation and does not load full cards. The normal
+   three-object answer limit does not apply to this listing mode.
+
 After an actual recommendation or requested selection containing one or more
 central used_result_refs, end with one brief, non-pushy request for feedback,
 for example: "Подходит такое направление или сделать вариант суше/ярче?"
@@ -122,10 +130,20 @@ do not recommend a cocktail containing sugar syrup as a clearly non-sweet
 choice. If no supplied card safely satisfies the request, say so honestly
 instead of forcing a recommendation.
 
+recent_dialogue contains only the last two completed exchanges. Use it solely
+for conversational continuity, corrections and avoiding repetition. Priority
+is strict:
+1. current turn_resolution;
+2. current cards and tool_messages;
+3. recent_dialogue.
+Never recover the current target, catalog facts or used_result_refs from
+recent_dialogue when it conflicts with the current resolution or current
+cards. An older assistant mistake is context to correct, not evidence to reuse.
+
 Never say "the card says", "in the supplied data", "search result", "tool" or
 other internal wording. Do not use Markdown bold or asterisks. Do not invent
-facts. Keep every recipe attached to the correct cocktail. Return at most three
-catalog objects.
+facts. Keep every recipe attached to the correct cocktail. Except for
+request_scope="catalog_listing", return at most three catalog objects.
 
 Return FinalAnswerResult:
 - answer: polished direct response to the user;
@@ -177,6 +195,10 @@ def resolve_turn_node(state: AgentState, config: RunnableConfig | None = None) -
             memory=state.session_memory,
             profile=state.user_profile,
             llm=_llm(config, "resolver_llm"),
+            recent_messages=_repository(config).load_recent_messages(
+                state.session_id,
+                limit=4,
+            ),
         )
         return {
             "turn_resolution": result,
@@ -188,10 +210,17 @@ def resolve_turn_node(state: AgentState, config: RunnableConfig | None = None) -
             ],
         }
     except Exception as exc:
+        logger.exception(
+            "Turn resolution failed for session=%s turn=%s",
+            state.session_id,
+            state.turn_id,
+        )
         return {"errors": state.errors + [f"resolve_turn_failed:{type(exc).__name__}"]}
 
 
 def validate_turn_resolution_node(state: AgentState) -> dict:
+    if state.errors or state.turn_resolution is None:
+        return {}
     try:
         validate_turn_resolution(
             state.turn_resolution, state.user_request, state.session_memory
@@ -251,6 +280,20 @@ def _answer_llm(config: RunnableConfig | None) -> Any:
     return _llm(config, "answer_llm")
 
 
+def _catalog_listing_from_messages(state: AgentState) -> CatalogListOutput | None:
+    for message in reversed(state.messages):
+        if (
+            getattr(message, "type", "") != "tool"
+            or getattr(message, "name", None) != "list_catalog"
+        ):
+            continue
+        envelope = json.loads(getattr(message, "content", ""))
+        if envelope.get("ok") is not True:
+            return None
+        return CatalogListOutput.model_validate(envelope.get("output", {}))
+    return None
+
+
 def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> dict:
     if state.errors or state.turn_resolution is None:
         return {}
@@ -259,7 +302,14 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
     payload = {
         "user_request": state.user_request,
         "turn_resolution": state.turn_resolution.model_dump(mode="json"),
-        "turns": [turn.model_dump(mode="json") for turn in state.session_memory.turns],
+        "turns": [
+            turn.model_dump(mode="json")
+            for turn in state.session_memory.turns[-6:]
+        ],
+        "recent_dialogue": _repository(config).load_recent_messages(
+            state.session_id,
+            limit=4,
+        ),
         "cart": [
             item.model_dump(mode="json") for item in state.session_memory.cart
         ],
@@ -275,6 +325,7 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
         FinalAnswerResult, method="function_calling"
     )
     known = {(card.kind, card.id) for card in state.cards}
+    listing = _catalog_listing_from_messages(state)
     feedback = ""
     for _ in range(2):
         try:
@@ -283,8 +334,33 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
                 f"{json.dumps(payload, ensure_ascii=False)}{feedback}"
             )
             result = FinalAnswerResult.model_validate(raw)
+            if state.turn_resolution.request_scope == "catalog_listing":
+                if listing is None:
+                    raise ValueError("catalog_listing requires successful list_catalog")
+                if result.used_result_refs:
+                    raise ValueError("catalog_listing requires used_result_refs=[]")
+                missing = [
+                    item.name for item in listing.items if item.name not in result.answer
+                ]
+                if missing:
+                    raise ValueError(
+                        "catalog listing omitted exact names: " + ", ".join(missing)
+                    )
             if any((ref.kind, ref.id) not in known for ref in result.used_result_refs):
                 raise ValueError("used_result_refs requires a current full card")
+            expected_kind = {
+                "product": "product",
+                "food_pairing": "product",
+                "cocktail": "cocktail",
+                "recipe": "cocktail",
+            }.get(state.turn_resolution.request_scope)
+            if expected_kind and any(
+                ref.kind != expected_kind for ref in result.used_result_refs
+            ):
+                raise ValueError(
+                    f"request_scope={state.turn_resolution.request_scope!r} "
+                    f"requires used_result_refs kind={expected_kind!r}"
+                )
             return {
                 "final_answer_result": result,
                 "tool_traces": state.tool_traces + [
@@ -324,6 +400,7 @@ def build_turn_memory(state: AgentState) -> dict:
     memory.turns.append(
         TurnMemory(
             follow_up=resolution.follow_up,
+            request_scope=resolution.request_scope,
             user_request=state.user_request,
             initial_request=resolution.initial_request,
             effective_request=resolution.effective_request,

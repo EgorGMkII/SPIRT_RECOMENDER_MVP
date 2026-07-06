@@ -8,8 +8,9 @@ from sommelier.retrieval.bm25_index import Bm25Index
 from sommelier.retrieval.faiss_index import FaissIndex, OpenAIEmbeddingProvider
 from sommelier.retrieval.query_normalizer import normalize_query
 
-DEFAULT_INDEX_DIR = Path("data/indexes")
-DEFAULT_PROFILES_DIR = Path("data/catalog/search_profiles")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_INDEX_DIR = PROJECT_ROOT / "data" / "indexes"
+DEFAULT_PROFILES_DIR = PROJECT_ROOT / "data" / "catalog" / "search_profiles"
 DEFAULT_FAISS_TOP_K = 2
 DEFAULT_BM25_TOP_K = 2
 

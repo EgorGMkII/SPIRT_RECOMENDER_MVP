@@ -7,7 +7,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from sommelier.agent.profile import ProfilePatch
-from sommelier.agent.memory import CatalogRef, ShownResult
+from sommelier.agent.memory import CatalogRef, RequestScope, ShownResult
 
 
 class StrictModel(BaseModel):
@@ -16,6 +16,7 @@ class StrictModel(BaseModel):
 
 class TurnResolution(StrictModel):
     follow_up: bool
+    request_scope: RequestScope = "conversation"
     initial_request: str = Field(min_length=1, max_length=1200)
     effective_request: str = Field(min_length=1, max_length=1200)
     negative_request: str | None = Field(default=None, max_length=1200)
@@ -72,3 +73,13 @@ class CocktailSearchOutput(StrictModel):
     query: str
     candidates: list[CocktailCandidate] = Field(default_factory=list, max_length=7)
     caveats: list[str] = Field(default_factory=list)
+
+
+class CatalogListItem(CatalogRef):
+    name: str = Field(min_length=1, max_length=300)
+
+
+class CatalogListOutput(StrictModel):
+    kind: Literal["product", "cocktail"]
+    total: int = Field(ge=0)
+    items: list[CatalogListItem] = Field(default_factory=list, max_length=100)

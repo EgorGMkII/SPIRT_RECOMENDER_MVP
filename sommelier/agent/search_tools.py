@@ -1,4 +1,4 @@
-"""The four read-only catalog model tools."""
+"""Narrow read-only catalog model tools."""
 
 from pathlib import Path
 from typing import Literal
@@ -9,6 +9,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from sommelier.agent.contracts import (
     CocktailCandidate,
     CocktailSearchOutput,
+    CatalogListItem,
+    CatalogListOutput,
     ProductCandidate,
     ProductSearchOutput,
 )
@@ -18,8 +20,11 @@ from sommelier.catalog.search_profiles import load_search_profiles
 from sommelier.retrieval.cocktail_search import CocktailBm25Index
 from sommelier.retrieval.food_pairing_query import DEFAULT_PAIRING_CAVEAT
 
-PRODUCT_PROFILES_DIR = Path("data/catalog/search_profiles")
-COCKTAIL_PROFILES_DIR = Path("data/catalog/cocktail_search_profiles")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PRODUCT_PROFILES_DIR = PROJECT_ROOT / "data" / "catalog" / "search_profiles"
+COCKTAIL_PROFILES_DIR = (
+    PROJECT_ROOT / "data" / "catalog" / "cocktail_search_profiles"
+)
 
 
 class ProductSearchInput(BaseModel):
@@ -45,6 +50,11 @@ class LookupByIdInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     kind: Literal["product", "cocktail"]
     id: str = Field(min_length=1, max_length=300)
+
+
+class ListCatalogInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    kind: Literal["product", "cocktail"]
 
 
 def _product_candidate(profile, sources: list[str] | None = None) -> ProductCandidate:
@@ -127,6 +137,29 @@ def _lookup_by_id(kind: str, id: str) -> dict:
     return {"card": card.model_dump(mode="json")}
 
 
+def _list_catalog(kind: str) -> dict:
+    if kind == "product":
+        items = [
+            CatalogListItem(kind="product", id=profile.product_id, name=profile.name)
+            for profile in load_search_profiles(PRODUCT_PROFILES_DIR)
+        ]
+    else:
+        items = [
+            CatalogListItem(
+                kind="cocktail",
+                id=profile.cocktail_id,
+                name=profile.name,
+            )
+            for profile in load_cocktail_profiles(COCKTAIL_PROFILES_DIR)
+        ]
+    items.sort(key=lambda item: item.name.casefold())
+    return CatalogListOutput(
+        kind=kind,
+        total=len(items),
+        items=items,
+    ).model_dump(mode="json")
+
+
 search_products = StructuredTool.from_function(
     func=_product_search,
     name="search_products",
@@ -154,11 +187,22 @@ lookup_by_id = StructuredTool.from_function(
     description="Load one full card by a kind/id already shown to the user.",
     args_schema=LookupByIdInput,
 )
+list_catalog = StructuredTool.from_function(
+    func=_list_catalog,
+    name="list_catalog",
+    description=(
+        "Return the complete compact list of all known rum products or all "
+        "known cocktails. Use only for explicit catalog-list requests; it "
+        "returns names and ids, not full cards or recommendations."
+    ),
+    args_schema=ListCatalogInput,
+)
 
 AGENT_TOOLS = [
     search_products,
     search_products_for_food,
     search_cocktails,
     lookup_by_id,
+    list_catalog,
 ]
 TOOL_MAP = {tool.name: tool for tool in AGENT_TOOLS}

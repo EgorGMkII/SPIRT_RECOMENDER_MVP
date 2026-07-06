@@ -10,8 +10,39 @@ from sommelier.agent.contracts import TurnResolution
 from sommelier.agent.memory import SessionMemory
 from sommelier.agent.profile import UserProfile
 
+RESOLVER_TURN_LIMIT = 6
+RESOLVER_MESSAGE_LIMIT = 4
+
 RESOLVER_PROMPT = """Resolve the current message for a rum sommelier.
 Return TurnResolution only.
+
+REQUEST SCOPE:
+- request_scope describes the CURRENT requested action, not the historical
+  topic and not a tool choice;
+- product: recommend or explain a rum product;
+- cocktail: recommend concrete cocktails;
+- recipe: ingredients or preparation for a cocktail;
+- food_pairing: choose a product for food or explain a food pairing;
+- cart: add, delete or show cart items;
+- profile: remember or correct a durable preference;
+- catalog_listing: explicitly list every known rum product or every known
+  cocktail by name; this is catalog navigation, not a recommendation;
+- conversation: smalltalk or a clarification question without a catalog task;
+- a follow-up may change scope when the user explicitly changes the action.
+  Example: food_pairing -> cocktail for "which cocktails can I make from it?";
+- a short constraint-only follow-up such as "давай сладкие варианты",
+  "тогда покрепче" or "more fresh ones" MUST inherit the previous scope,
+  action and resolved object, changing only the new constraint.
+
+INPUT CONTEXT:
+- recent_messages contains only the last two completed user/assistant exchanges.
+  Use it to understand pending actions, corrections and what the assistant
+  offered to do next;
+- turns contains at most the six newest compact turns;
+- recent_objects is computed only from central shown_results and is ordered
+  newest-first. It is the authoritative source for resolving catalog pronouns;
+- never treat an incidental product name from recent_messages as the current
+  catalog object when it is absent from recent_objects.
 
 STRICT FIELD SEPARATION:
 - effective_request describes only what the user WANTS to find;
@@ -29,11 +60,38 @@ follow_up=false:
 follow_up=true:
 - use it only when the message modifies the SAME request or explicitly refers
   to a saved answer/object (for example "ещё", "первый из последних", "его",
-  "этот ром", "как его приготовить");
+  "этот ром", "как его приготовить", "давай сладкий");
 - initial_request must exactly equal initial_request from one saved turn;
 - effective_request is the complete updated request containing ONLY desired,
   positive properties and task context;
 - negative_request is the complete updated temporary exclusions, or null.
+
+PRONOUN AND REFERENT RESOLUTION IS RECENCY-FIRST:
+- resolve "он", "она", "оно", "его", "её", "из него", "из неё",
+  "этот ром", "этот напиток", "этот коктейль", "it", "this rum" and similar
+  references to the MOST RECENT compatible object in shown_results;
+- inspect saved turns from newest to oldest. Skip profile-only turns, smalltalk
+  and turns with empty shown_results; they do not erase the last shown object;
+- compatibility is determined by the requested action: "какие коктейли из
+  него" requires the most recent product, while "как его приготовить" requires
+  the most recent cocktail;
+- recency has priority over topical similarity to an older conversation branch.
+  Never select an older object merely because an older request used similar
+  words such as "коктейли из";
+- after resolving a reference, effective_request MUST contain the exact object
+  name from shown_results. Never leave an unresolved pronoun in
+  effective_request;
+- if the user explicitly names an object, that explicit name overrides a
+  pronoun or implicit recent referent.
+
+CORRECTIONS MUST PRESERVE THE PENDING ACTION:
+- messages such as "нет, про X", "я говорю про X", "имел в виду X" and
+  "not that one, I mean X" correct the object of the immediately preceding
+  request;
+- keep the action requested in the immediately preceding turn and replace only
+  the target object. Do not fall back to an older action associated with X;
+- a wrong assistant answer does not cancel the user's pending action. Correct
+  the resolved effective_request and perform the originally requested action.
 
 FOLLOW-UP DECISION IS STRICT:
 - topical similarity alone is not enough;
@@ -74,6 +132,27 @@ Examples:
   Current: "Теперь посоветуй выдержанный ром для коктейлей, но не сладкий."
   => follow_up=false; this is a standalone product request with a new
      initial_request, despite "Теперь".
+- Older shown product: "BACARDÍ Coconut rum"
+  Most recent shown product: "BACARDÍ Spiced"
+  Current: "А какие коктейли из него можно сделать?"
+  => follow_up=true
+  => effective_request: "Подобрать коктейли на основе BACARDÍ Spiced."
+  BACARDÍ Coconut rum is WRONG: the most recent compatible shown product wins.
+- Previous user action: "А какие коктейли из него можно сделать?"
+  Assistant incorrectly discussed BACARDÍ Coconut rum.
+  Current: "Нет, про BACARDÍ Spiced говорю."
+  => follow_up=true
+  => effective_request: "Подобрать коктейли на основе BACARDÍ Spiced."
+  Preserve the cocktail-selection action. Do not return to food pairing or
+  merely describe BACARDÍ Spiced.
+- Previous effective request: "Подобрать коктейли на основе BACARDÍ Spiced."
+  Previous scope: cocktail
+  Current: "Давай сладкие варианты."
+  => follow_up=true
+  => request_scope=cocktail
+  => effective_request:
+     "Подобрать сладкие коктейли на основе BACARDÍ Spiced."
+  Returning a sweet rum product is WRONG.
 
 Negative meaning must not appear in effective_request in ANY wording. This
 includes direct negatives ("not sweet", "не сладкий", "without sugar",
@@ -102,6 +181,31 @@ profile_patch: add "мята" and "сладкие вкусы" to liked_flavors
 Do not search and do not recommend a product.
 
 Do not choose tools, queries or catalog IDs. Do not answer."""
+
+
+def build_recent_objects(
+    memory: SessionMemory,
+    turn_limit: int = RESOLVER_TURN_LIMIT,
+) -> list[dict[str, object]]:
+    """Build a newest-first resolver view of central catalog objects."""
+
+    objects: list[dict[str, object]] = []
+    seen: set[tuple[str, str]] = set()
+    recent_turns = memory.turns[-turn_limit:]
+    for turn_offset, turn in enumerate(reversed(recent_turns), start=1):
+        for shown in turn.shown_results:
+            key = (shown.kind, shown.id)
+            if key in seen:
+                continue
+            seen.add(key)
+            objects.append(
+                {
+                    "kind": shown.kind,
+                    "name": shown.name,
+                    "turn_offset": turn_offset,
+                }
+            )
+    return objects
 
 
 def _normalized_clause(value: str) -> str:
@@ -172,6 +276,84 @@ def _profile_patch_has_changes(result: TurnResolution) -> bool:
     )
 
 
+def _contains_catalog_pronoun(user_request: str) -> bool:
+    text = f" {_normalized_clause(user_request)} "
+    return any(
+        marker in text
+        for marker in (
+            " из него ",
+            " из неё ",
+            " его ",
+            " её ",
+            " этот ром ",
+            " этот напиток ",
+            " этот коктейль ",
+            " from it ",
+            " this rum ",
+            " this cocktail ",
+        )
+    )
+
+
+def _referent_kind_for_scope(scope: str) -> str | None:
+    if scope == "cocktail":
+        return "product"
+    if scope == "recipe":
+        return "cocktail"
+    if scope in {"product", "food_pairing"}:
+        return "product"
+    return None
+
+
+def _explicit_recent_object(
+    user_request: str,
+    candidates: list[dict[str, object]],
+) -> dict[str, object] | None:
+    user_tokens = set(_normalized_clause(user_request).split())
+    generic = {"bacardi", "bacardí", "rum", "ром", "cocktail", "коктейль"}
+    for candidate in candidates:
+        name_tokens = set(_normalized_clause(str(candidate["name"])).split())
+        distinctive = {
+            token for token in name_tokens if len(token) >= 4 and token not in generic
+        }
+        if distinctive & user_tokens:
+            return candidate
+    return None
+
+
+def _validate_scope_and_referent(
+    result: TurnResolution,
+    user_request: str,
+    memory: SessionMemory,
+) -> None:
+    if not _contains_catalog_pronoun(user_request):
+        return
+    expected_kind = _referent_kind_for_scope(result.request_scope)
+    candidates = [
+        item
+        for item in build_recent_objects(memory)
+        if expected_kind is None or item["kind"] == expected_kind
+    ]
+    if not candidates:
+        return
+    explicit_object = _explicit_recent_object(user_request, candidates)
+    if explicit_object is None and any(
+        token in _normalized_clause(user_request)
+        for token in ("bacardi", "bacardí")
+    ):
+        # The user explicitly named a Bacardi object that may not have been
+        # shown yet. The explicit name overrides pronoun recency.
+        return
+    expected_name = str((explicit_object or candidates[0])["name"])
+    if _normalized_clause(expected_name) not in _normalized_clause(
+        result.effective_request
+    ):
+        raise ValueError(
+            "effective_request must resolve the pronoun to the most recent "
+            f"compatible object: {expected_name!r}"
+        )
+
+
 def validate_turn_resolution(
     result: TurnResolution,
     user_request: str,
@@ -201,6 +383,7 @@ def validate_turn_resolution(
         raise ValueError(
             "explicit durable preference requires a non-empty profile_patch"
         )
+    _validate_scope_and_referent(result, user_request, memory)
     _validate_negative_separation(result)
     return result
 
@@ -211,11 +394,17 @@ def resolve_turn(
     memory: SessionMemory,
     profile: UserProfile,
     llm: Any,
+    recent_messages: list[dict[str, str]] | None = None,
 ) -> TurnResolution:
     structured = llm.with_structured_output(TurnResolution, method="function_calling")
     payload = {
         "user_request": user_request,
-        "turns": [turn.model_dump(mode="json") for turn in memory.turns],
+        "recent_messages": list(recent_messages or [])[-RESOLVER_MESSAGE_LIMIT:],
+        "turns": [
+            turn.model_dump(mode="json")
+            for turn in memory.turns[-RESOLVER_TURN_LIMIT:]
+        ],
+        "recent_objects": build_recent_objects(memory),
         "user_profile": profile.model_dump(mode="json"),
     }
     feedback = ""

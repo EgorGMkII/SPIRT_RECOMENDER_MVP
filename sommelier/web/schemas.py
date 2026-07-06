@@ -18,6 +18,16 @@ class ChatResponse(BaseModel):
     session_id: str
     answer: str
     follow_up: bool
+    request_scope: Literal[
+        "product",
+        "cocktail",
+        "recipe",
+        "food_pairing",
+        "cart",
+        "profile",
+        "catalog_listing",
+        "conversation",
+    ] = "conversation"
     effective_request: str | None = None
     profile: dict | None = None
     candidates: list[dict] = Field(default_factory=list)
