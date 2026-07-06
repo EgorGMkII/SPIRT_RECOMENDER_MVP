@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Response, status
 from sommelier.agent.graph import run_agent_turn
 from sommelier.agent.state import AgentState
 from sommelier.storage.session_repository import (
@@ -154,3 +154,14 @@ def chat_history(session_id: str, request: Request) -> ChatHistoryResponse:
             for message in _repository(request).load_messages(session_id)
         ],
     )
+
+
+@router.delete(
+    "/api/sessions/{session_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def reset_session(session_id: str, request: Request) -> Response:
+    """Delete agent memory, profile, cart, transcript, traces and feedback."""
+
+    _repository(request).delete_session(session_id)
+    return Response(status_code=status.HTTP_204_NO_CONTENT)

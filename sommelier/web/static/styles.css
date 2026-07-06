@@ -54,6 +54,32 @@ body {
   white-space: nowrap;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-actions button {
+  padding: 8px 10px;
+  border: 1px solid #c9d3cf;
+  border-radius: 8px;
+  color: #495753;
+  background: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.header-actions button:hover {
+  background: #f4f7f6;
+}
+
+.header-actions button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
 .messages {
   display: flex;
   flex-direction: column;
@@ -136,6 +162,12 @@ body {
 
   .chat-header small {
     white-space: normal;
+  }
+
+  .header-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .message {

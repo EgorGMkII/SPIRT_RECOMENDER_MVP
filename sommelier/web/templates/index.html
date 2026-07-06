@@ -14,7 +14,10 @@
             <h1>AI Sommelier</h1>
             <span>Rum recommendations</span>
           </div>
-          <small id="status">Загрузка каталога...</small>
+          <div class="header-actions">
+            <small id="status">Загрузка каталога...</small>
+            <button id="reset-session" type="button">Очистить контекст</button>
+          </div>
         </header>
         <div id="messages" class="messages" aria-live="polite"></div>
         <form id="chat-form" class="composer">
@@ -23,6 +26,6 @@
         </form>
       </section>
     </main>
-    <script src="/static/chat.js"></script>
+    <script src="/static/chat.js?v=20260706-2"></script>
   </body>
 </html>

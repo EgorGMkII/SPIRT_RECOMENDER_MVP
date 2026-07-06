@@ -3,6 +3,7 @@ const form = document.querySelector("#chat-form");
 const input = document.querySelector("#message-input");
 const button = form.querySelector("button");
 const statusNode = document.querySelector("#status");
+const resetButton = document.querySelector("#reset-session");
 
 const sessionIdKey = "sommelier_session_id";
 const DEFAULT_GREETING = `Привет! Круто, что зашёл в наш бар. Меня зовут Бакард-ИИ. Я профессиональный бармен и так давно работаю в этом баре, что помню времена, когда коктейль «Апероль Шприц» считался экзотикой.
@@ -22,11 +23,24 @@ function createSessionId() {
   return `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
-let sessionId = localStorage.getItem(sessionIdKey);
-if (!sessionId) {
-  sessionId = createSessionId();
-  localStorage.setItem(sessionIdKey, sessionId);
+function loadOrCreateSessionId() {
+  try {
+    const saved = window.localStorage.getItem(sessionIdKey);
+    if (saved) {
+      return saved;
+    }
+    const created = createSessionId();
+    window.localStorage.setItem(sessionIdKey, created);
+    return created;
+  } catch (error) {
+    // Private browsing or strict privacy settings may disable localStorage.
+    // The chat must still work; this id will simply last for the current tab.
+    console.warn("Persistent browser session is unavailable", error);
+    return createSessionId();
+  }
 }
+
+const sessionId = loadOrCreateSessionId();
 
 function stripUnsupportedMarkdown(text) {
   return text
@@ -110,6 +124,34 @@ async function loadCatalogStatus() {
 
 loadCatalogStatus();
 loadChatHistory();
+
+resetButton.addEventListener("click", async () => {
+  const confirmed = window.confirm(
+    "Очистить весь диалог, память, профиль и корзину?"
+  );
+  if (!confirmed) return;
+
+  setFormEnabled(false);
+  resetButton.disabled = true;
+  try {
+    const response = await fetch(
+      `/api/sessions/${encodeURIComponent(sessionId)}`,
+      { method: "DELETE" }
+    );
+    if (!response.ok) {
+      throw new Error(`Session reset failed: ${response.status}`);
+    }
+    messages.replaceChildren();
+    appendMessage("assistant", DEFAULT_GREETING);
+  } catch (error) {
+    console.error("Session reset failed", error);
+    window.alert("Не удалось очистить контекст. Попробуйте ещё раз.");
+  } finally {
+    setFormEnabled(true);
+    resetButton.disabled = false;
+    input.focus();
+  }
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
