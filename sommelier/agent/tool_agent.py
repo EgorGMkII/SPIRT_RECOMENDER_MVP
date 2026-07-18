@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 TOOL_PROMPT = """Decide whether a tool is needed.
 Catalog tools: search_products, search_products_for_food, search_cocktails,
-lookup_by_id, list_catalog.
+lookup_by_ids, list_catalog.
 Cart tools: add_cart, dellete_cart, show_cart.
 Identify the requested action before choosing a tool:
 - turn_resolution.request_scope is the authoritative description of the
@@ -39,6 +39,11 @@ Identify the requested action before choosing a tool:
   is already a complete request: call search_cocktails now. Do not answer that
   cocktails could be selected later and do not ask for an extra preference
   before performing the requested search;
+- use search_cocktails when the current action asks to find, list, recommend
+  or narrow cocktails from a named rum/product in effective_request;
+- use lookup_by_ids, not search_cocktails, when the current action asks about
+  an already shown set of cocktails: "из них", "среди них", "which of them",
+  "compare them", "which are easiest/sweeter/stronger", or similar;
 - request_scope="catalog_listing" means the user explicitly wants the complete
   catalog of names. Call list_catalog exactly once with kind="product" for
   rums/products or kind="cocktail" for cocktails. Do not use a ranked search
@@ -49,8 +54,8 @@ Identify the requested action before choosing a tool:
 - a named cocktail is NOT food. Choosing a rum to make Old Fashioned, Daiquiri,
   Mojito or any other cocktail uses search_products, not
   search_products_for_food;
-- a recipe, ingredients, preparation method or factual explanation about a
-  previously shown object uses lookup_by_id;
+- a recipe, ingredients, preparation method, comparison or factual explanation
+  about previously shown objects uses lookup_by_ids;
 - "add to cart" uses add_cart with the exact product id and desired amount;
 - "remove/delete from cart" uses dellete_cart with the exact product id;
 - "show/what is in cart" uses show_cart;
@@ -59,7 +64,7 @@ Identify the requested action before choosing a tool:
   call search_products, then call add_cart using a returned id;
 - turn_resolution.cart_action is mandatory: add -> add_cart,
   delete -> dellete_cart, show -> show_cart. Do not finish the tool loop until
-  that exact cart tool has returned success. lookup_by_id never changes cart;
+  that exact cart tool has returned success. lookup_by_ids never changes cart;
 - profile-only updates and smalltalk need no catalog tool.
   A statement like "мне нравится мята и сладкое" is NOT an implicit request
   for a recommendation. Do not search merely because flavor words are present.
@@ -82,7 +87,9 @@ query. After a search, inspect returned cards against negative_request. If the
 best cards explicitly conflict, use the remaining tool call for a better
 positive search or finish without forcing a recommendation.
 Resolve "first/second/last" from the ordered shown_results inside saved turns.
-Use lookup_by_id to obtain full details for a previously shown object.
+Use lookup_by_ids to obtain full details for one or more previously shown
+objects. For "which of them" comparisons, pass all relevant ids from the
+ordered shown_results in a single call.
 Emit at most one tool call per message and at most two calls per user request.
 Do not write the final user-facing answer."""
 
@@ -227,7 +234,7 @@ def tool_calling_agent(
         called = response.tool_calls[0]["name"] if response.tool_calls else None
         preparatory = action == "add" and called in {
             "search_products",
-            "lookup_by_id",
+            "lookup_by_ids",
         }
         if called != required_tool and not preparatory:
             correction = HumanMessage(
@@ -246,40 +253,12 @@ def tool_calling_agent(
             called = response.tool_calls[0]["name"] if response.tool_calls else None
             preparatory = action == "add" and called in {
                 "search_products",
-                "lookup_by_id",
+                "lookup_by_ids",
             }
             if called != required_tool and not preparatory:
                 return {
                     "messages": [AIMessage(content="Required cart tool missing.")],
                     "errors": state.errors + ["required_cart_tool_missing"],
-                }
-    if _cocktail_search_is_required(state):
-        called = response.tool_calls[0]["name"] if response.tool_calls else None
-        if called != "search_cocktails":
-            correction = HumanMessage(
-                content=(
-                    "REQUIRED ACTION: request_scope is cocktail and "
-                    "effective_request names a shown product. Call "
-                    "search_cocktails now; do not defer the requested search."
-                )
-            )
-            response = bound.invoke([*history, response, correction])
-            if not isinstance(response, AIMessage):
-                response = AIMessage(
-                    content=getattr(response, "content", str(response))
-                )
-            if len(response.tool_calls) > 1:
-                response = AIMessage(
-                    content="",
-                    tool_calls=[response.tool_calls[0]],
-                )
-            called = response.tool_calls[0]["name"] if response.tool_calls else None
-            if called != "search_cocktails":
-                return {
-                    "messages": [
-                        AIMessage(content="Required cocktail search missing.")
-                    ],
-                    "errors": state.errors + ["required_cocktail_search_missing"],
                 }
     listing_kind = _required_catalog_listing_kind(state)
     if listing_kind is not None:
@@ -335,10 +314,16 @@ def _parse_cards(name: str, output: dict) -> list[ProductCandidate | CocktailCan
     if name == "list_catalog":
         CatalogListOutput.model_validate(output)
         return []
-    if name == "lookup_by_id":
-        raw = output["card"]
-        model = CocktailCandidate if raw.get("kind") == "cocktail" else ProductCandidate
-        return [model.model_validate(raw)]
+    if name == "lookup_by_ids":
+        cards = []
+        for raw in output["cards"]:
+            model = (
+                CocktailCandidate
+                if raw.get("kind") == "cocktail"
+                else ProductCandidate
+            )
+            cards.append(model.model_validate(raw))
+        return cards
     if name == "search_cocktails":
         return list(CocktailSearchOutput.model_validate(output).candidates)
     return list(ProductSearchOutput.model_validate(output).candidates)
@@ -351,24 +336,6 @@ def _product_refs_available_to_add(state: AgentState) -> set[str]:
         for item in turn.shown_results
         if item.kind == "product"
     } | {card.id for card in state.cards if card.kind == "product"}
-
-
-def _cocktail_search_is_required(state: AgentState) -> bool:
-    if (
-        state.tool_call_count != 0
-        or state.turn_resolution is None
-        or state.turn_resolution.request_scope != "cocktail"
-    ):
-        return False
-    effective = " ".join(
-        state.turn_resolution.effective_request.lower().split()
-    )
-    return any(
-        " ".join(item.name.lower().split()) in effective
-        for turn in state.session_memory.turns
-        for item in turn.shown_results
-        if item.kind == "product"
-    )
 
 
 def _required_catalog_listing_kind(state: AgentState) -> str | None:
@@ -432,12 +399,18 @@ def execute_tool(state: AgentState) -> dict:
         error = "unknown_tool"
     elif signature in state.canonical_tool_calls:
         error = "duplicate_tool_call"
-    elif name == "lookup_by_id":
-        ref = (str(args.get("kind")), str(args.get("id")))
+    elif name == "lookup_by_ids":
+        kind = str(args.get("kind"))
+        raw_ids = args.get("ids", [])
+        refs = (
+            {(kind, str(item_id)) for item_id in raw_ids}
+            if isinstance(raw_ids, list)
+            else set()
+        )
         allowed = _all_shown_refs(state) | {
             (card.kind, card.id) for card in state.cards
         }
-        if ref not in allowed:
+        if not refs or refs - allowed:
             error = "lookup_ref_not_allowed"
     updated_memory = state.session_memory
     if error is None:
@@ -470,7 +443,7 @@ def execute_tool(state: AgentState) -> dict:
     cards = list(state.cards)
     if error is None and name not in CART_TOOL_MAP:
         returned = _parse_cards(name, output)
-        if name not in {"lookup_by_id", "list_catalog"}:
+        if name not in {"lookup_by_ids", "list_catalog"}:
             shown = _recent_shown_refs(state)
             returned = [card for card in returned if (card.kind, card.id) not in shown]
             if "candidates" in output:

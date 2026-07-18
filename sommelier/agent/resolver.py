@@ -11,7 +11,9 @@ from sommelier.agent.memory import SessionMemory
 from sommelier.agent.profile import UserProfile
 
 RESOLVER_TURN_LIMIT = 6
-RESOLVER_MESSAGE_LIMIT = 4
+RESOLVER_MESSAGE_LIMIT = 6
+RECENT_USER_MESSAGE_CHARS = 500
+RECENT_ASSISTANT_MESSAGE_CHARS = 800
 
 RESOLVER_PROMPT = """Resolve the current message for a rum sommelier.
 Return TurnResolution only.
@@ -35,14 +37,16 @@ REQUEST SCOPE:
   action and resolved object, changing only the new constraint.
 
 INPUT CONTEXT:
-- recent_messages contains only the last two completed user/assistant exchanges.
-  Use it to understand pending actions, corrections and what the assistant
-  offered to do next;
+- recent_messages contains only the last three completed user/assistant
+  exchanges, with long messages truncated. Use it to understand pending
+  actions, corrections and what the assistant offered to do next;
 - turns contains at most the six newest compact turns;
-- recent_objects is computed only from central shown_results and is ordered
-  newest-first. It is the authoritative source for resolving catalog pronouns;
+- each turn.shown_results contains the catalog objects explicitly shown to
+  the user in that answer, in display order. It is the authoritative source
+  for resolving catalog pronouns and references such as "из них",
+  "первый", "второй" and "последний";
 - never treat an incidental product name from recent_messages as the current
-  catalog object when it is absent from recent_objects.
+  catalog object when it is absent from recent turn.shown_results.
 
 STRICT FIELD SEPARATION:
 - effective_request describes only what the user WANTS to find;
@@ -70,8 +74,10 @@ PRONOUN AND REFERENT RESOLUTION IS RECENCY-FIRST:
 - resolve "он", "она", "оно", "его", "её", "из него", "из неё",
   "этот ром", "этот напиток", "этот коктейль", "it", "this rum" and similar
   references to the MOST RECENT compatible object in shown_results;
-- inspect saved turns from newest to oldest. Skip profile-only turns, smalltalk
-  and turns with empty shown_results; they do not erase the last shown object;
+- inspect saved turns from newest to oldest. Within a turn, shown_results keeps
+  the exact order in which options were shown to the user. Skip profile-only
+  turns, smalltalk and turns with empty shown_results; they do not erase the
+  last shown objects;
 - compatibility is determined by the requested action: "какие коктейли из
   него" requires the most recent product, while "как его приготовить" requires
   the most recent cocktail;
@@ -81,6 +87,8 @@ PRONOUN AND REFERENT RESOLUTION IS RECENCY-FIRST:
 - after resolving a reference, effective_request MUST contain the exact object
   name from shown_results. Never leave an unresolved pronoun in
   effective_request;
+- for "из них"/"which of them" questions, keep the action scoped to the
+  latest compatible shown_results set rather than inventing a broad new search;
 - if the user explicitly names an object, that explicit name overrides a
   pronoun or implicit recent referent.
 
@@ -183,13 +191,13 @@ Do not search and do not recommend a product.
 Do not choose tools, queries or catalog IDs. Do not answer."""
 
 
-def build_recent_objects(
+def _recent_shown_result_candidates(
     memory: SessionMemory,
     turn_limit: int = RESOLVER_TURN_LIMIT,
 ) -> list[dict[str, object]]:
-    """Build a newest-first resolver view of central catalog objects."""
+    """Build a newest-first validation view from durable shown_results."""
 
-    objects: list[dict[str, object]] = []
+    candidates: list[dict[str, object]] = []
     seen: set[tuple[str, str]] = set()
     recent_turns = memory.turns[-turn_limit:]
     for turn_offset, turn in enumerate(reversed(recent_turns), start=1):
@@ -198,14 +206,31 @@ def build_recent_objects(
             if key in seen:
                 continue
             seen.add(key)
-            objects.append(
+            candidates.append(
                 {
                     "kind": shown.kind,
+                    "id": shown.id,
                     "name": shown.name,
                     "turn_offset": turn_offset,
                 }
             )
-    return objects
+    return candidates
+
+
+def truncate_recent_messages(
+    messages: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    truncated: list[dict[str, str]] = []
+    for message in messages[-RESOLVER_MESSAGE_LIMIT:]:
+        role = str(message.get("role", ""))
+        content = str(message.get("content", ""))
+        limit = (
+            RECENT_USER_MESSAGE_CHARS
+            if role == "user"
+            else RECENT_ASSISTANT_MESSAGE_CHARS
+        )
+        truncated.append({"role": role, "content": content[:limit]})
+    return truncated
 
 
 def _normalized_clause(value: str) -> str:
@@ -331,7 +356,7 @@ def _validate_scope_and_referent(
     expected_kind = _referent_kind_for_scope(result.request_scope)
     candidates = [
         item
-        for item in build_recent_objects(memory)
+        for item in _recent_shown_result_candidates(memory)
         if expected_kind is None or item["kind"] == expected_kind
     ]
     if not candidates:
@@ -399,12 +424,11 @@ def resolve_turn(
     structured = llm.with_structured_output(TurnResolution, method="function_calling")
     payload = {
         "user_request": user_request,
-        "recent_messages": list(recent_messages or [])[-RESOLVER_MESSAGE_LIMIT:],
+        "recent_messages": truncate_recent_messages(list(recent_messages or [])),
         "turns": [
             turn.model_dump(mode="json")
             for turn in memory.turns[-RESOLVER_TURN_LIMIT:]
         ],
-        "recent_objects": build_recent_objects(memory),
         "user_profile": profile.model_dump(mode="json"),
     }
     feedback = ""

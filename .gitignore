@@ -9,9 +9,6 @@
 secrets.*
 
 # Docker/local deployment files
-Dockerfile
-docker-compose.yml
-docker-compose.*.yml
 .docker/
 
 # Project-local agent instructions and docs not intended for upload
@@ -21,8 +18,6 @@ agents.md
 docs/
 
 # Tests and notebooks
-tests/
-test*.ipynb
 .pytest_cache/
 .tmp_pytest/
 .test_tmp/

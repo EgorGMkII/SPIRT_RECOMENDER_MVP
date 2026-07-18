@@ -46,10 +46,10 @@ class CocktailSearchInput(BaseModel):
     limit: int = Field(default=7, ge=1, le=7)
 
 
-class LookupByIdInput(BaseModel):
+class LookupByIdsInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     kind: Literal["product", "cocktail"]
-    id: str = Field(min_length=1, max_length=300)
+    ids: list[str] = Field(min_length=1, max_length=5)
 
 
 class ListCatalogInput(BaseModel):
@@ -117,24 +117,27 @@ def _cocktail_search(query: str, limit: int = 7) -> dict:
     ).model_dump(mode="json")
 
 
-def _lookup_by_id(kind: str, id: str) -> dict:
+def _lookup_by_ids(kind: str, ids: list[str]) -> dict:
+    unique_ids = list(dict.fromkeys(ids))
     if kind == "product":
         profiles = {
             profile.product_id: profile
             for profile in load_search_profiles(PRODUCT_PROFILES_DIR)
         }
-        if id not in profiles:
+        missing = [item_id for item_id in unique_ids if item_id not in profiles]
+        if missing:
             raise ValueError("unknown product id")
-        card = _product_candidate(profiles[id])
+        cards = [_product_candidate(profiles[item_id]) for item_id in unique_ids]
     else:
         profiles = {
             profile.cocktail_id: profile
             for profile in load_cocktail_profiles(COCKTAIL_PROFILES_DIR)
         }
-        if id not in profiles:
+        missing = [item_id for item_id in unique_ids if item_id not in profiles]
+        if missing:
             raise ValueError("unknown cocktail id")
-        card = _cocktail_candidate(profiles[id])
-    return {"card": card.model_dump(mode="json")}
+        cards = [_cocktail_candidate(profiles[item_id]) for item_id in unique_ids]
+    return {"cards": [card.model_dump(mode="json") for card in cards]}
 
 
 def _list_catalog(kind: str) -> dict:
@@ -181,11 +184,15 @@ search_cocktails = StructuredTool.from_function(
     description="Search cocktail recipes using a positive English query.",
     args_schema=CocktailSearchInput,
 )
-lookup_by_id = StructuredTool.from_function(
-    func=_lookup_by_id,
-    name="lookup_by_id",
-    description="Load one full card by a kind/id already shown to the user.",
-    args_schema=LookupByIdInput,
+lookup_by_ids = StructuredTool.from_function(
+    func=_lookup_by_ids,
+    name="lookup_by_ids",
+    description=(
+        "Load one or more full cards by kind/ids already shown to the user. "
+        "Use for recipes, explanations, comparisons, or references such as "
+        "'first', 'second', or 'which of them'."
+    ),
+    args_schema=LookupByIdsInput,
 )
 list_catalog = StructuredTool.from_function(
     func=_list_catalog,
@@ -202,7 +209,7 @@ AGENT_TOOLS = [
     search_products,
     search_products_for_food,
     search_cocktails,
-    lookup_by_id,
+    lookup_by_ids,
     list_catalog,
 ]
 TOOL_MAP = {tool.name: tool for tool in AGENT_TOOLS}

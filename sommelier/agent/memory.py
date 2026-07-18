@@ -5,6 +5,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 MAX_TURNS = 12
+MAX_SHOWN_RESULTS = 5
 RequestScope = Literal[
     "product",
     "cocktail",
@@ -44,7 +45,10 @@ class TurnMemory(MemoryModel):
     effective_request: str = Field(min_length=1, max_length=1200)
     negative_request: str | None = Field(default=None, max_length=1200)
     assistant_summary: str = Field(min_length=1, max_length=800)
-    shown_results: list[ShownResult] = Field(default_factory=list, max_length=3)
+    shown_results: list[ShownResult] = Field(
+        default_factory=list,
+        max_length=MAX_SHOWN_RESULTS,
+    )
 
 
 class SessionMemory(MemoryModel):

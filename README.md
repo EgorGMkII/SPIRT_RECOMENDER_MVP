@@ -27,7 +27,8 @@ START
        <-> search_products
        <-> search_products_for_food
        <-> search_cocktails
-       <-> lookup_by_id
+       <-> lookup_by_ids
+       <-> list_catalog
        <-> add_cart / dellete_cart / show_cart
   -> generate and validate answer
   -> build TurnMemory
@@ -47,16 +48,25 @@ START
 - `follow_up`, `initial_request` и позитивный `effective_request`;
 - временный `negative_request`;
 - короткий `assistant_summary`;
-- до трёх упорядоченных `shown_results` с `{kind, id, name, summary}`.
+- до пяти упорядоченных `shown_results` с `{kind, id, name, summary}`.
 
 Также `SessionMemory.cart` хранит позиции `{id, amount}`. В корзину добавляются
 только product IDs.
 
 Полные catalog cards в `SessionMemory` не сохраняются. Новый поиск возвращает
-их на текущий ход, а `lookup_by_id` загружает полную карточку ранее показанного
-объекта. Memory, profile, полный transcript и traces атомарно сохраняются в
-`data/sommelier.sqlite3` только после успешного финального ответа. Transcript
-используется web-интерфейсом и не передаётся агенту.
+их на текущий ход, а `lookup_by_ids` загружает полные карточки ранее показанных
+объектов. Resolver и final answer получают только последние три полных
+user/assistant-обмена с обрезкой длинных сообщений; полный transcript
+используется web-интерфейсом и не передаётся агенту целиком.
+
+Memory, profile, cart, полный transcript и traces атомарно сохраняются в
+SQLite только после успешного финального ответа. По умолчанию это
+`data/sommelier.sqlite3`; при Docker-запуске путь задаётся через
+`SOMMELIER_DB_PATH`.
+
+Отдельно сохраняется feedback-аналитика (`neutral`, `purchase_intent`,
+`negative_feedback`). Она не влияет на resolver, tools, память, профиль или
+ответ пользователю.
 
 ## Retrieval
 
@@ -71,6 +81,18 @@ Ingestion, catalog cards, search profiles и indexes являются отдел
 `sommelier/catalog` и `sommelier/retrieval`.
 
 ## Запуск
+
+Создайте `.env` из `.env.example` и заполните ключ:
+
+```text
+OPENAI_API_KEY=...
+HYDRA_BASE_URL=https://api.hydraai.ru/v1
+OPENAI_MODEL=gpt-5.4-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+SOMMELIER_LLM_KEEPALIVE_SECONDS=600
+```
+
+`.env` не должен попадать в git.
 
 ```powershell
 python -m uvicorn sommelier.web.app:app --reload

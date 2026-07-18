@@ -32,9 +32,16 @@ def _build_candidates(state: AgentState) -> list[dict]:
     """Build compact candidate payloads for the web client."""
 
     candidates: list[dict] = []
-    used = {(ref.kind, ref.id) for ref in (state.final_answer_result.used_result_refs if state.final_answer_result else [])}
+    shown = {
+        (ref.kind, ref.id)
+        for ref in (
+            state.final_answer_result.shown_refs
+            if state.final_answer_result
+            else []
+        )
+    }
     for card in state.cards:
-        if (card.kind, card.id) in used:
+        if (card.kind, card.id) in shown:
             candidates.append(card.model_dump(mode="json"))
     return candidates
 

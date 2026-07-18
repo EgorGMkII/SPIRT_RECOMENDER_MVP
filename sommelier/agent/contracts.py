@@ -31,12 +31,12 @@ class FeedbackResult(StrictModel):
 
 class FinalAnswerResult(StrictModel):
     answer: str = Field(min_length=1)
-    used_result_refs: list[CatalogRef] = Field(
+    shown_refs: list[CatalogRef] = Field(
         default_factory=list,
-        max_length=3,
+        max_length=5,
         description=(
-            "Catalog objects that are central recommendations or direct subjects "
-            "of the answer; exclude incidental alternatives and comparisons."
+            "Catalog objects explicitly named in the answer, in first-mention "
+            "order. Exclude tool candidates that are not shown to the user."
         ),
     )
     assistant_summary: str = Field(min_length=1, max_length=800)

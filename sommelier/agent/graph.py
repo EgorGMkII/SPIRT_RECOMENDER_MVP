@@ -11,7 +11,11 @@ from sommelier.agent.contracts import CatalogListOutput, FinalAnswerResult
 from sommelier.agent.feedback import classify_feedback
 from sommelier.agent.memory import ShownResult, TurnMemory, enforce_memory_limits
 from sommelier.agent.profile import apply_profile_patch
-from sommelier.agent.resolver import resolve_turn, validate_turn_resolution
+from sommelier.agent.resolver import (
+    resolve_turn,
+    truncate_recent_messages,
+    validate_turn_resolution,
+)
 from sommelier.agent.state import AgentState
 from sommelier.agent.tool_agent import (
     execute_tool,
@@ -70,7 +74,7 @@ answer for that action. Do not reuse recommendation phrasing for every turn:
    clearly say that the cart is empty. Do not turn a cart confirmation into a
    recommendation and do not invent product names, prices or availability.
    Describe a cart change ONLY when the corresponding successful cart tool
-   output is present. User intent, memory summaries and lookup_by_id do not
+   output is present. User intent, memory summaries and lookup_by_ids do not
    prove that the cart changed.
 7. Insufficient recommendation context:
    when the user requests a recommendation but there are no current cards, no
@@ -78,7 +82,7 @@ answer for that action. Do not reuse recommendation phrasing for every turn:
    a meaningful selection criterion, ask exactly one concise clarification
    question covering at most two useful parameters, such as preferred flavor
    and occasion. Do not recommend anything, do not imply that a search ran,
-   and return used_result_refs=[].
+   and return shown_refs=[].
    This rule does not apply when the user explicitly delegates the choice with
    wording such as "на свой вкус", "удиви меня" or "выбери сам".
 
@@ -86,19 +90,19 @@ answer for that action. Do not reuse recommendation phrasing for every turn:
    when request_scope="catalog_listing", reproduce every exact name returned
    by list_catalog, once and in the returned order. A short heading and a
    numbered or bulleted list are allowed. Do not rank, recommend, describe or
-   add catalog facts. Return used_result_refs=[] because browsing a complete
+   add catalog facts. Return shown_refs=[] because browsing a complete
    name list is not a recommendation and does not load full cards. The normal
-   three-object answer limit does not apply to this listing mode.
+   five-object shown_refs limit does not apply to this listing mode.
 
 After an actual recommendation or requested selection containing one or more
-central used_result_refs, end with one brief, non-pushy request for feedback,
+shown_refs, end with one brief, non-pushy request for feedback,
 for example: "Подходит такое направление или сделать вариант суше/ярче?"
 Do this only for a recommendation or selection. Do NOT request feedback after
 a recipe, explanation, profile update, cart action, smalltalk, failed search or
 clarification question.
 
 Do not add secondary products merely to make the prose more colorful, and do
-not expand used_result_refs for incidental alternatives.
+not expand shown_refs for objects not actually named in the answer.
 
 Light humor is allowed only when it matches the user's tone or during
 smalltalk. Never add jokes to recipes, error messages, cart actions or serious
@@ -112,16 +116,10 @@ a yes/no question. Match the scope of the answer to the request. Give a recipe,
 ingredient quantities or preparation steps ONLY when explicitly requested.
 For a recommendation request, do not append an unsolicited recipe.
 
-used_result_refs is NOT a list of every catalog object mentioned in the text.
-Include only the central recommendation or direct subject of the answer.
-Exclude drinks mentioned merely as secondary alternatives, comparisons,
-background or passing examples. If the user explicitly asks for several
-options or a comparison, each substantively presented requested option may be
-central and therefore included.
-
-Example: if Mojito is the recommendation and Raspberry Mojito and Old Cuban
-are mentioned only as optional alternatives, used_result_refs must contain
-only the Mojito ref.
+shown_refs is the ordered list of catalog objects explicitly named in the
+answer. Include recommendations, requested alternatives and comparison objects
+that the user can reasonably refer to later as "first", "second" or "them".
+Exclude tool candidates that are not named in the final answer.
 
 Use saved turn summaries for conversational references and only current cards
 for catalog facts requiring full evidence. Treat negative_request as a hard
@@ -130,28 +128,51 @@ do not recommend a cocktail containing sugar syrup as a clearly non-sweet
 choice. If no supplied card safely satisfies the request, say so honestly
 instead of forcing a recommendation.
 
-recent_dialogue contains only the last two completed exchanges. Use it solely
-for conversational continuity, corrections and avoiding repetition. Priority
-is strict:
+recent_dialogue contains only the last three completed exchanges, with long
+messages truncated. Use it solely for conversational continuity, corrections
+and avoiding repetition. Priority is strict:
 1. current turn_resolution;
 2. current cards and tool_messages;
 3. recent_dialogue.
-Never recover the current target, catalog facts or used_result_refs from
+Never recover the current target, catalog facts or shown_refs from
 recent_dialogue when it conflicts with the current resolution or current
 cards. An older assistant mistake is context to correct, not evidence to reuse.
 
 Never say "the card says", "in the supplied data", "search result", "tool" or
 other internal wording. Do not use Markdown bold or asterisks. Do not invent
 facts. Keep every recipe attached to the correct cocktail. Except for
-request_scope="catalog_listing", return at most three catalog objects.
+request_scope="catalog_listing", return at most five catalog objects.
 
 Return FinalAnswerResult:
 - answer: polished direct response to the user;
-- used_result_refs: only catalog objects that are the central recommendations
-  or direct subjects requested by the user;
-- assistant_summary: short factual memory summary, not the user-facing answer."""
+- shown_refs: catalog objects explicitly named in the answer, in first-mention
+  order, up to five;
+- assistant_summary: short factual memory summary, not the user-facing answer.
+  No marketing language: state what the user asked, what was answered, which
+  objects were named, and any important temporary constraints/profile/cart
+  action."""
 
 logger = logging.getLogger(__name__)
+
+RECIPE_REQUEST_MARKERS = (
+    "как приготовить",
+    "приготовить",
+    "рецепт",
+    "ингредиент",
+    "ingredients",
+    "recipe",
+    "how to make",
+    "make it",
+)
+
+RECIPE_ANSWER_MARKERS = (
+    "как приготовить",
+    "ингредиенты",
+    "приготовление",
+    "вот как приготовить",
+    "ingredients",
+    "preparation",
+)
 
 
 def _configurable(config: RunnableConfig | None) -> dict:
@@ -197,7 +218,7 @@ def resolve_turn_node(state: AgentState, config: RunnableConfig | None = None) -
             llm=_llm(config, "resolver_llm"),
             recent_messages=_repository(config).load_recent_messages(
                 state.session_id,
-                limit=4,
+                limit=6,
             ),
         )
         return {
@@ -294,6 +315,16 @@ def _catalog_listing_from_messages(state: AgentState) -> CatalogListOutput | Non
     return None
 
 
+def _unsolicited_recipe_in_answer(state: AgentState, result: FinalAnswerResult) -> bool:
+    if state.turn_resolution is None or state.turn_resolution.request_scope == "recipe":
+        return False
+    request = state.user_request.lower()
+    if any(marker in request for marker in RECIPE_REQUEST_MARKERS):
+        return False
+    answer = result.answer.lower()
+    return any(marker in answer for marker in RECIPE_ANSWER_MARKERS)
+
+
 def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> dict:
     if state.errors or state.turn_resolution is None:
         return {}
@@ -306,9 +337,11 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
             turn.model_dump(mode="json")
             for turn in state.session_memory.turns[-6:]
         ],
-        "recent_dialogue": _repository(config).load_recent_messages(
-            state.session_id,
-            limit=4,
+        "recent_dialogue": truncate_recent_messages(
+            _repository(config).load_recent_messages(
+                state.session_id,
+                limit=6,
+            )
         ),
         "cart": [
             item.model_dump(mode="json") for item in state.session_memory.cart
@@ -334,11 +367,13 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
                 f"{json.dumps(payload, ensure_ascii=False)}{feedback}"
             )
             result = FinalAnswerResult.model_validate(raw)
+            if _unsolicited_recipe_in_answer(state, result):
+                raise ValueError("do not include recipe unless explicitly requested")
             if state.turn_resolution.request_scope == "catalog_listing":
                 if listing is None:
                     raise ValueError("catalog_listing requires successful list_catalog")
-                if result.used_result_refs:
-                    raise ValueError("catalog_listing requires used_result_refs=[]")
+                if result.shown_refs:
+                    raise ValueError("catalog_listing requires shown_refs=[]")
                 missing = [
                     item.name for item in listing.items if item.name not in result.answer
                 ]
@@ -346,8 +381,8 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
                     raise ValueError(
                         "catalog listing omitted exact names: " + ", ".join(missing)
                     )
-            if any((ref.kind, ref.id) not in known for ref in result.used_result_refs):
-                raise ValueError("used_result_refs requires a current full card")
+            if any((ref.kind, ref.id) not in known for ref in result.shown_refs):
+                raise ValueError("shown_refs requires a current full card")
             expected_kind = {
                 "product": "product",
                 "food_pairing": "product",
@@ -355,18 +390,18 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
                 "recipe": "cocktail",
             }.get(state.turn_resolution.request_scope)
             if expected_kind and any(
-                ref.kind != expected_kind for ref in result.used_result_refs
+                ref.kind != expected_kind for ref in result.shown_refs
             ):
                 raise ValueError(
                     f"request_scope={state.turn_resolution.request_scope!r} "
-                    f"requires used_result_refs kind={expected_kind!r}"
+                    f"requires shown_refs kind={expected_kind!r}"
                 )
             return {
                 "final_answer_result": result,
                 "tool_traces": state.tool_traces + [
                     ToolTrace(
                         tool_name="generate_answer",
-                        output_summary=f"used_refs={len(result.used_result_refs)}",
+                        output_summary=f"shown_refs={len(result.shown_refs)}",
                     )
                 ],
             }
@@ -381,7 +416,7 @@ def build_turn_memory(state: AgentState) -> dict:
     resolution = state.turn_resolution
     card_map = {(card.kind, card.id): card for card in state.cards}
     shown: list[ShownResult] = []
-    for ref in state.final_answer_result.used_result_refs:
+    for ref in state.final_answer_result.shown_refs:
         card = card_map[(ref.kind, ref.id)]
         summary = (
             getattr(card, "description", "")
@@ -479,7 +514,7 @@ def safe_error(state: AgentState) -> dict:
     return {
         "final_answer_result": FinalAnswerResult(
             answer="Не удалось надёжно обработать запрос. Попробуйте ещё раз.",
-            used_result_refs=[],
+            shown_refs=[],
             assistant_summary="Ход завершён с ошибкой без сохранения.",
         )
     }
