@@ -28,6 +28,7 @@ class ChatResponse(BaseModel):
         "catalog_listing",
         "conversation",
     ] = "conversation"
+    answer_mode: Literal["hard", "soft"] = "hard"
     effective_request: str | None = None
     profile: dict | None = None
     candidates: list[dict] = Field(default_factory=list)

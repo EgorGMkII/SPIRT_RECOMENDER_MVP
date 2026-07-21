@@ -20,7 +20,6 @@ from sommelier.agent.state import AgentState
 from sommelier.agent.tool_agent import (
     execute_tool,
     required_cart_tool_completed,
-    route_after_tool_agent,
     tool_calling_agent,
 )
 from sommelier.agent.tracer import ToolTrace
@@ -44,10 +43,14 @@ FIRST identify the action requested by the current user_message, then style the
 answer for that action. Do not reuse recommendation phrasing for every turn:
 
 1. Direct recommendation:
-   recommend the best-fitting object and present it with appealing, restrained
-   marketing language, for example "Конечно, думаю, вам подойдёт...". Explain
-   its relevant taste and character. Do not sound like a database or ranking
-   report.
+   recommend one best-fitting main object by default and present it with
+   appealing, restrained marketing language, for example "Конечно, думаю, вам
+   подойдёт...". Add at most one or two short alternatives only when they help
+   the choice or the user asked for options. Explain relevant taste and
+   character briefly; do not write a long tasting lecture or a ranking report.
+   For ordinary recommendation/list requests, mention no more than four
+   catalog objects unless the user explicitly asks for a complete catalog list.
+   Prefer one main option plus one or two short alternatives.
 2. Recipe / how-to / ingredients:
    the object has already been selected. Start directly with a phrase such as
    "Вот как приготовить Old Cuban:" and give the requested ingredients and
@@ -92,7 +95,7 @@ answer for that action. Do not reuse recommendation phrasing for every turn:
    numbered or bulleted list are allowed. Do not rank, recommend, describe or
    add catalog facts. Return shown_refs=[] because browsing a complete
    name list is not a recommendation and does not load full cards. The normal
-   five-object shown_refs limit does not apply to this listing mode.
+   recommendation shown_refs limit does not apply to this listing mode.
 
 After an actual recommendation or requested selection containing one or more
 shown_refs, end with one brief, non-pushy request for feedback,
@@ -120,6 +123,19 @@ shown_refs is the ordered list of catalog objects explicitly named in the
 answer. Include recommendations, requested alternatives and comparison objects
 that the user can reasonably refer to later as "first", "second" or "them".
 Exclude tool candidates that are not named in the final answer.
+Before returning, reread your own answer text and compare it with the current
+cards list. Every product or cocktail name from current cards that appears in
+the answer as a recommendation, alternative or comparison object MUST have its
+{kind, id} in shown_refs, in first-mention order. Do not include a shorter card
+name just because it is part of a longer name: if the answer says "Raspberry
+Mojito", include Raspberry Mojito, not Mojito, unless Mojito is also named as a
+separate object.
+shown_refs may contain ONLY ids from current cards. Never put ids remembered
+from previous turns, recent_dialogue, assistant_summary, tool_messages or model
+knowledge into shown_refs unless the full card is present in current cards. If
+the current cards do not contain a safe recommendation for this request, say so
+briefly and return shown_refs=[] instead of borrowing an older or better-known
+object.
 
 Use saved turn summaries for conversational references and only current cards
 for catalog facts requiring full evidence. Treat negative_request as a hard
@@ -127,6 +143,11 @@ selection constraint whenever a card explicitly shows a conflict. For example,
 do not recommend a cocktail containing sugar syrup as a clearly non-sweet
 choice. If no supplied card safely satisfies the request, say so honestly
 instead of forcing a recommendation.
+For cocktail requests based on an exact rum/product named in effective_request,
+keep that base product strict. Recommend only cocktails whose current card
+supports that product as an ingredient or main rum. Do not broaden the answer
+to "or with other rums" unless the user asked for loose alternatives. If a
+returned cocktail uses a different base product, skip it.
 
 recent_dialogue contains only the last three completed exchanges, with long
 messages truncated. Use it solely for conversational continuity, corrections
@@ -141,16 +162,48 @@ cards. An older assistant mistake is context to correct, not evidence to reuse.
 Never say "the card says", "in the supplied data", "search result", "tool" or
 other internal wording. Do not use Markdown bold or asterisks. Do not invent
 facts. Keep every recipe attached to the correct cocktail. Except for
-request_scope="catalog_listing", return at most five catalog objects.
+request_scope="catalog_listing", return at most five catalog objects, and
+prefer at most four for normal recommendations.
 
 Return FinalAnswerResult:
 - answer: polished direct response to the user;
 - shown_refs: catalog objects explicitly named in the answer, in first-mention
-  order, up to five;
+  order, up to ten. Prefer fewer in the answer: normally no more than four;
 - assistant_summary: short factual memory summary, not the user-facing answer.
   No marketing language: state what the user asked, what was answered, which
   objects were named, and any important temporary constraints/profile/cart
   action."""
+
+SOFT_ANSWER_PROMPT = """You are an experienced rum sommelier answering in
+memory-only mode.
+
+The tool-agent did not load current full catalog cards for this turn. Answer
+from compact conversation memory only.
+
+Allowed sources:
+- current user_request and turn_resolution;
+- saved TurnMemory summaries and shown_results;
+- recent_dialogue for conversational continuity;
+- UserProfile.
+
+Strict limits:
+- return shown_refs=[];
+- do not introduce new products or cocktails;
+- do not provide recipes, ingredient quantities, preparation steps, prices,
+  availability, ABV or exact catalog facts that require full cards;
+- do not claim that a search or lookup was performed;
+- if the user asks for a recommendation, filtering, comparison or recipe that
+  needs catalog evidence, give a brief helpful continuation from memory and ask
+  one concise question that invites the user to continue with a specific
+  lookup/search, for example "Хотите, я точнее подберу по карточкам?" or
+  "Уточнить по уже показанным вариантам?";
+- for profile, smalltalk, simple conversational references or clarification,
+  answer naturally and briefly.
+
+Return FinalAnswerResult:
+- answer: user-facing soft response in the user's language;
+- shown_refs: always [];
+- assistant_summary: factual summary of this soft memory-only turn."""
 
 logger = logging.getLogger(__name__)
 
@@ -226,7 +279,21 @@ def resolve_turn_node(state: AgentState, config: RunnableConfig | None = None) -
             "tool_traces": state.tool_traces + [
                 ToolTrace(
                     tool_name="resolve_turn",
-                    output_summary=f"follow_up={result.follow_up}",
+                    input={
+                        "follow_up": result.follow_up,
+                        "request_scope": result.request_scope,
+                        "initial_request": result.initial_request,
+                        "effective_request": result.effective_request,
+                        "negative_request": result.negative_request,
+                        "cart_action": result.cart_action,
+                        "reasoning_note": result.reasoning_note,
+                    },
+                    output_summary=(
+                        f"follow_up={result.follow_up}; "
+                        f"scope={result.request_scope}; "
+                        f"initial={result.initial_request[:80]!r}; "
+                        f"effective={result.effective_request[:80]!r}"
+                    ),
                 )
             ],
         }
@@ -360,6 +427,7 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
     known = {(card.kind, card.id) for card in state.cards}
     listing = _catalog_listing_from_messages(state)
     feedback = ""
+    last_error: Exception | None = None
     for _ in range(2):
         try:
             raw = structured.invoke(
@@ -406,8 +474,110 @@ def generate_answer(state: AgentState, config: RunnableConfig | None = None) -> 
                 ],
             }
         except Exception as exc:
+            last_error = exc
             feedback = f"\nVALIDATION ERROR: {exc}. Correct the result."
-    return {"errors": state.errors + ["final_answer_validation_failed"]}
+    return {
+        "answer_mode": "soft",
+        "final_answer_result": FinalAnswerResult(
+            answer=(
+                "Я нашёл подходящие варианты, но не смог надёжно оформить ответ. "
+                "Хотите, я уточню подбор по уже найденным карточкам или попробую "
+                "сформулировать короче?"
+            ),
+            shown_refs=[],
+            assistant_summary=(
+                "Hard answer generation failed; returned a safe soft fallback "
+                "without catalog references."
+            ),
+        ),
+        "tool_traces": state.tool_traces + [
+            ToolTrace(
+                tool_name="generate_answer",
+                status="error",
+                output_summary=(
+                    "final_answer_validation_failed"
+                    if last_error is None
+                    else f"final_answer_validation_failed:{last_error}"
+                )[:500],
+            )
+        ],
+    }
+
+
+def generate_soft_answer(state: AgentState, config: RunnableConfig | None = None) -> dict:
+    if state.errors or state.turn_resolution is None:
+        return {}
+    payload = {
+        "user_request": state.user_request,
+        "turn_resolution": state.turn_resolution.model_dump(mode="json"),
+        "turns": [
+            turn.model_dump(mode="json")
+            for turn in state.session_memory.turns[-6:]
+        ],
+        "recent_dialogue": truncate_recent_messages(
+            _repository(config).load_recent_messages(
+                state.session_id,
+                limit=6,
+            )
+        ),
+        "cart": [
+            item.model_dump(mode="json") for item in state.session_memory.cart
+        ],
+        "profile": state.user_profile.model_dump(mode="json"),
+    }
+    structured = _answer_llm(config).with_structured_output(
+        FinalAnswerResult, method="function_calling"
+    )
+    feedback = ""
+    last_error: Exception | None = None
+    for _ in range(2):
+        try:
+            raw = structured.invoke(
+                f"{SOFT_ANSWER_PROMPT}\nINPUT:\n"
+                f"{json.dumps(payload, ensure_ascii=False)}{feedback}"
+            )
+            result = FinalAnswerResult.model_validate(raw)
+            if result.shown_refs:
+                raise ValueError("soft answer requires shown_refs=[]")
+            return {
+                "answer_mode": "soft",
+                "final_answer_result": result,
+                "tool_traces": state.tool_traces + [
+                    ToolTrace(
+                        tool_name="generate_soft_answer",
+                        output_summary="shown_refs=0",
+                    )
+                ],
+            }
+        except Exception as exc:
+            last_error = exc
+            feedback = f"\nVALIDATION ERROR: {exc}. Correct the result."
+    return {
+        "answer_mode": "soft",
+        "final_answer_result": FinalAnswerResult(
+            answer=(
+                "Я понял направление, но сейчас не смог надёжно оформить ответ "
+                "по памяти. Хотите, я уточню подбор по карточкам или вы зададите "
+                "один конкретный вариант?"
+            ),
+            shown_refs=[],
+            assistant_summary=(
+                "Soft answer generation failed; returned a safe clarification "
+                "without catalog references."
+            ),
+        ),
+        "tool_traces": state.tool_traces + [
+            ToolTrace(
+                tool_name="generate_soft_answer",
+                status="error",
+                output_summary=(
+                    "soft_answer_validation_failed"
+                    if last_error is None
+                    else f"soft_answer_validation_failed:{last_error}"
+                )[:500],
+            )
+        ],
+    }
 
 
 def build_turn_memory(state: AgentState) -> dict:
@@ -524,6 +694,18 @@ def route_after_resolution(state: AgentState) -> str:
     return "safe_error" if state.errors else "tool_calling_agent"
 
 
+def route_after_tool_agent_decision(state: AgentState) -> str:
+    last = state.messages[-1]
+    if getattr(last, "tool_calls", None) and state.tool_call_count < 2:
+        return "execute_tool"
+    if state.errors:
+        return "generate_answer"
+    has_tool_output = any(getattr(message, "type", "") == "tool" for message in state.messages)
+    if state.cards or has_tool_output:
+        return "generate_answer"
+    return "generate_soft_answer"
+
+
 def route_after_answer(state: AgentState) -> str:
     return (
         "safe_error"
@@ -542,6 +724,7 @@ def build_graph():
     graph.add_node("tool_calling_agent", tool_calling_agent)
     graph.add_node("execute_tool", execute_tool)
     graph.add_node("generate_answer", generate_answer)
+    graph.add_node("generate_soft_answer", generate_soft_answer)
     graph.add_node("build_turn_memory", build_turn_memory)
     graph.add_node("persist", persist)
     graph.add_node("persist_feedback", persist_feedback)
@@ -553,9 +736,10 @@ def build_graph():
     graph.add_edge("validate_turn_resolution", "classify_feedback")
     graph.add_edge("classify_feedback", "apply_optional_profile_patch")
     graph.add_conditional_edges("apply_optional_profile_patch", route_after_resolution)
-    graph.add_conditional_edges("tool_calling_agent", route_after_tool_agent)
+    graph.add_conditional_edges("tool_calling_agent", route_after_tool_agent_decision)
     graph.add_edge("execute_tool", "tool_calling_agent")
     graph.add_conditional_edges("generate_answer", route_after_answer)
+    graph.add_conditional_edges("generate_soft_answer", route_after_answer)
     graph.add_edge("build_turn_memory", "persist")
     graph.add_edge("persist", "persist_feedback")
     graph.add_edge("safe_error", "persist_feedback")

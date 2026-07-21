@@ -12,6 +12,7 @@ RUN apt-get update \
 
 COPY pyproject.toml README.md ./
 COPY sommelier ./sommelier
+COPY scripts ./scripts
 COPY llm_module.py ./llm_module.py
 
 RUN pip install --upgrade pip \

@@ -1,6 +1,6 @@
 """Ephemeral state for one user request."""
 
-from typing import Annotated, Any
+from typing import Annotated, Any, Literal
 from uuid import uuid4
 
 from langgraph.graph.message import add_messages
@@ -34,6 +34,7 @@ class AgentState(BaseModel):
     tool_call_count: int = 0
     canonical_tool_calls: list[str] = Field(default_factory=list)
     cards: list[ProductCandidate | CocktailCandidate] = Field(default_factory=list)
+    answer_mode: Literal["hard", "soft"] = "hard"
 
     final_answer_result: FinalAnswerResult | None = None
     errors: list[str] = Field(default_factory=list)

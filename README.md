@@ -31,6 +31,8 @@ START
        <-> list_catalog
        <-> add_cart / dellete_cart / show_cart
   -> generate and validate answer
+       hard: по текущим cards/tool output
+       soft: memory-only fallback без shown_refs
   -> build TurnMemory
   -> atomically persist memory/profile/transcript/traces to SQLite
   -> END
@@ -48,7 +50,7 @@ START
 - `follow_up`, `initial_request` и позитивный `effective_request`;
 - временный `negative_request`;
 - короткий `assistant_summary`;
-- до пяти упорядоченных `shown_results` с `{kind, id, name, summary}`.
+- до десяти упорядоченных `shown_results` с `{kind, id, name, summary}`.
 
 Также `SessionMemory.cart` хранит позиции `{id, amount}`. В корзину добавляются
 только product IDs.
@@ -115,3 +117,32 @@ pytest
 
 Тесты используют fake LLM и локальные retrieval doubles; реальные model calls
 и интернет не требуются.
+
+## Live LLM dialog CLI
+
+Для адаптивной ручной проверки реального поведения агента используется CLI:
+
+```powershell
+python scripts/agent_chat_cli.py --session codex-live --interactive
+```
+
+Можно отправлять отдельные сообщения в одну и ту же сессию:
+
+```powershell
+python scripts/agent_chat_cli.py --session codex-live --message "Привет, хочу ром к жареному мясу."
+python scripts/agent_chat_cli.py --session codex-live --message "А какие коктейли можно из него сделать?"
+python scripts/agent_chat_cli.py --session codex-live --show-memory
+python scripts/agent_chat_cli.py --session codex-live --reset
+```
+
+В Docker с сохранением CLI-сессии в runtime volume:
+
+```bash
+docker compose exec -T sommelier-web python scripts/agent_chat_cli.py --db-path /app/runtime/agent_chat_cli.sqlite3 --session codex-live --interactive
+```
+
+CLI использует настоящий LLM provider из `.env`, поэтому он не входит в обычный
+`pytest`. Он печатает ответ, `follow_up`, `scope`, `effective_request`,
+реальные tool names, `shown_refs`, полные карточки текущего хода и ошибки.
+Сценарии не захардкожены: проверяющий может вести диалог естественно и
+адаптировать следующий вопрос под фактический ответ агента.

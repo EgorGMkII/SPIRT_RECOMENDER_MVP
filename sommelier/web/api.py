@@ -86,6 +86,7 @@ def chat(payload: ChatRequest, request: Request) -> ChatResponse:
             if state.turn_resolution
             else "conversation"
         ),
+        answer_mode=state.answer_mode,
         effective_request=state.turn_resolution.effective_request if state.turn_resolution else None,
         profile=state.user_profile.model_dump(mode="json") if state.user_profile else None,
         candidates=_build_candidates(state),

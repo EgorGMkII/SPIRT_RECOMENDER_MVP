@@ -49,7 +49,7 @@ class CocktailSearchInput(BaseModel):
 class LookupByIdsInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     kind: Literal["product", "cocktail"]
-    ids: list[str] = Field(min_length=1, max_length=5)
+    ids: list[str] = Field(min_length=1, max_length=10)
 
 
 class ListCatalogInput(BaseModel):

@@ -54,6 +54,12 @@ STRICT FIELD SEPARATION:
 - never translate an exclusion into a softened positive-looking property;
 - if removing an exclusion leaves the previous effective_request unchanged,
   keep that effective_request unchanged.
+- effective_request is a compact normalized request, not an answer plan. Do
+  NOT add response format, number of options, serving advice, explanation
+  depth, tasting structure or other requirements unless the user explicitly
+  asked for them;
+- preserve the user's real criteria, but do not make the request more specific
+  just because such details would be useful in a good answer.
 
 follow_up=false:
 - initial_request must exactly equal the current user_request;
@@ -65,7 +71,9 @@ follow_up=true:
 - use it only when the message modifies the SAME request or explicitly refers
   to a saved answer/object (for example "ещё", "первый из последних", "его",
   "этот ром", "как его приготовить", "давай сладкий");
-- initial_request must exactly equal initial_request from one saved turn;
+- initial_request should copy initial_request from the saved turn being
+  continued. Python will normalize this field, so do not rely on it for
+  reasoning;
 - effective_request is the complete updated request containing ONLY desired,
   positive properties and task context;
 - negative_request is the complete updated temporary exclusions, or null.
@@ -78,6 +86,10 @@ PRONOUN AND REFERENT RESOLUTION IS RECENCY-FIRST:
   the exact order in which options were shown to the user. Skip profile-only
   turns, smalltalk and turns with empty shown_results; they do not erase the
   last shown objects;
+- if the latest compatible shown_results set contains several objects and the
+  user uses a singular ambiguous pronoun such as "из него" without an ordinal
+  ("первый", "второй") or exact name, do not guess. Ask a short clarification
+  question with request_scope="conversation" and no catalog search;
 - compatibility is determined by the requested action: "какие коктейли из
   него" requires the most recent product, while "как его приготовить" requires
   the most recent cocktail;
@@ -316,6 +328,14 @@ def _contains_catalog_pronoun(user_request: str) -> bool:
             " from it ",
             " this rum ",
             " this cocktail ",
+            " первого варианта ",
+            " первый вариант ",
+            " второго варианта ",
+            " второй вариант ",
+            " третьего варианта ",
+            " третий вариант ",
+            " последнего варианта ",
+            " последний вариант ",
         )
     )
 
@@ -346,6 +366,62 @@ def _explicit_recent_object(
     return None
 
 
+def _latest_compatible_shown_results(
+    memory: SessionMemory,
+    expected_kind: str | None,
+) -> list[dict[str, object]]:
+    recent_turns = memory.turns[-RESOLVER_TURN_LIMIT:]
+    for turn_offset, turn in enumerate(reversed(recent_turns), start=1):
+        items = [
+            {
+                "kind": shown.kind,
+                "id": shown.id,
+                "name": shown.name,
+                "turn_offset": turn_offset,
+            }
+            for shown in turn.shown_results
+            if expected_kind is None or shown.kind == expected_kind
+        ]
+        if items:
+            return items
+    return []
+
+
+def _initial_request_for_follow_up(
+    result: TurnResolution,
+    user_request: str,
+    memory: SessionMemory,
+) -> str:
+    """Choose the durable root request in Python, not from LLM text copying."""
+
+    allowed = {turn.initial_request for turn in memory.turns}
+    if result.initial_request in allowed:
+        return result.initial_request
+    expected_kind = _referent_kind_for_scope(result.request_scope)
+    if _contains_catalog_pronoun(user_request):
+        latest = _latest_compatible_shown_results(memory, expected_kind)
+        if latest:
+            turn_offset = int(latest[0]["turn_offset"])
+            return memory.turns[-turn_offset].initial_request
+    return memory.turns[-1].initial_request
+
+
+def _ordinal_recent_object(
+    user_request: str,
+    candidates: list[dict[str, object]],
+) -> dict[str, object] | None:
+    text = f" {_normalized_clause(user_request)} "
+    if any(marker in text for marker in (" первого ", " первый ")):
+        return candidates[0] if candidates else None
+    if any(marker in text for marker in (" второго ", " второй ")):
+        return candidates[1] if len(candidates) >= 2 else None
+    if any(marker in text for marker in (" третьего ", " третий ")):
+        return candidates[2] if len(candidates) >= 3 else None
+    if any(marker in text for marker in (" последнего ", " последний ")):
+        return candidates[-1] if candidates else None
+    return None
+
+
 def _validate_scope_and_referent(
     result: TurnResolution,
     user_request: str,
@@ -362,6 +438,10 @@ def _validate_scope_and_referent(
     if not candidates:
         return
     explicit_object = _explicit_recent_object(user_request, candidates)
+    ordinal_object = _ordinal_recent_object(
+        user_request,
+        _latest_compatible_shown_results(memory, expected_kind),
+    )
     if explicit_object is None and any(
         token in _normalized_clause(user_request)
         for token in ("bacardi", "bacardí")
@@ -369,7 +449,12 @@ def _validate_scope_and_referent(
         # The user explicitly named a Bacardi object that may not have been
         # shown yet. The explicit name overrides pronoun recency.
         return
-    expected_name = str((explicit_object or candidates[0])["name"])
+    latest_compatible = _latest_compatible_shown_results(memory, expected_kind)
+    if explicit_object is None and ordinal_object is None and len(latest_compatible) > 1:
+        # Ambiguous singular references after several shown objects should be
+        # resolved by the LLM as a clarification, not by Python guessing.
+        return
+    expected_name = str((explicit_object or ordinal_object or candidates[0])["name"])
     if _normalized_clause(expected_name) not in _normalized_clause(
         result.effective_request
     ):
@@ -387,11 +472,11 @@ def validate_turn_resolution(
     if result.follow_up:
         if not memory.turns:
             raise ValueError("follow_up requires saved turns")
-        allowed = {turn.initial_request for turn in memory.turns}
-        if result.initial_request not in allowed:
-            raise ValueError("follow_up initial_request must match saved turn")
+        result.initial_request = _initial_request_for_follow_up(
+            result, user_request, memory
+        )
     elif result.initial_request != user_request:
-        raise ValueError("new turn initial_request must equal user_request exactly")
+        result.initial_request = user_request
     if result.negative_request is not None:
         result.negative_request = " ".join(result.negative_request.split()) or None
     expected_cart_action = _expected_cart_action(

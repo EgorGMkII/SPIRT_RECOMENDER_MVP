@@ -11,11 +11,10 @@ secrets.*
 # Docker/local deployment files
 .docker/
 
-# Project-local agent instructions and docs not intended for upload
+# Project-local agent instructions not intended for upload
 AGENTS.md
 Agents.md
 agents.md
-docs/
 
 # Tests and notebooks
 .pytest_cache/

@@ -55,3 +55,29 @@ def test_prompt_defines_requested_labels_and_priority() -> None:
     assert '"Ответ не тот, я не просил советовать" -> negative_feedback' in FEEDBACK_PROMPT
     assert '"Мне не нравится сладкий ром" -> neutral' in FEEDBACK_PROMPT
     assert '"Этот ром невкусный" -> neutral' in FEEDBACK_PROMPT
+
+
+def test_invalid_structured_feedback_falls_back_to_neutral() -> None:
+    llm = RecordingFeedbackLLM(None)
+
+    result = classify_feedback(
+        user_request="Давай сладкие варианты.",
+        previous_assistant_answer="Вот варианты.",
+        follow_up=True,
+        llm=llm,
+    )
+
+    assert result.feedback == "neutral"
+
+
+def test_invalid_structured_feedback_fallback_keeps_priority() -> None:
+    llm = RecordingFeedbackLLM(None)
+
+    result = classify_feedback(
+        user_request="Ответ не тот, но хочу купить этот ром.",
+        previous_assistant_answer="Я посоветовал другой ром.",
+        follow_up=True,
+        llm=llm,
+    )
+
+    assert result.feedback == "negative_feedback"

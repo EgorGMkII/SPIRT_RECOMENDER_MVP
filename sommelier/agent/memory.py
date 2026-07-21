@@ -5,7 +5,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 MAX_TURNS = 12
-MAX_SHOWN_RESULTS = 5
+MAX_SHOWN_RESULTS = 10
 RequestScope = Literal[
     "product",
     "cocktail",

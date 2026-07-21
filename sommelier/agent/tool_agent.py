@@ -35,30 +35,61 @@ Cart tools: add_cart, dellete_cart, show_cart.
 Identify the requested action before choosing a tool:
 - turn_resolution.request_scope is the authoritative description of the
   CURRENT action. Saved turns provide context but must not replace that scope;
-- request_scope="cocktail" with an exact shown rum name in effective_request
-  is already a complete request: call search_cocktails now. Do not answer that
-  cocktails could be selected later and do not ask for an extra preference
-  before performing the requested search;
-- use search_cocktails when the current action asks to find, list, recommend
-  or narrow cocktails from a named rum/product in effective_request;
-- use lookup_by_ids, not search_cocktails, when the current action asks about
-  an already shown set of cocktails: "из них", "среди них", "which of them",
-  "compare them", "which are easiest/sweeter/stronger", or similar;
+
+Choose exactly one mode:
+
+MODE A — SEARCH NEW CANDIDATES:
+- use search_products for product/rum recommendations or choosing a rum for a
+  named cocktail;
+- use search_products_for_food only for pairing rum with edible food: a dish,
+  ingredient, meal or cuisine;
+- use search_cocktails when the current user asks to find, list, recommend or
+  narrow cocktail candidates, including "какие коктейли можно сделать из X",
+  "подбери коктейли на основе X", "варианты коктейлей с X", or a constraint
+  follow-up such as "давай сладкие варианты" after a cocktail request;
+- if request_scope="cocktail" and effective_request names an exact rum/product
+  as the base, that is sufficient to search. Do not answer "I can select them"
+  and do not ask for extra preferences before searching.
+
+MODE B — LOOK UP SHOWN OBJECTS:
+- use lookup_by_ids when the user asks for recipe, ingredients, preparation,
+  comparison, explanation or properties of objects already shown;
+- request_scope="recipe" normally means lookup_by_ids for the referenced
+  cocktail. Do not answer a recipe from memory summaries;
+- use lookup_by_ids when the user asks to filter or narrow the already shown
+  objects by a property such as sweetness, strength, freshness, bitterness,
+  ease, ingredients or serving style. "Давай сладкие варианты" after shown
+  cocktails means inspect the shown cocktails with lookup_by_ids; do not ask
+  whether to filter or search;
+- use lookup_by_ids, not search_cocktails, for "из них", "среди них",
+  "which of them", "compare them", "which are easiest/sweeter/stronger",
+  "first/second/last", or similar references to saved shown_results;
+- pass all relevant ids in one lookup_by_ids call, preserving shown_results
+  order.
+
+MODE C — CART:
+- "add to cart" uses add_cart with the exact product id and desired amount;
+- "remove/delete from cart" uses dellete_cart with the exact product id;
+- "show/what is in cart" uses show_cart.
+
+MODE D — NO TOOL:
+- profile-only updates and smalltalk need no catalog tool;
+- an underspecified new recommendation with no meaningful criterion should
+  finish without a tool so final answer can ask one concise clarification
+  question.
+- no-tool text is only an internal signal to the graph, never the final
+  user-facing answer. Do not ask the user a follow-up question from this node
+  when the current request can be answered by search_products,
+  search_products_for_food, search_cocktails or lookup_by_ids;
+
 - request_scope="catalog_listing" means the user explicitly wants the complete
   catalog of names. Call list_catalog exactly once with kind="product" for
   rums/products or kind="cocktail" for cocktails. Do not use a ranked search
   and do not load full cards;
 - a new recommendation normally requires the matching search tool;
-- search_products_for_food is ONLY for pairing rum with edible food: a dish,
-  ingredient, meal or cuisine;
 - a named cocktail is NOT food. Choosing a rum to make Old Fashioned, Daiquiri,
   Mojito or any other cocktail uses search_products, not
   search_products_for_food;
-- a recipe, ingredients, preparation method, comparison or factual explanation
-  about previously shown objects uses lookup_by_ids;
-- "add to cart" uses add_cart with the exact product id and desired amount;
-- "remove/delete from cart" uses dellete_cart with the exact product id;
-- "show/what is in cart" uses show_cart;
 - cart tools are for product ids, never cocktail ids;
 - if a product to add has not been shown and its exact id is unavailable, first
   call search_products, then call add_cart using a returned id;
@@ -86,12 +117,22 @@ Use positive effective_request for search; never put negative_request into a
 query. After a search, inspect returned cards against negative_request. If the
 best cards explicitly conflict, use the remaining tool call for a better
 positive search or finish without forcing a recommendation.
-Resolve "first/second/last" from the ordered shown_results inside saved turns.
-Use lookup_by_ids to obtain full details for one or more previously shown
-objects. For "which of them" comparisons, pass all relevant ids from the
-ordered shown_results in a single call.
+After a successful search that returned cards in this same turn, do not call
+another search of the same kind unless the first search returned zero usable
+cards or explicitly conflicts with negative_request. Prefer stopping so the
+final answer can use the current cards.
+Do not call lookup_by_ids immediately after a successful search just to inspect
+the same newly returned cards: search outputs already contain answer-safe card
+details. Reserve lookup_by_ids for objects saved in previous shown_results or
+for recipe/comparison/explanation requests about already shown objects.
 Emit at most one tool call per message and at most two calls per user request.
-Do not write the final user-facing answer."""
+Do not write the final user-facing answer. If you return an AIMessage without
+tool_calls, keep content short and internal, for example "No tool needed." Never
+write recommendations, product/cocktail names, filtering choices, recipes or
+questions to the user from this node.
+Never write a tool name or JSON arguments as plain text. If you decide on
+lookup_by_ids, search_products, search_products_for_food, search_cocktails,
+list_catalog or a cart action, call the tool through native tool_calls only."""
 
 SEARCH_DEDUP_TURNS = 2
 ALL_TOOLS = [*AGENT_TOOLS, *CART_TOOL_MAP.values()]
@@ -194,6 +235,21 @@ def _is_profile_only_turn(state: AgentState) -> bool:
     return preference_correction or (preference_statement and not explicit_action)
 
 
+def _sanitize_plain_response(response: AIMessage) -> AIMessage:
+    if response.tool_calls:
+        return response
+    content = str(response.content or "").strip()
+    if content in {
+        "No tool needed.",
+        "No tool needed for profile-only update.",
+        "Tool budget exhausted.",
+        "Required cart tool missing.",
+        "Required catalog listing missing.",
+    }:
+        return response
+    return AIMessage(content="No tool needed.")
+
+
 def tool_calling_agent(
     state: AgentState,
     config: RunnableConfig | None = None,
@@ -230,6 +286,7 @@ def tool_calling_agent(
         response = AIMessage(content=getattr(response, "content", str(response)))
     if len(response.tool_calls) > 1:
         response = AIMessage(content="", tool_calls=[response.tool_calls[0]])
+    response = _sanitize_plain_response(response)
     if cart_incomplete:
         called = response.tool_calls[0]["name"] if response.tool_calls else None
         preparatory = action == "add" and called in {
@@ -250,6 +307,7 @@ def tool_calling_agent(
                 )
             if len(response.tool_calls) > 1:
                 response = AIMessage(content="", tool_calls=[response.tool_calls[0]])
+            response = _sanitize_plain_response(response)
             called = response.tool_calls[0]["name"] if response.tool_calls else None
             preparatory = action == "add" and called in {
                 "search_products",
@@ -281,6 +339,7 @@ def tool_calling_agent(
                 )
             if len(response.tool_calls) > 1:
                 response = AIMessage(content="", tool_calls=[response.tool_calls[0]])
+            response = _sanitize_plain_response(response)
             call = response.tool_calls[0] if response.tool_calls else None
             if (
                 call is None
@@ -389,10 +448,12 @@ def _execute_cart_tool(
 def execute_tool(state: AgentState) -> dict:
     call = state.messages[-1].tool_calls[0]
     name, args, call_id = call["name"], call["args"], call["id"]
+    args = dict(args)
     signature = json.dumps({"name": name, "args": args}, sort_keys=True)
     error: str | None = None
     output: dict = {}
     returned_count = 0
+    rejected_lookup_ids: list[str] = []
     if state.tool_call_count >= 2:
         error = "tool_budget_exhausted"
     elif name not in ALL_TOOL_MAP:
@@ -402,16 +463,24 @@ def execute_tool(state: AgentState) -> dict:
     elif name == "lookup_by_ids":
         kind = str(args.get("kind"))
         raw_ids = args.get("ids", [])
-        refs = (
-            {(kind, str(item_id)) for item_id in raw_ids}
+        ordered_ids = (
+            list(dict.fromkeys(str(item_id) for item_id in raw_ids))
             if isinstance(raw_ids, list)
-            else set()
+            else []
         )
         allowed = _all_shown_refs(state) | {
             (card.kind, card.id) for card in state.cards
         }
-        if not refs or refs - allowed:
+        allowed_ids = [
+            item_id for item_id in ordered_ids if (kind, item_id) in allowed
+        ]
+        rejected_lookup_ids = [
+            item_id for item_id in ordered_ids if (kind, item_id) not in allowed
+        ]
+        if not allowed_ids:
             error = "lookup_ref_not_allowed"
+        else:
+            args["ids"] = allowed_ids
     updated_memory = state.session_memory
     if error is None:
         try:
@@ -419,6 +488,11 @@ def execute_tool(state: AgentState) -> dict:
                 output, updated_memory = _execute_cart_tool(state, name, args)
             else:
                 output = TOOL_MAP[name].invoke(args)
+                if name == "lookup_by_ids" and rejected_lookup_ids:
+                    output["rejected_ids"] = rejected_lookup_ids
+                    output["caveats"] = [
+                        "Some requested ids were not in saved shown_results or current cards."
+                    ]
         except ValueError as exc:
             message = str(exc)
             error = (
@@ -475,16 +549,21 @@ def execute_tool(state: AgentState) -> dict:
                     (
                         f"cart_items={len(updated_memory.cart)}"
                         if name in CART_TOOL_MAP
+                else (
+                    (
+                        f"catalog_items={output.get('total', 0)}"
+                        if name == "list_catalog"
                         else (
-                            (
-                                f"catalog_items={output.get('total', 0)}"
-                                if name == "list_catalog"
-                                else (
-                                    f"returned_after_filter={returned_count}; "
-                                    f"cards_in_current_turn={len(cards)}"
-                                )
+                            f"returned_after_filter={returned_count}; "
+                            f"cards_in_current_turn={len(cards)}"
+                            + (
+                                f"; rejected_ids={len(rejected_lookup_ids)}"
+                                if rejected_lookup_ids
+                                else ""
                             )
                         )
+                    )
+                )
                     )
                 ),
                 status="error" if error else "success",

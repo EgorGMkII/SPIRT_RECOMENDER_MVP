@@ -33,7 +33,7 @@ class FinalAnswerResult(StrictModel):
     answer: str = Field(min_length=1)
     shown_refs: list[CatalogRef] = Field(
         default_factory=list,
-        max_length=5,
+        max_length=10,
         description=(
             "Catalog objects explicitly named in the answer, in first-mention "
             "order. Exclude tool candidates that are not shown to the user."

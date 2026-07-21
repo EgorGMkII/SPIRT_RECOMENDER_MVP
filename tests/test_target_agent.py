@@ -15,7 +15,12 @@ from sommelier.agent.contracts import (
     TurnResolution,
 )
 from sommelier.agent.search_tools import _list_catalog
-from sommelier.agent.graph import ANSWER_PROMPT, generate_answer, run_agent_turn
+from sommelier.agent.graph import (
+    ANSWER_PROMPT,
+    SOFT_ANSWER_PROMPT,
+    generate_answer,
+    run_agent_turn,
+)
 from sommelier.agent.memory import (
     CartItem,
     CatalogRef,
@@ -77,7 +82,7 @@ def test_memory_keeps_last_twelve_ordered_turns() -> None:
     ]
 
 
-def test_turn_memory_keeps_up_to_five_ordered_shown_results() -> None:
+def test_turn_memory_keeps_up_to_ten_ordered_shown_results() -> None:
     turn = _turn().model_copy(
         update={
             "shown_results": [
@@ -87,16 +92,12 @@ def test_turn_memory_keeps_up_to_five_ordered_shown_results() -> None:
                     name=f"Cocktail {index}",
                     summary="Shown.",
                 )
-                for index in range(5)
+                for index in range(10)
             ]
         }
     )
     assert [item.id for item in turn.shown_results] == [
-        "cocktail-0",
-        "cocktail-1",
-        "cocktail-2",
-        "cocktail-3",
-        "cocktail-4",
+        f"cocktail-{index}" for index in range(10)
     ]
 
 
@@ -117,12 +118,42 @@ def test_resolution_validation_for_new_and_follow_up() -> None:
     )
     validate_turn_resolution(follow, "more bitter", memory)
 
-    with pytest.raises(ValueError):
-        validate_turn_resolution(
-            follow.model_copy(update={"initial_request": "unknown"}),
-            "more bitter",
-            memory,
-        )
+    normalized_follow = validate_turn_resolution(
+        follow.model_copy(update={"initial_request": "unknown"}),
+        "more bitter",
+        memory,
+    )
+    assert normalized_follow.initial_request == "fresh cocktail"
+
+    product_turn = TurnMemory(
+        follow_up=False,
+        request_scope="food_pairing",
+        user_request="Привет, хочу ром к жареному мясу.",
+        initial_request="Привет, хочу ром к жареному мясу.",
+        effective_request="Посоветовать ром к жареному мясу.",
+        negative_request=None,
+        assistant_summary="Рекомендован BACARDÍ Carta Negra.",
+        shown_results=[
+            ShownResult(
+                kind="product",
+                id="bacardi-carta-negra",
+                name="BACARDÍ Carta Negra",
+                summary="Dark rum.",
+            )
+        ],
+    )
+    pronoun_memory = SessionMemory(session_id="s", turns=[product_turn])
+    pronoun_follow = validate_turn_resolution(
+        TurnResolution(
+            follow_up=True,
+            request_scope="cocktail",
+            initial_request="перефразированный корень",
+            effective_request="Подобрать коктейли на основе BACARDÍ Carta Negra.",
+        ),
+        "А какие коктейли можно из него сделать?",
+        pronoun_memory,
+    )
+    assert pronoun_follow.initial_request == product_turn.initial_request
 
     with pytest.raises(ValueError, match="negative constraints"):
         validate_turn_resolution(
@@ -141,6 +172,8 @@ def test_resolver_prompt_forbids_softened_negative_in_effective_request() -> Non
     assert '"низкая сладость"' in RESOLVER_PROMPT
     assert "WRONG effective_request examples" in RESOLVER_PROMPT
     assert "keep that effective_request unchanged" in RESOLVER_PROMPT
+    assert "compact normalized request, not an answer plan" in RESOLVER_PROMPT
+    assert "Do\n  NOT add response format, number of options" in RESOLVER_PROMPT
 
 
 def test_resolver_prompt_treats_standalone_target_switch_as_new_request() -> None:
@@ -457,6 +490,11 @@ def test_answer_prompt_requires_marketing_tone_and_no_unsolicited_recipe() -> No
     assert "do not append an unsolicited recipe" in ANSWER_PROMPT
     assert "shown_refs is the ordered list" in ANSWER_PROMPT
     assert "explicitly named in the answer" in ANSWER_PROMPT
+    assert "one best-fitting main object by default" in ANSWER_PROMPT
+    assert "at most one or two short alternatives" in ANSWER_PROMPT
+    assert "do not write a long tasting lecture" in ANSWER_PROMPT
+    assert "keep that base product strict" in ANSWER_PROMPT
+    assert "skip it" in ANSWER_PROMPT
     assert '"Вот как приготовить Old Cuban:"' in ANSWER_PROMPT
     assert "do not recommend it again" in ANSWER_PROMPT
     assert "after show_cart" in ANSWER_PROMPT
@@ -505,6 +543,40 @@ def test_lookup_rejects_reference_not_present_in_memory() -> None:
     output = execute_tool(state)
     assert '"lookup_ref_not_allowed"' in output["messages"][0].content
     assert output["cards"] == []
+
+
+def test_lookup_drops_unallowed_ids_when_some_refs_are_valid() -> None:
+    state = AgentState(
+        session_id="s",
+        user_request="Which are sweet?",
+        session_memory=SessionMemory(session_id="s", turns=[_turn()]),
+        user_profile=UserProfile(session_id="s"),
+        turn_resolution=TurnResolution(
+            follow_up=True,
+            initial_request="fresh cocktail",
+            effective_request="Compare shown cocktails.",
+        ),
+        messages=[
+            AIMessage(
+                content="",
+                tool_calls=[
+                    {
+                        "name": "lookup_by_ids",
+                        "args": {
+                            "kind": "cocktail",
+                            "ids": ["mojito", "unknown", "old-cuban"],
+                        },
+                        "id": "call-1",
+                    }
+                ],
+            )
+        ],
+    )
+    output = execute_tool(state)
+    envelope = json.loads(output["messages"][0].content)
+    assert envelope["ok"] is True
+    assert envelope["output"]["rejected_ids"] == ["unknown"]
+    assert [card.id for card in output["cards"]] == ["mojito", "old-cuban"]
 
 
 def test_lookup_loads_full_shown_cocktail_cards() -> None:
@@ -1003,7 +1075,7 @@ def test_only_recent_transcript_is_loaded_into_resolver_and_answer() -> None:
         shutil.rmtree(directory, ignore_errors=True)
 
 
-def test_failed_graph_turn_does_not_write_sqlite() -> None:
+def test_invalid_soft_answer_returns_safe_fallback() -> None:
     directory = Path(".test_tmp") / f"graph-failed-{uuid4().hex}"
     repository = SessionRepository(directory / "sommelier.sqlite3")
     request = "Hello"
@@ -1030,10 +1102,10 @@ def test_failed_graph_turn_does_not_write_sqlite() -> None:
                 }
             },
         )
-        assert "final_answer_validation_failed" in state.errors
-        assert repository.load_messages("failed") == []
-        assert repository.load_session_memory("failed").turns == []
-        assert repository.load_feedback_stats("failed")["failed_turns"] == 1
+        assert state.errors == []
+        assert state.answer_mode == "soft"
+        assert state.final_answer_result.shown_refs == []
+        assert "уточню подбор по карточкам" in state.final_answer_result.answer
     finally:
         shutil.rmtree(directory, ignore_errors=True)
 
@@ -1252,6 +1324,90 @@ def test_explicit_scope_change_resolves_latest_product_pronoun() -> None:
         )
 
 
+def test_ambiguous_singular_pronoun_after_multiple_results_is_not_python_guessed() -> None:
+    memory = SessionMemory(
+        session_id="ambiguous",
+        turns=[
+            _turn("rum").model_copy(
+                update={
+                    "request_scope": "food_pairing",
+                    "shown_results": [
+                        ShownResult(
+                            kind="product",
+                            id="negra",
+                            name="BACARDÍ Carta Negra",
+                            summary="Dark rum.",
+                        ),
+                        ShownResult(
+                            kind="product",
+                            id="spiced",
+                            name="BACARDÍ Spiced",
+                            summary="Spiced rum.",
+                        ),
+                    ],
+                }
+            )
+        ],
+    )
+    result = TurnResolution(
+        follow_up=True,
+        request_scope="cocktail",
+        initial_request="rum",
+        effective_request="Уточнить, из какого рома подобрать коктейли.",
+    )
+    validate_turn_resolution(result, "А какие коктейли можно из него сделать?", memory)
+
+
+def test_ordinal_reference_after_multiple_results_resolves_by_shown_order() -> None:
+    memory = SessionMemory(
+        session_id="ordinal",
+        turns=[
+            _turn("rum").model_copy(
+                update={
+                    "request_scope": "food_pairing",
+                    "shown_results": [
+                        ShownResult(
+                            kind="product",
+                            id="negra",
+                            name="BACARDÍ Carta Negra",
+                            summary="Dark rum.",
+                        ),
+                        ShownResult(
+                            kind="product",
+                            id="spiced",
+                            name="BACARDÍ Spiced",
+                            summary="Spiced rum.",
+                        ),
+                    ],
+                }
+            )
+        ],
+    )
+    valid = TurnResolution(
+        follow_up=True,
+        request_scope="cocktail",
+        initial_request="rum",
+        effective_request="Подобрать коктейли на основе BACARDÍ Carta Negra.",
+    )
+    validate_turn_resolution(
+        valid,
+        "А какие коктейли можно сделать из первого варианта?",
+        memory,
+    )
+    with pytest.raises(ValueError, match="BACARDÍ Carta Negra"):
+        validate_turn_resolution(
+            valid.model_copy(
+                update={
+                    "effective_request": (
+                        "Подобрать коктейли на основе BACARDÍ Spiced."
+                    )
+                }
+            ),
+            "А какие коктейли можно сделать из первого варианта?",
+            memory,
+        )
+
+
 def test_known_product_cocktail_scope_is_prompted_not_forced() -> None:
     memory = SessionMemory(
         session_id="forced-cocktail",
@@ -1289,8 +1445,90 @@ def test_known_product_cocktail_scope_is_prompted_not_forced() -> None:
         state,
         config={"configurable": {"tool_llm": fake}},
     )
-    assert output["messages"][-1].content == "I can select cocktails later."
-    assert "call search_cocktails" in TOOL_PROMPT
+    assert output["messages"][-1].content == "No tool needed."
+    assert "that is sufficient to search" in TOOL_PROMPT
+    assert "Choose exactly one mode" in TOOL_PROMPT
+    assert "MODE A — SEARCH NEW CANDIDATES" in TOOL_PROMPT
+    assert "MODE B — LOOK UP SHOWN OBJECTS" in TOOL_PROMPT
+    assert 'request_scope="recipe" normally means lookup_by_ids' in TOOL_PROMPT
+    assert "Давай сладкие варианты" in TOOL_PROMPT
+    assert "do not ask\n  whether to filter or search" in TOOL_PROMPT
+    assert "After a successful search that returned cards" in TOOL_PROMPT
+    assert "Do not call lookup_by_ids immediately after a successful search" in TOOL_PROMPT
+    assert "No tool needed." in TOOL_PROMPT
+    assert "Never\nwrite recommendations" in TOOL_PROMPT
+    assert "Never write a tool name or JSON arguments as plain text" in TOOL_PROMPT
+    assert "native tool_calls only" in TOOL_PROMPT
+
+
+def test_tool_agent_sanitizes_plain_text_response() -> None:
+    state = AgentState(
+        session_id="plain-tool-agent",
+        user_request="Давай сладкие варианты.",
+        session_memory=SessionMemory(session_id="plain-tool-agent"),
+        user_profile=UserProfile(session_id="plain-tool-agent"),
+        turn_resolution=TurnResolution(
+            follow_up=True,
+            request_scope="cocktail",
+            initial_request="rum",
+            effective_request="Подобрать сладкие коктейли.",
+        ),
+    )
+    fake = SequenceToolFake(
+        [AIMessage(content="Вот три сладких коктейля: Mojito, Daiquiri.")]
+    )
+
+    output = tool_calling_agent(
+        state,
+        config={"configurable": {"tool_llm": fake}},
+    )
+
+    assert output["messages"][-1].content == "No tool needed."
+
+
+def test_graph_routes_no_tool_catalog_turn_to_soft_answer() -> None:
+    directory = Path(".test_tmp") / f"soft-answer-{uuid4().hex}"
+    repository = SessionRepository(directory / "sommelier.sqlite3")
+    request = "Давай сладкие варианты."
+    resolution = TurnResolution(
+        follow_up=False,
+        request_scope="cocktail",
+        initial_request=request,
+        effective_request="Подобрать сладкие коктейли.",
+    )
+    answer = FinalAnswerResult(
+        answer="Могу уточнить по уже показанным вариантам. Хотите, я точнее подберу по карточкам?",
+        shown_refs=[],
+        assistant_summary="Soft memory-only ответ без новых карточек.",
+    )
+    try:
+        state = run_agent_turn(
+            AgentState(session_id="soft-answer", user_request=request),
+            config={
+                "configurable": {
+                    "resolver_llm": StructuredFake(resolution),
+                    "feedback_llm": StructuredFake(FeedbackResult(feedback="neutral")),
+                    "tool_llm": NoToolFake(),
+                    "answer_llm": StructuredFake(answer),
+                    "repository": repository,
+                    "persist": False,
+                }
+            },
+        )
+        assert state.errors == []
+        assert state.answer_mode == "soft"
+        assert state.final_answer_result == answer
+        assert state.session_memory.turns[-1].shown_results == []
+    finally:
+        shutil.rmtree(directory, ignore_errors=True)
+
+
+def test_soft_answer_prompt_is_memory_only_and_invites_lookup() -> None:
+    assert "memory-only mode" in SOFT_ANSWER_PROMPT
+    assert "return shown_refs=[]" in SOFT_ANSWER_PROMPT
+    assert "do not introduce new products or cocktails" in SOFT_ANSWER_PROMPT
+    assert "do not provide recipes" in SOFT_ANSWER_PROMPT
+    assert "Хотите, я точнее подберу по карточкам" in SOFT_ANSWER_PROMPT
 
 
 def test_final_answer_retries_wrong_kind_for_scope() -> None:
@@ -1348,3 +1586,13 @@ def test_final_answer_retries_wrong_kind_for_scope() -> None:
         ]
     finally:
         shutil.rmtree(directory, ignore_errors=True)
+
+
+def test_final_answer_prompt_requires_named_cards_in_shown_refs() -> None:
+    assert "reread your own answer text" in ANSWER_PROMPT
+    assert "Every product or cocktail name from current cards" in ANSWER_PROMPT
+    assert "MUST have its\n{kind, id} in shown_refs" in ANSWER_PROMPT
+    assert "Raspberry Mojito" in ANSWER_PROMPT
+    assert "not Mojito" in ANSWER_PROMPT
+    assert "shown_refs may contain ONLY ids from current cards" in ANSWER_PROMPT
+    assert "return shown_refs=[] instead of borrowing" in ANSWER_PROMPT
